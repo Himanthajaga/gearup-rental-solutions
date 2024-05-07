@@ -1,14 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<AnchorPane fx:id="rootNode" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rental.controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="658.0" fitWidth="1304.0" layoutX="-4.0" layoutY="-4.0">
+         <image>
+            <Image url="@../asserts/login2.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtuserId" layoutX="619.0" layoutY="113.0" onAction="#btnuserIdOnAction" prefHeight="42.0" prefWidth="342.0" promptText="username">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font></TextField>
+      <JFXButton fx:id="btnlogin" buttonType="RAISED" layoutX="628.0" layoutY="298.0" onAction="#btnloginOnAction" prefHeight="25.0" prefWidth="143.0" style="-fx-background-color: #2ecc71;" text="Login" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <Text fx:id="ForgotPassword" fill="WHITE" layoutX="783.0" layoutY="321.0" onMouseClicked="#btnForgotPasswordOnAction" strokeType="OUTSIDE" strokeWidth="0.0" text="forgot password?" wrappingWidth="135.0224609375">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="628.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New User?">
+         <font>
+            <Font name="Calibri Bold" size="25.0" />
+         </font>
+      </Text>
+      <Text fx:id="Signup" fill="#2ecc71" layoutX="752.0" layoutY="382.0" onMouseClicked="#btnSignupOnAction" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="595.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome To Jaga Renters!">
+         <font>
+            <Font name="Calibri Bold" size="40.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="619.0" layoutY="85.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" text="Login to continue">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="1024.0" layoutY="593.0" strokeType="OUTSIDE" strokeWidth="0.0" text="074-1411520">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="1024.0" layoutY="619.0" strokeType="OUTSIDE" strokeWidth="0.0" text="071-5346789">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="1024.0" layoutY="644.0" strokeType="OUTSIDE" strokeWidth="0.0" text="himanthagamachchige@gmail.com">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="937.0" layoutY="593.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile  -">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="937.0" layoutY="619.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mobile  -">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="937.0" layoutY="643.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gmail    -">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font></Text>
+      <PasswordField fx:id="txtpassword" layoutX="619.0" layoutY="217.0" onAction="#txtpasswordOnAction" prefHeight="42.0" prefWidth="342.0" promptText="password">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </PasswordField>
+      <ImageView fitHeight="239.0" fitWidth="285.0" layoutX="989.0" layoutY="325.0">
+         <image>
+            <Image url="@../asserts/Icons/outline-stock-trader-working-on-laptop-with-charts.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="130.0" fitWidth="143.0" layoutX="1144.0" layoutY="16.0">
+         <image>
+            <Image url="@../asserts/2.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="txtGreetings" fill="WHITE" layoutX="357.0" layoutY="49.0" wrappingWidth="237.7412109375">
+         <font>
+            <Font name="Calibri Bold" size="40.0" />
+         </font>
+      </Text>
+   </children>
 </AnchorPane>

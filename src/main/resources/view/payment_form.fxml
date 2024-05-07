@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="1048.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rental.controller.PaymentFormController">
+   <children>
+      <TableView fx:id="tblPayment" layoutX="68.0" layoutY="315.0" prefHeight="254.0" prefWidth="901.0">
+        <columns>
+          <TableColumn fx:id="colPaymentId" prefWidth="138.0" text="Payment_Id" />
+          <TableColumn fx:id="colPaymentType" prefWidth="229.0" text="Payment_Type" />
+            <TableColumn fx:id="colPaymentAmount" prefWidth="264.0" text="Payment_Amount" />
+            <TableColumn fx:id="colCid" prefWidth="269.0" text="Customer_id" />
+        </columns>
+      </TableView>
+      <Text layoutX="50.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Form">
+         <font>
+            <Font name="Calibri Bold" size="40.0" />
+         </font>
+      </Text>
+   </children>
 </AnchorPane>

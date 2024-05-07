@@ -8,23 +8,30 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import lk.ijse.rental.util.DateTimeUtil;
 
 import java.io.IOException;
 
-public class DashboardFormController {
-
-    public AnchorPane rootNode;
+public class DashboardMainFormController {
+    @FXML
+    private JFXButton btnSell;
+    @FXML
+    private Label lblName;
+    @FXML
+    private JFXButton btnPayment;
     @FXML
     private ImageView IconBack;
+    @FXML
+    private ImageView btnExit;
 
     @FXML
     private ImageView IconHome;
@@ -48,6 +55,9 @@ public class DashboardFormController {
     private JFXButton btnMachine;
 
     @FXML
+    private JFXButton btnRentMachine;
+
+    @FXML
     private JFXButton btnReservation;
 
     @FXML
@@ -57,173 +67,160 @@ public class DashboardFormController {
     private JFXButton btnmechanic;
 
     @FXML
-    private JFXButton btnRentMachine;
+    private AnchorPane paneHolder;
     @FXML
-    private Label lblTime;
-
+    private JFXButton btnReturn;
     @FXML
-    private TableView<?> tblDash;
-
+    private AnchorPane rootNode;
     @FXML
-    private TableColumn<?, ?> tblDashboard;
-
-    public void initialize() {
-        realTime();
+    private Label lblSetTime;
+    @FXML
+    void btnReturnOnActionOnAction(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/retunMachine_form.fxml"));
+        Pane registePane = (Pane) fxmlLoader.load();
+        paneHolder.getChildren().clear();
+        paneHolder.getChildren().add(registePane);
     }
+
+    public void realTime(){
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> lblSetTime.setText(DateTimeUtil.timenow())));
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+        lblSetTime.setText(DateTimeUtil.dateNow());
+    }
+
+    public void initialize() throws IOException {
+       // setAdminName();
+        realTime();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/dashboard_form.fxml"));
+        Pane registePane = (Pane) fxmlLoader.load();
+        paneHolder.getChildren().clear();
+        paneHolder.getChildren().add(registePane);
+    }
+
+//    private void setAdminName() {
+//        lblName.setText("Hello     "+ AdminRepo.adminId();
+//    }
 
     @FXML
     void BtnBokkingOnAction(ActionEvent event) throws IOException {
-        Stage stage1 = (Stage) btnBokking.getScene().getWindow();
-        stage1.close();
-        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/bokking_form.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/bokking_form.fxml"));
+        Pane registePane = (Pane) fxmlLoader.load();
+        paneHolder.getChildren().clear();
+        paneHolder.getChildren().add(registePane);
+    }
 
-        Scene scene = new Scene(rootNode);
-        Stage stage = new Stage();
-        stage.setScene(scene);
+    @FXML
+    void IconBackOnAction(MouseEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/dashboard_form.fxml"));
+        Pane registePane = (Pane) fxmlLoader.load();
+        paneHolder.getChildren().clear();
+        paneHolder.getChildren().add(registePane);
+    }
 
-        stage.setTitle("Bokking Form");
-
-        stage.show();
+    @FXML
+    void IconHomeOnAction(MouseEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/dashboard_form.fxml"));
+        Pane registePane = (Pane) fxmlLoader.load();
+        paneHolder.getChildren().clear();
+        paneHolder.getChildren().add(registePane);
     }
 
     @FXML
     void btnAdminOnAction(ActionEvent event) throws IOException {
-        Stage stage1 = (Stage) btnBokking.getScene().getWindow();
-        stage1.close();
-        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/admin_form.fxml"));
-
-        Scene scene = new Scene(rootNode);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-
-        stage.setTitle("Admin Form");
-
-        stage.show();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/admin_form.fxml"));
+        Pane registePane = (Pane) fxmlLoader.load();
+        paneHolder.getChildren().clear();
+        paneHolder.getChildren().add(registePane);
     }
 
     @FXML
     void btnBuildingMaterialOnAction(ActionEvent event) throws IOException {
-        Stage stage1 = (Stage) btnBokking.getScene().getWindow();
-        stage1.close();
-        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/building_material_form.fxml"));
-
-        Scene scene = new Scene(rootNode);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-
-        stage.setTitle("Building_Material Form");
-
-        stage.show();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/building_material_form.fxml"));
+        Pane registePane = (Pane) fxmlLoader.load();
+        paneHolder.getChildren().clear();
+        paneHolder.getChildren().add(registePane);
     }
     @FXML
-    void btnLogoutOnAction(ActionEvent event) {
-        System.exit(0);
+    void btnExitOnAction(MouseEvent event) {
+System.exit(0);
     }
     @FXML
     void btnCustomerOnAction(ActionEvent event) throws IOException {
-        Stage stage1 = (Stage) btnBokking.getScene().getWindow();
-        stage1.close();
-        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/customer_form.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/customer_form.fxml"));
+        Pane registePane = (Pane) fxmlLoader.load();
+        paneHolder.getChildren().clear();
+        paneHolder.getChildren().add(registePane);
+    }
+    @FXML
+    void btnPaymentOnAction(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/payment_form.fxml"));
+        Pane registePane = (Pane) fxmlLoader.load();
+        paneHolder.getChildren().clear();
+        paneHolder.getChildren().add(registePane);
 
-        Scene scene = new Scene(rootNode);
-        Stage stage = new Stage();
-        stage.setScene(scene);
+    }
+    @FXML
+    void btnLogoutOnAction(ActionEvent event) throws IOException {
+        if (new Alert(Alert.AlertType.CONFIRMATION,"Are you sure you want to logout?").showAndWait().get().equals(ButtonType.OK)){
+            Stage stage1 = (Stage)btnLogout.getScene().getWindow();
+            stage1.close();
+            Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/login_form.fxml"));
 
-        stage.setTitle("Customer Form");
+            Scene scene = new Scene(rootNode);
+            Stage stage = new Stage();
+            stage.setScene(scene);
 
-        stage.show();
+            stage.setTitle("login form");
+
+            stage.show();
+        }
+    }
+    @FXML
+    void btnSellOnAction(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/sell_form.fxml"));
+        Pane registePane = (Pane) fxmlLoader.load();
+        paneHolder.getChildren().clear();
+        paneHolder.getChildren().add(registePane);
     }
 
     @FXML
     void btnMachineOnAction(ActionEvent event) throws IOException {
-        Stage stage1 = (Stage) btnBokking.getScene().getWindow();
-        stage1.close();
-        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/machine_form.fxml"));
-
-        Scene scene = new Scene(rootNode);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-
-        stage.setTitle("Machine Form");
-
-        stage.show();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/machine_form.fxml"));
+        Pane registePane = (Pane) fxmlLoader.load();
+        paneHolder.getChildren().clear();
+        paneHolder.getChildren().add(registePane);
     }
 
     @FXML
     void btnMechanicOnAction(ActionEvent event) throws IOException {
-        Stage stage1 = (Stage) btnBokking.getScene().getWindow();
-        stage1.close();
-        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/mechanic_form.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/mechanic_form.fxml"));
+        Pane registePane = (Pane) fxmlLoader.load();
+        paneHolder.getChildren().clear();
+        paneHolder.getChildren().add(registePane);
+    }
 
-        Scene scene = new Scene(rootNode);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-
-        stage.setTitle("Mechanic Form");
-
-        stage.show();
+    @FXML
+    void btnRentMachineOnAction(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/rentMachine_form.fxml"));
+        Pane registePane = (Pane) fxmlLoader.load();
+        paneHolder.getChildren().clear();
+        paneHolder.getChildren().add(registePane);
     }
 
     @FXML
     void btnReservationOnAction(ActionEvent event) throws IOException {
-        Stage stage1 = (Stage) btnBokking.getScene().getWindow();
-        stage1.close();
-        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/reservation_form.fxml"));
-
-        Scene scene = new Scene(rootNode);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-
-        stage.setTitle("Reservation Form");
-
-        stage.show();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/reservation_form.fxml"));
+        Pane registePane = (Pane) fxmlLoader.load();
+        paneHolder.getChildren().clear();
+        paneHolder.getChildren().add(registePane);
     }
-    @FXML
-    void btnRentMachineOnAction(ActionEvent event) throws IOException {
-        Stage stage1 = (Stage) btnBokking.getScene().getWindow();
-        stage1.close();
-        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/rentMachine_form.fxml"));
 
-        Scene scene = new Scene(rootNode);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-
-        stage.setTitle("Supplier Form");
-
-        stage.show();
-    }
     @FXML
     void btnSupplierOnAction(ActionEvent event) throws IOException {
-        Stage stage1 = (Stage) btnBokking.getScene().getWindow();
-        stage1.close();
-        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/supplier_form.fxml"));
-
-        Scene scene = new Scene(rootNode);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-
-        stage.setTitle("Supplier Form");
-
-        stage.show();
-    }
-    public void realTime(){
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> lblTime.setText(DateTimeUtil.timenow())));
-        timeline.setCycleCount(Timeline.INDEFINITE);
-        timeline.play();
-        lblTime.setText(DateTimeUtil.dateNow());
-    }
-
-    public void IconBackOnAction(MouseEvent mouseEvent) {
-    }
-    public void IconHomeOnAction(MouseEvent mouseEvent) throws IOException {
-        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/dashboard_form.fxml"));
-
-        Scene scene = new Scene(rootNode);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-
-        stage.setTitle("Dashboard Form");
-
-        stage.show();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/supplier_form.fxml"));
+        Pane registePane = (Pane) fxmlLoader.load();
+        paneHolder.getChildren().clear();
+        paneHolder.getChildren().add(registePane);
     }
 }

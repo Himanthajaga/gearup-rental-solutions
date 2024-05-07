@@ -1,14 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rental.controller.SignupFormController">
+   <children>
+      <ImageView fitHeight="656.0" fitWidth="1128.0" layoutX="-478.0" layoutY="-1.0">
+         <image>
+            <Image url="@../asserts/login2.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtAdminId" layoutX="194.0" layoutY="163.0" prefHeight="37.0" prefWidth="252.0" promptText="Enter AdminID">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font></TextField>
+      <TextField fx:id="txtAdminName" layoutX="194.0" layoutY="222.0" prefHeight="37.0" prefWidth="252.0" promptText="Enter AdminName">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font></TextField>
+      <JFXButton fx:id="btnSignin" buttonType="RAISED" layoutX="274.0" layoutY="449.0" onAction="#btnSignInOnAction" prefHeight="37.0" prefWidth="102.0" style="-fx-background-color: #2ecc71;" text="sign in" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <Text fill="WHITE" layoutX="194.0" layoutY="530.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already have an account?">
+         <font>
+            <Font name="Calibri" size="25.0" />
+         </font>
+      </Text>
+      <Text fx:id="btnLogin" fill="#2ecc71" layoutX="464.0" layoutY="530.0" onMouseClicked="#btnLoginOnAction" strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="211.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up Here!">
+         <font>
+            <Font name="Calibri Bold" size="40.0" />
+         </font>
+      </Text>
+      <PasswordField fx:id="txtPassword" layoutX="194.0" layoutY="278.0" prefHeight="40.0" prefWidth="252.0" promptText="Enter Password">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </PasswordField>
+      <PasswordField fx:id="txtConfirmPassword" layoutX="194.0" layoutY="339.0" prefHeight="40.0" prefWidth="252.0" promptText="Confirm Password">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </PasswordField>
+      <ImageView fitHeight="131.0" fitWidth="131.0" layoutX="443.0">
+         <image>
+            <Image url="@../asserts/Icons/martina-boy-working-on-computer-with-checklist.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="82.0" fitWidth="88.0" layoutX="548.0" layoutY="554.0">
+         <image>
+            <Image url="@../asserts/2.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtAdminEmail" layoutX="194.0" layoutY="112.0" prefHeight="37.0" prefWidth="252.0" promptText="Enter Admin Email">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+      <Text fx:id="txtMassage" fill="WHITE" layoutX="194.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Text>
+   </children>
 </AnchorPane>

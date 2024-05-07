@@ -1,14 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<AnchorPane prefHeight="605.0" prefWidth="1048.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rental.controller.DashbordFormController">
+   <children>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="867.0" layoutY="-31.0" opacity="0.67">
+         <image>
+            <Image url="@../asserts/2.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="67.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Rent Orders">
+         <font>
+            <Font name="Calibri Bold" size="35.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblTotalRentOrders" layoutX="124.0" layoutY="169.0" prefHeight="17.0" prefWidth="67.0">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Text layoutX="545.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Sell Orders">
+         <font>
+            <Font name="Calibri Bold" size="35.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblTotalSellorders" layoutX="632.0" layoutY="169.0" prefHeight="17.0" prefWidth="67.0">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblrent_order" layoutX="10.0" layoutY="315.0" prefHeight="200.0" prefWidth="518.0">
+        <columns>
+          <TableColumn fx:id="colOrderId" prefWidth="57.0" text="Order_ID" />
+          <TableColumn fx:id="colOrderDate" prefWidth="93.0" text="Order_Date" />
+            <TableColumn fx:id="ColReturnDate" prefWidth="82.0" text="Return_Date" />
+            <TableColumn fx:id="colCEmail" prefWidth="200.0" text="C_Email" />
+            <TableColumn fx:id="colTotal" prefWidth="85.0" text="Total" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tblSell" layoutX="540.0" layoutY="315.0" prefHeight="200.0" prefWidth="518.0">
+        <columns>
+          <TableColumn fx:id="colSellId" prefWidth="84.0" text="Sell_Id" />
+          <TableColumn fx:id="colSellDate" prefWidth="142.0" text="Sell_Date" />
+            <TableColumn fx:id="colCEmail" prefWidth="211.0" text="C_Email" />
+            <TableColumn fx:id="colSellTotal" text="Sell_Total" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>

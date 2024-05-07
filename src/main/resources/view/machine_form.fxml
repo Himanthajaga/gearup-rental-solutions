@@ -1,14 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<AnchorPane prefHeight="605.0" prefWidth="1048.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rental.controller.MachineFormController">
+   <children>
+      <Text layoutX="29.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Machine Manage">
+         <font>
+            <Font name="Calibri Bold" size="40.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tblMachine" layoutX="101.0" layoutY="331.0" prefHeight="264.0" prefWidth="862.0">
+         <columns>
+            <TableColumn fx:id="colMachineId" prefWidth="173.0" text="Machine_Id" />
+            <TableColumn fx:id="colMachineName" prefWidth="162.0" text="Machine_Name" />
+            <TableColumn fx:id="colMachineDescription" prefWidth="177.0" text="Machine_Description" />
+            <TableColumn fx:id="colMachineRentalPrice" prefWidth="178.0" text="Machine_Rental_Price" />
+            <TableColumn fx:id="colMachineIsAvailable" prefWidth="171.0" text="isAvailable" />
+         </columns>
+      </TableView>
+      <JFXButton fx:id="btnUpdateMachine" buttonType="RAISED" layoutX="335.0" layoutY="281.0" onAction="#btnUpdateMachineOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #55E6C1;" text="      Update" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnDeleteMachine" buttonType="RAISED" layoutX="754.0" layoutY="281.0" onAction="#btnDeleteMachineOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #ff5e57;" text="   Delete" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnSaveMachine" buttonType="RAISED" layoutX="101.0" layoutY="281.0" onAction="#btnSaveMachinerOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #44bd32;" text="Save" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="101.0" layoutY="281.0">
+         <image>
+            <Image url="@../asserts/Icons/Save.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="335.0" layoutY="281.0">
+         <image>
+            <Image url="@../asserts/Icons/Update.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="754.0" layoutY="281.0">
+         <image>
+            <Image url="@../asserts/Icons/Delete.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtMachineId" layoutX="147.0" layoutY="69.0" onAction="#txtSearchOnAction" prefHeight="40.0" prefWidth="188.0" promptText="Machine_Id">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtDesc" layoutX="147.0" layoutY="119.0" prefHeight="40.0" prefWidth="188.0" promptText="Machine_Desc">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtMachineName" layoutX="524.0" layoutY="60.0" prefHeight="40.0" prefWidth="188.0" promptText="Machine_Name">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="560.0" layoutY="281.0" onAction="#btnClearCustomerOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #7f8c8d;" text="Clear" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="566.0" layoutY="284.0">
+         <image>
+            <Image url="@../asserts/Icons/Clear.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtRentalprice" layoutX="147.0" layoutY="176.0" prefHeight="40.0" prefWidth="188.0" promptText="Machine_Rental_price">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtisavailable" layoutX="524.0" layoutY="119.0" prefHeight="40.0" prefWidth="188.0" promptText="IsAvailable">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+   </children>
 </AnchorPane>

@@ -1,14 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<AnchorPane prefHeight="605.0" prefWidth="1048.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rental.controller.BokkingFormController">
+   <children>
+      <Text layoutX="30.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bokking Manage">
+         <font>
+            <Font name="Calibri Bold" size="40.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tblBokking" layoutX="71.0" layoutY="367.0" prefHeight="230.0" prefWidth="917.0">
+         <columns>
+            <TableColumn fx:id="colBokkingId" prefWidth="198.0" text="Bokking ID" />
+            <TableColumn fx:id="colBokkingDate" prefWidth="164.0" text="Bokking Date" />
+            <TableColumn fx:id="colCustomerEmail" prefWidth="247.0" text="Customer_Email" />
+            <TableColumn fx:id="colMachineId" prefWidth="306.0" text="Machine_ID" />
+         </columns>
+      </TableView>
+      <JFXButton fx:id="btnUpdateBokking" buttonType="RAISED" layoutX="328.0" layoutY="311.0" onAction="#btnUpdateBokkingOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #55E6C1;" text="  Update" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnDeleteBokking" buttonType="RAISED" layoutX="800.0" layoutY="314.0" onAction="#btnDeleteBokkingOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #ff5e57;" text="  Delete" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnSaveBokking" buttonType="RAISED" layoutX="71.0" layoutY="311.0" onAction="#btnSaveBokkingOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #44bd32;" text="Save" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="71.0" layoutY="311.0">
+         <image>
+            <Image url="@../asserts/Icons/Save.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="328.0" layoutY="311.0">
+         <image>
+            <Image url="@../asserts/Icons/Update.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="800.0" layoutY="314.0">
+         <image>
+            <Image url="@../asserts/Icons/Delete.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtBokkingId" layoutX="123.0" layoutY="94.0" onAction="#txtSearchOnAction" prefHeight="40.0" prefWidth="195.0" promptText="Bokking_Id">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="575.0" layoutY="311.0" onAction="#btnClearBokkingOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #7f8c8d;" text="Clear" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="581.0" layoutY="314.0">
+         <image>
+            <Image url="@../asserts/Icons/Clear.png" />
+         </image>
+      </ImageView>
+      <DatePicker fx:id="txtBokkkingDate" layoutX="603.0" layoutY="94.0" prefHeight="40.0" prefWidth="189.0" promptText="Bokking_Date" />
+      <JFXComboBox fx:id="cmbCustomerID" layoutX="260.0" layoutY="162.0" onAction="#cmbCustomerIdOnAction" prefHeight="40.0" prefWidth="189.0" />
+      <JFXComboBox fx:id="cmbMachineId" layoutX="260.0" layoutY="230.0" onAction="#cmbMachineIdOnaction" prefHeight="40.0" prefWidth="189.0" />
+      <Label layoutX="123.0" layoutY="182.0" text="Customer_Email">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="123.0" layoutY="250.0" text="Machine_Id">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCustomerId" layoutX="723.0" layoutY="170.0" prefHeight="23.0" prefWidth="76.0">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblMachineId" layoutX="697.0" layoutY="250.0" prefHeight="23.0" prefWidth="76.0">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="548.0" layoutY="170.0" text="Customer_Name">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="556.0" layoutY="250.0" text="Machine_Name">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>

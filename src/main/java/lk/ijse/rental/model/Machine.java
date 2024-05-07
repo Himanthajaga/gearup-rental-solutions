@@ -1,16 +1,19 @@
-package lk.ijse.dep.model;
+package lk.ijse.rental.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Machine {
-   private String machineId;
-    private String machineName;
-    private String machineType;
-    private String machineBrand;
+   private String m_Id;
+    private String m_Name;
+    private String m_desc;
+    private String m_rental_price;
+    private String isAvaiable;
+
+
 
 }

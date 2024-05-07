@@ -1,4 +1,4 @@
-package lk.ijse.dep.model;
+package lk.ijse.rental.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class Supplier {
-  private String id;
-    private String name;
-    private String address;
-    private String tel;
+    private String s_id;
+    private String s_name;
+    private String s_address;
+    private String s_tel;
 }

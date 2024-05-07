@@ -2,129 +2,188 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode" prefHeight="630.0" prefWidth="823.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rental.controller.DashboardFormController">
+<AnchorPane fx:id="rootNode" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rental.controller.DashboardMainFormController">
    <children>
-      <ImageView fitHeight="630.0" fitWidth="824.0" layoutY="-2.0">
+      <ImageView fitHeight="656.0" fitWidth="1300.0" layoutY="-1.0">
          <image>
-            <Image url="@../asserts/loginBlur.png" />
+            <Image url="@../asserts/loginBlur%201.png" />
          </image>
+         <effect>
+            <Glow level="0.0" />
+         </effect>
       </ImageView>
       <Label layoutX="619.0" layoutY="24.0" />
-      <JFXButton fx:id="btnCustomer" buttonType="RAISED" layoutX="14.0" layoutY="83.0" onAction="#btnCustomerOnAction" prefHeight="34.0" prefWidth="188.0" style="-fx-background-color: #2ecc71;" text="Customer" textAlignment="CENTER" textFill="#795d5d">
+      <JFXButton fx:id="btnCustomer" buttonType="RAISED" layoutX="14.0" layoutY="214.0" onAction="#btnCustomerOnAction" prefHeight="37.0" prefWidth="202.0" style="-fx-background-color: #2ecc71;" text="Customer" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Calibri Bold" size="18.0" />
+            <Font name="Calibri Bold" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnSupplier" buttonType="RAISED" layoutX="14.0" layoutY="140.0" onAction="#btnSupplierOnAction" prefHeight="34.0" prefWidth="188.0" style="-fx-background-color: #2ecc71;" text="Supplier" textAlignment="CENTER" textFill="#795d5d">
+      <JFXButton fx:id="btnSupplier" buttonType="RAISED" layoutX="14.0" layoutY="265.0" onAction="#btnSupplierOnAction" prefHeight="37.0" prefWidth="202.0" style="-fx-background-color: #2ecc71;" text="Supplier" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Calibri Bold" size="18.0" />
+            <Font name="Calibri Bold" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnBokking" buttonType="RAISED" layoutX="14.0" layoutY="195.0" onAction="#BtnBokkingOnAction" prefHeight="34.0" prefWidth="188.0" style="-fx-background-color: #2ecc71;" text="Booking" textAlignment="CENTER" textFill="#795d5d">
+      <JFXButton fx:id="btnAdmin" buttonType="RAISED" layoutX="14.0" layoutY="413.0" onAction="#btnAdminOnAction" prefHeight="37.0" prefWidth="202.0" style="-fx-background-color: #2ecc71;" text="Admin" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Calibri Bold" size="18.0" />
+            <Font name="Calibri Bold" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnAdmin" buttonType="RAISED" layoutX="14.0" layoutY="395.0" onAction="#btnAdminOnAction" prefHeight="34.0" prefWidth="188.0" style="-fx-background-color: #2ecc71;" text="Admin" textAlignment="CENTER" textFill="#795d5d">
+      <JFXButton fx:id="btnBuildingMaterial" buttonType="RAISED" layoutX="14.0" layoutY="364.0" onAction="#btnBuildingMaterialOnAction" prefHeight="35.0" prefWidth="202.0" style="-fx-background-color: #2ecc71;" text="       Building Material" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Calibri Bold" size="18.0" />
+            <Font name="Calibri Bold" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnBuildingMaterial" buttonType="RAISED" layoutX="14.0" layoutY="345.0" onAction="#btnBuildingMaterialOnAction" prefHeight="34.0" prefWidth="188.0" style="-fx-background-color: #2ecc71;" text="       Building Material" textAlignment="CENTER" textFill="#795d5d">
+      <JFXButton fx:id="btnMachine" buttonType="RAISED" layoutX="14.0" layoutY="316.0" onAction="#btnMachineOnAction" prefHeight="37.0" prefWidth="202.0" style="-fx-background-color: #2ecc71;" text="Machine" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Calibri Bold" size="18.0" />
+            <Font name="Calibri Bold" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnMachine" buttonType="RAISED" layoutX="14.0" layoutY="296.0" onAction="#btnMachineOnAction" prefHeight="34.0" prefWidth="188.0" style="-fx-background-color: #2ecc71;" text="Machine" textAlignment="CENTER" textFill="#795d5d">
+      <JFXButton fx:id="btnmechanic" buttonType="RAISED" layoutX="14.0" layoutY="464.0" onAction="#btnMechanicOnAction" prefHeight="37.0" prefWidth="202.0" style="-fx-background-color: #2ecc71;" text="Mechanic" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Calibri Bold" size="18.0" />
+            <Font name="Calibri Bold" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnReservation" buttonType="RAISED" layoutX="14.0" layoutY="247.0" onAction="#btnReservationOnAction" prefHeight="34.0" prefWidth="188.0" style="-fx-background-color: #2ecc71;" text="   Reservation" textAlignment="CENTER" textFill="#795d5d">
+      <JFXButton fx:id="btnLogout" buttonType="RAISED" layoutX="14.0" layoutY="517.0" onAction="#btnLogoutOnAction" prefHeight="37.0" prefWidth="202.0" style="-fx-background-color: #2ecc71;" text="Logout" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Calibri Bold" size="18.0" />
+            <Font name="Calibri Bold" size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnmechanic" buttonType="RAISED" layoutX="14.0" layoutY="444.0" onAction="#btnMechanicOnAction" prefHeight="34.0" prefWidth="188.0" style="-fx-background-color: #2ecc71;" text="Mechanic" textAlignment="CENTER" textFill="#795d5d">
-         <font>
-            <Font name="Calibri Bold" size="18.0" />
-         </font>
-      </JFXButton>
-      <JFXButton fx:id="btnLogout" buttonType="RAISED" layoutX="14.0" layoutY="495.0" onAction="#btnLogoutOnAction" prefHeight="34.0" prefWidth="188.0" style="-fx-background-color: #2ecc71;" text="Logout" textAlignment="CENTER" textFill="#795d5d">
-         <font>
-            <Font name="Calibri Bold" size="18.0" />
-         </font>
-      </JFXButton>
-      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="21.0" layoutY="397.0">
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="21.0" layoutY="416.0">
          <image>
             <Image url="@../asserts/Icons/icons8-attendance-96.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="IconBack" fitHeight="53.0" fitWidth="51.0" layoutX="15.0" layoutY="544.0" onMouseClicked="#IconBackOnAction">
+      <ImageView fx:id="IconBack" fitHeight="37.0" fitWidth="43.0" layoutX="19.0" layoutY="607.0" onMouseClicked="#IconBackOnAction" opacity="0.69">
          <image>
             <Image url="@../asserts/Icons/icons8-back-100.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="21.0" layoutY="249.0">
-         <image>
-            <Image url="@../asserts/Icons/icons8-date-96.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="IconHome" fitHeight="53.0" fitWidth="64.0" layoutX="76.0" layoutY="544.0" onMouseClicked="#IconHomeOnAction">
+      <ImageView fx:id="IconHome" fitHeight="44.0" fitWidth="51.0" layoutX="82.0" layoutY="603.0" onMouseClicked="#IconHomeOnAction">
          <image>
             <Image url="@../asserts/Icons/icons8-home-96.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="22.0" layoutY="497.0">
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="22.0" layoutY="519.0">
          <image>
             <Image url="@../asserts/Icons/icons8-logout-96.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="18.0" layoutY="195.0">
-         <image>
-            <Image url="@../asserts/Icons/icons8-order-96.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="34.0" fitWidth="37.0" layoutX="18.0" layoutY="83.0">
+      <ImageView fitHeight="34.0" fitWidth="37.0" layoutX="18.0" layoutY="214.0">
          <image>
             <Image url="@../asserts/Icons/icons8-person-96.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="18.0" layoutY="141.0">
+      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="18.0" layoutY="266.0">
          <image>
             <Image url="@../asserts/Icons/icons8-user-96.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="17.0" layoutY="345.0">
+      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="17.0" layoutY="364.0">
          <image>
             <Image url="@../asserts/Icons/building%20material%20icion.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="22.0" layoutY="298.0">
+      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="22.0" layoutY="318.0">
          <image>
             <Image url="@../asserts/Icons/Machine%20icon.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="22.0" layoutY="444.0">
+      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="22.0" layoutY="464.0">
          <image>
             <Image url="@../asserts/Icons/mechanic%20icon.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btnRentMachine" buttonType="RAISED" layoutX="14.0" layoutY="32.0" onAction="#btnRentMachineOnAction" prefHeight="34.0" prefWidth="188.0" style="-fx-background-color: #2ecc71;" text="  Rent Machine" textAlignment="CENTER" textFill="#795d5d">
+      <JFXButton fx:id="btnRentMachine" buttonType="RAISED" layoutX="14.0" layoutY="60.0" onAction="#btnRentMachineOnAction" prefHeight="37.0" prefWidth="202.0" style="-fx-background-color: #2ecc71;" text="    Rent Machine" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Calibri Bold" size="18.0" />
+            <Font name="Calibri Bold" size="20.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="34.0" fitWidth="37.0" layoutX="22.0" layoutY="33.0">
+      <ImageView fitHeight="34.0" fitWidth="37.0" layoutX="22.0" layoutY="61.0">
          <image>
             <Image url="@../asserts/Icons/icons8-drill-96.png" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="paneHolder" layoutX="224.0" layoutY="32.0" prefHeight="571.0" prefWidth="586.0" />
+      <AnchorPane fx:id="paneHolder" layoutX="238.0" layoutY="32.0" prefHeight="605.0" prefWidth="1048.0" />
+      <JFXButton fx:id="btnReservation" buttonType="RAISED" layoutX="14.0" layoutY="161.0" onAction="#btnReservationOnAction" prefHeight="37.0" prefWidth="202.0" style="-fx-background-color: #2ecc71;" text="   Reservation" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="21.0" layoutY="168.0">
+         <image>
+            <Image url="@../asserts/Icons/icons8-date-96.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnBokking" buttonType="RAISED" layoutX="14.0" layoutY="109.0" onAction="#BtnBokkingOnAction" prefHeight="37.0" prefWidth="202.0" style="-fx-background-color: #2ecc71;" text="Booking" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="18.0" layoutY="109.0">
+         <image>
+            <Image url="@../asserts/Icons/icons8-order-96.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="708.0" layoutY="1.0">
+         <image>
+            <Image url="@../asserts/Icons/icons8-date-96.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblSetTime" layoutX="751.0" layoutY="1.0" prefHeight="37.0" prefWidth="400.0">
+         <font>
+            <Font name="Calibri Bold" size="25.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="btnExit" fitHeight="44.0" fitWidth="43.0" layoutX="150.0" layoutY="603.0" onMouseClicked="#btnExitOnAction">
+         <image>
+            <Image url="@../asserts/Icons/icons8-exit-button-480.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnPayment" buttonType="RAISED" layoutX="14.0" layoutY="6.0" onAction="#btnPaymentOnAction" prefHeight="37.0" prefWidth="202.0" style="-fx-background-color: #2ecc71;" text="Payment" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="17.0" layoutY="6.0">
+         <image>
+            <Image url="@../asserts/Icons/icons8-payment-96.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="930.0" layoutY="1.0">
+         <image>
+            <Image url="@../asserts/Icons/icons8-clock-94.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblName" layoutX="223.0" layoutY="-1.0" prefHeight="37.0" prefWidth="291.0" text="Welcome to Jaga Renters!!">
+         <font>
+            <Font name="Calibri Bold" size="26.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnSell" buttonType="RAISED" layoutX="14.0" layoutY="565.0" onAction="#btnSellOnAction" prefHeight="17.0" prefWidth="202.0" style="-fx-background-color: #2ecc71;" text="Sell Material" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="19.0" layoutY="561.0">
+         <image>
+            <Image url="@../asserts/Icons/icons8-dollar-banknote-48.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnReturn" buttonType="RAISED" layoutX="525.0" layoutY="2.0" onAction="#btnReturnOnActionOnAction" prefHeight="34.0" prefWidth="172.0" style="-fx-background-color: #44bd32;" text="Return" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="541.0" layoutY="2.0">
+         <image>
+            <Image url="@../asserts/Icons/Update.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

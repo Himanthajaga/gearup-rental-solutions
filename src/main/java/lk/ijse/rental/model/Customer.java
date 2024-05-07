@@ -8,10 +8,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 public class Customer {
-    private String c_id;
+    private String c_mail;
     private String c_name;
     private String c_address;
     private String c_tel;
+    private String c_id;
+
 
 }
 

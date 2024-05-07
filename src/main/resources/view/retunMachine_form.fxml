@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="605.0" prefWidth="1048.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rental.controller.ReturnMachineFormController">
+   <children>
+      <Text layoutX="30.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Machine Return Manage">
+         <font>
+            <Font name="Calibri Bold" size="40.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="btnReturn" buttonType="RAISED" layoutX="151.0" layoutY="213.0" onAction="#btnReturnOnActionOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #44bd32;" text="Return" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="151.0" layoutY="213.0">
+         <image>
+            <Image url="@../asserts/Icons/Update.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtmachineId" layoutX="151.0" layoutY="117.0" prefHeight="40.0" prefWidth="188.0" promptText="Machine_Id">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </TextField>
+      <Label fx:id="lblDescription" layoutX="648.0" layoutY="126.0">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font></Label>
+      <Text layoutX="544.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

@@ -1,14 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<AnchorPane prefHeight="605.0" prefWidth="1048.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rental.controller.SupplierFormController">
+   <children>
+      <Text layoutX="20.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Manage">
+         <font>
+            <Font name="Calibri Bold" size="40.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tblSupplier" layoutX="75.0" layoutY="348.0" prefHeight="230.0" prefWidth="907.0">
+         <columns>
+            <TableColumn fx:id="colSupplierId" prefWidth="206.0" text="Supplier_Id" />
+            <TableColumn fx:id="colSupplierName" prefWidth="222.0" text="Supplier_Name" />
+            <TableColumn fx:id="colSupplierAddress" prefWidth="215.0" text="Supplier_Address" />
+            <TableColumn fx:id="colSupplierTele" prefWidth="263.0" text="Supplier_Tele" />
+         </columns>
+      </TableView>
+      <JFXButton fx:id="btnUpdateSupplier" buttonType="RAISED" layoutX="311.0" layoutY="294.0" onAction="#btnUpdateSupplierOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #55E6C1;" text="      Update" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnDeleteSupplier" buttonType="RAISED" layoutX="718.0" layoutY="294.0" onAction="#btnDeleteSupplierOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #ff5e57;" text="   Delete" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnSaveSupplier" buttonType="RAISED" layoutX="84.0" layoutY="294.0" onAction="#btnSaveSupplierOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #44bd32;" text="Save" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="84.0" layoutY="294.0">
+         <image>
+            <Image url="@../asserts/Icons/Save.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="311.0" layoutY="294.0">
+         <image>
+            <Image url="@../asserts/Icons/Update.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="718.0" layoutY="294.0">
+         <image>
+            <Image url="@../asserts/Icons/Delete.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtSupplierId" layoutX="160.0" layoutY="86.0" prefHeight="40.0" prefWidth="188.0" promptText="Supplier_Id">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtSupplierAdddress" layoutX="160.0" layoutY="166.0" prefHeight="40.0" prefWidth="188.0" promptText="Supplier_Address">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtSupplierName" layoutX="635.0" layoutY="86.0" prefHeight="40.0" prefWidth="188.0" promptText="Supplier_Name">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtSupplierTele" layoutX="635.0" layoutY="154.0" prefHeight="40.0" prefWidth="188.0" promptText="Supplier_Tele">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="507.0" layoutY="294.0" onAction="#btnClearCustomerOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #7f8c8d;" text="Clear" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="513.0" layoutY="297.0">
+         <image>
+            <Image url="@../asserts/Icons/Clear.png" />
+         </image>
+      </ImageView>
+   </children>
 </AnchorPane>

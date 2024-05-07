@@ -1,14 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<AnchorPane prefHeight="605.0" prefWidth="1048.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rental.controller.AdminFormController">
+   <children>
+      <Text layoutX="28.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Manage">
+         <font>
+            <Font name="Calibri Bold" size="40.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tblAdmin" layoutX="60.0" layoutY="361.0" prefHeight="230.0" prefWidth="905.0">
+         <columns>
+            <TableColumn fx:id="cola_id" prefWidth="183.0" text="Admin_Id" />
+            <TableColumn fx:id="cola_name" prefWidth="177.0" text="Admin_Name" />
+            <TableColumn fx:id="cola_password" prefWidth="150.0" text="Admin_Password" />
+            <TableColumn fx:id="cola_ConfirmPasswors" prefWidth="210.0" text="Admin_confirmPasssword" />
+            <TableColumn fx:id="cola_Email" prefWidth="183.0" text="Admin_Email" />
+         </columns>
+      </TableView>
+      <JFXButton fx:id="btnUpdateAdmin" buttonType="RAISED" layoutX="275.0" layoutY="312.0" onAction="#btnUpdateAdminOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #55E6C1;" text="Update" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnDeleteAdmin" buttonType="RAISED" layoutX="703.0" layoutY="311.0" onAction="#btnDeleteAdminOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #ff5e57;" text="Delete" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnSaveAdmin" buttonType="RAISED" layoutX="60.0" layoutY="312.0" onAction="#btnSaveAdminOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #44bd32;" text="Save" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="60.0" layoutY="312.0">
+         <image>
+            <Image url="@../asserts/Icons/Save.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="275.0" layoutY="312.0">
+         <image>
+            <Image url="@../asserts/Icons/Update.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="700.0" layoutY="311.0">
+         <image>
+            <Image url="@../asserts/Icons/Delete.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtId" layoutX="94.0" layoutY="109.0" prefHeight="40.0" prefWidth="222.0" promptText="Admin_Id">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtPassword" layoutX="94.0" layoutY="172.0" prefHeight="40.0" prefWidth="222.0" promptText="Admin_Password">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtName" layoutX="473.0" layoutY="109.0" prefHeight="40.0" prefWidth="222.0" promptText="Admin_Name">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="473.0" layoutY="312.0" onAction="#btnClearAdminOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #7f8c8d;" text="Clear" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="479.0" layoutY="315.0">
+         <image>
+            <Image url="@../asserts/Icons/Clear.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtEmail" layoutX="473.0" layoutY="192.0" prefHeight="40.0" prefWidth="222.0" promptText="Admin_Email">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtConfirmPassword" layoutX="94.0" layoutY="232.0" prefHeight="40.0" prefWidth="222.0" promptText="Admin_Confirm_Password">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+   </children>
 </AnchorPane>

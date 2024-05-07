@@ -1,2 +1,14 @@
-package lk.ijse.rental.model;public class PlaceOrder {
+package lk.ijse.rental.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class PlaceOrder {
+    private RentOrder rentorder;
+    private List<OrderDetail> odList;
 }

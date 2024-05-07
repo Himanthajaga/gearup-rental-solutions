@@ -1,14 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<AnchorPane prefHeight="605.0" prefWidth="1048.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rental.controller.BuildingMaterialFormController">
+   <children>
+      <Text layoutX="39.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Building Material Manage">
+         <font>
+            <Font name="Calibri Bold" size="40.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tblMaterial" layoutX="73.0" layoutY="348.0" prefHeight="230.0" prefWidth="913.0">
+         <columns>
+            <TableColumn fx:id="colMaterialId" prefWidth="151.0" text="Material_Id" />
+            <TableColumn fx:id="colMaterialdescription" prefWidth="201.0" text="Material_Description" />
+            <TableColumn fx:id="colMaterialType" prefWidth="178.0" text="Material_Type" />
+            <TableColumn fx:id="colMaterialPrice" prefWidth="233.0" text="Material_Price" />
+            <TableColumn fx:id="colMaterialQty" prefWidth="149.0" text="Material_qty" />
+         </columns>
+      </TableView>
+      <JFXButton fx:id="btnUpdateMaterial" buttonType="RAISED" layoutX="294.0" layoutY="295.0" onAction="#btnUpdateMaterialOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #55E6C1;" text="      Update" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnDeleteMaterial" buttonType="RAISED" layoutX="784.0" layoutY="295.0" onAction="#btnDeleteMaterialOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #ff5e57;" text="   Delete" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnSaveMaterial" buttonType="RAISED" layoutX="73.0" layoutY="295.0" onAction="#btnSaveMaterialOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #44bd32;" text="Save" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="73.0" layoutY="295.0">
+         <image>
+            <Image url="@../asserts/Icons/Save.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="294.0" layoutY="295.0">
+         <image>
+            <Image url="@../asserts/Icons/Update.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="784.0" layoutY="295.0">
+         <image>
+            <Image url="@../asserts/Icons/Delete.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtMaterialId" layoutX="264.0" layoutY="98.0" onAction="#txtSearchOnAction" prefHeight="40.0" prefWidth="188.0" promptText="Material_Id">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtMaterialType" layoutX="264.0" layoutY="150.0" prefHeight="40.0" prefWidth="188.0" promptText="Material_Type">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtMateriaDescription" layoutX="575.0" layoutY="98.0" prefHeight="40.0" prefWidth="188.0" promptText="Material_Description">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtMaterialPrice" layoutX="575.0" layoutY="150.0" prefHeight="40.0" prefWidth="188.0" promptText="Material_Price">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="532.0" layoutY="295.0" onAction="#btnClearAdminOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #7f8c8d;" text="Clear" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="538.0" layoutY="298.0">
+         <image>
+            <Image url="@../asserts/Icons/Clear.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtMaterialQty" layoutX="264.0" layoutY="207.0" prefHeight="40.0" prefWidth="188.0" promptText="Material_Qty">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+   </children>
 </AnchorPane>
