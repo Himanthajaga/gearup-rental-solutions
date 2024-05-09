@@ -90,6 +90,7 @@ public class DashboardMainFormController {
     }
 
     public void initialize() throws IOException {
+
        // setAdminName();
         realTime();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/dashboard_form.fxml"));

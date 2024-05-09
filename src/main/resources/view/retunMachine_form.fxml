@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -26,12 +26,7 @@
             <Image url="@../asserts/Icons/Update.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtmachineId" layoutX="151.0" layoutY="117.0" prefHeight="40.0" prefWidth="188.0" promptText="Machine_Id">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </TextField>
-      <Label fx:id="lblDescription" layoutX="648.0" layoutY="126.0">
+      <Label fx:id="lblDescription" layoutX="650.0" layoutY="121.0" prefHeight="33.0" prefWidth="187.0">
          <font>
             <Font name="Calibri Bold" size="20.0" />
          </font></Label>
@@ -40,5 +35,6 @@
             <Font name="Calibri Bold" size="20.0" />
          </font>
       </Text>
+      <ComboBox fx:id="cmbmachineId" layoutX="140.0" layoutY="125.0" onAction="#cmbmachineIdOnAction" prefHeight="43.0" prefWidth="187.0" />
    </children>
 </AnchorPane>

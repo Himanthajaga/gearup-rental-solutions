@@ -5,19 +5,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
-import javafx.stage.Stage;
 import lk.ijse.rental.model.Machine;
 import lk.ijse.rental.model.tm.MachineTm;
+import lk.ijse.rental.qrGenerate.QrcodeForMachine;
 import lk.ijse.rental.repository.MachineRepo;
 
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -73,6 +68,7 @@ public class MachineFormController {
     private TextField txtisavailable;
     @FXML
     private AnchorPane paneHolder;
+    private QrcodeForMachine qrcodeForUser = new QrcodeForMachine();
 
     private List<Machine> machineList = new ArrayList<>();
 
@@ -168,6 +164,7 @@ public class MachineFormController {
 
             if (isAdded) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Saved", ButtonType.OK).show();
+                qrcodeForUser.CreateQr(id);
                 machineList.add(machine);
                 loadMachineTable();
                 clearFields();

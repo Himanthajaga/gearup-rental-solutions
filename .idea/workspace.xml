@@ -5,313 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8fd34041-7df3-4a7c-a09b-be4f07457bf2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/ForgotPasswordFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/OtpFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/ReturnMachineFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/Rent_orderTm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/SellTm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/util/EmailServiceUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/forgotPassword_form.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/otp_form.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/retunMachine_form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4cc9286f-cac7-4834-a7f7-0ef67365cbea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4cc9286f-cac7-4834-a7f7-0ef67365cbea.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/EmpQSscannerPopUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/qrGenerate/QrCodeScanner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/qrGenerate/QrcodeForMachine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/QrImage/fvdf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/QrImageM005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/asserts/icons8-touch-100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/reports/RentOrderReport.jrxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/view/empQRscannerPopUp_form.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/LauncherWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/LauncherWrapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/AdminFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/AdminFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/BokkingFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/BokkingFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/BuildingMaterialFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/BuildingMaterialFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/CustomerFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/CustomerFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/DashboardMainFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/DashboardMainFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/DashbordFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/DashbordFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/LoginFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/LoginFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/MachineFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/MachineFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/MechanicFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/MechanicFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/PaymentFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/PaymentFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/RentMachineFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/RentMachineFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/ReservationFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/ReservationFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/SellFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/SellFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/SignupFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/SignupFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/ReturnMachineFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/ReturnMachineFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/SupplierFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/SupplierFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/db/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/db/DbConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/Bokking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/Bokking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/BuildingMaterial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/BuildingMaterial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/Machine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/Machine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/Mechanic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/Mechanic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/OrderDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/OrderDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/Payment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/PlaceOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/PlaceOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/PlaceSell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/PlaceSell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/RentOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/RentOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/Reservation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/Sell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/Sell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/SellMaterial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/SellMaterial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/Supplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/AdminTm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/AdminTm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/BokkingTm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/BokkingTm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/BuildingMaterialTm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/BuildingMaterialTm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/CustomerTm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/CustomerTm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/MachineTm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/MachineTm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/MechanicTm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/MechanicTm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/PaymentTm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/PaymentTm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/ReservationTm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/ReservationTm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/SupplierTm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/SupplierTm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/TblMaterialcartTm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/TblMaterialcartTm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/TblOrderCartTm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/model/tm/TblOrderCartTm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/AdminRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/AdminRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/BokkingRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/BokkingRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/BuildingMaterialRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/BuildingMaterialRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/CustomerRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/CustomerRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/MachineRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/MachineRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/MechanicRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/MechanicRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/OrderDetailRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/OrderDetailRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/PaymentRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/PaymentRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/PlaceOrderRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/PlaceOrderRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/PlaceSellRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/PlaceSellRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/RentOrderRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/RentOrderRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/ReservationRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/ReservationRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/SellMaterialRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/SellMaterialRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/SellRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/SellRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/SupplierRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/SupplierRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/util/DateTimeUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/util/DateTimeUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (1)/dislike_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (1)/filled-like_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (1)/filled-star_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (1)/half-heart_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (1)/hand-drawn-star_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (1)/heart-upside-down_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (1)/like_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (1)/poo_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (1)/rating-off_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (1)/star-half-empty_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (1)/star-half_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (1)/star_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/ball-point-pen_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/blur_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/border-color_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/chisel-tip-marker_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/collapse_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/color-dropper_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/crop_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/cut_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/dashed-line_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/design_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/diagonal-lines_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/erase_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/eraser_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/expand_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/fill-color_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/fish-scales-pattern_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/flip-horizontal_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/flip-vertical_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/full-trash_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/hexagonal-pattern_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/horizontal-line_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/illustrator_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/invert-colors_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/invert-selection_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/line-style_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/line-width_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/line_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/move_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/no-edit_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/no-filling_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/opacity_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/paint-palette_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/paint-sprayer_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/paint_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/pen_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/pencil-tip_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/pencil_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/photo-editor_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/picture_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/polygon_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/reorder_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/resize_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/rgb-circle-1_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/roller-brush_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/rotate-left_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/rotate-right_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/rotate_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/rounded-corner_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/ruler_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/saturation_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/screenshot_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/square-border_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/squiggly-line_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/text-box_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/trash_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/vector_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/vertical-line_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px (2)/wavy-line_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px/business-group_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px/businessman_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px/businesswoman_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px/collaboration-female-male_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px/employee-card_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px/landlord_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px/manager_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px/name-tag-woman-horizontal_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px/name-tag-woman_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px/office-worker-in-a-suit-female_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px/online-support_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px/person-growth_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px/personal-growth_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px/purposeful-man_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px/security-pass_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px/supplier_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px/technical-support_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px/vip_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/480px/working-with-a-laptop_hires.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6763 - Family.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6764 - Good Health.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6765 - Gender Equality.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6766 - Sanitation.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6767 - Energy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6768 - Infrastructure.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6769 - Reduced Inequality.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6770 - Cities.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6771 - Production.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6772 - Climate Action.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6773 - Life Under Water.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6774 - Life on Land.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6775 - Peace and Justice.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6776 - Partnership.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6777 - Community Health.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6778 - Oceans.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6779 - Communities.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6780 - Investing.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6781 - Meaning.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6782 - Faith.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6783 - Art.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6784 - Open Connection.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6785 - Community Collaboration.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6786 - National Event.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6787 - Creativity.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6788 - Practical Learning.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6789 - Environment.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6790 - Well Being.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6791 - Team Acquisition.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6792 - Organizational Structure.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6793 - Strategic Focus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6794 - Funding.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6795 - Leadership.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6796 - Donation.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6797 - Coin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6798 - Ribbon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6799 - Advocacy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6800 - Security.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6801 - Food.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6802 - Health Care.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6803 - Wheat Bag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6804 - Kitchen Set.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6805 - Vaccine.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6806 - Community Building.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6807 - Diplomatic Building.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6808 - Debris Management.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6809 - Population Growth.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6810 - Waste Bin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6811 - Water Truck.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/512 x 512/6812 - NGO Building.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/Icons/icons8-clock-94.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/asserts/Icons/icons8-clock-94.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/LINE/Icon Line_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/LINE/Icon Line_10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/LINE/Icon Line_11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/LINE/Icon Line_12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/LINE/Icon Line_13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/LINE/Icon Line_14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/LINE/Icon Line_15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/LINE/Icon Line_16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/LINE/Icon Line_17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/LINE/Icon Line_18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/LINE/Icon Line_19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/LINE/Icon Line_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/LINE/Icon Line_20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/LINE/Icon Line_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/LINE/Icon Line_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/LINE/Icon Line_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/LINE/Icon Line_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/LINE/Icon Line_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/LINE/Icon Line_8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/LINE/Icon Line_9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/Orders.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/Payements.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/dashIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/icons8-user-30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/icons8-user-96.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/login-img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/manager icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/001-factory.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/002-nuclear plant.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/003-tank.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/004-electric tower.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/005-crane.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/006-electric generator.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/007-id card.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/008-petroleum.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/009-protection.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/010-co2 emission.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/011-package.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/012-truck.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/013-containers.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/014-cosmetics.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/015-pharmaceutical.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/016-cargo ship.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/017-maintenance.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/018-warehouse.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/019-meter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/020-tank.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/021-chemical.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/022-industry.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/023-automotive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/024-food industry.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/025-textile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/026-globalization.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/027-wood.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/028-steel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/029-coal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/030-automation.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/031-worker.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/032-pipe.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/033-wind turbine.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/034-conveyor belt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/035-chemistry.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/036-control panel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/037-green energy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/038-industry.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/039-value.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/040-Siren.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/041-quality control.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/042-robotic arm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/043-oil barrel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/044-recycle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/045-solar panel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/046-forklift.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/047-vest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/048-radioactive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/049-security.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/png/050-gears.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/asserts/supervisor icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/admin_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/admin_form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/bokking_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/bokking_form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/building_material_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/building_material_form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/customer_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/customer_form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dashboard_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/dashboard_form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/dashboard_main_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/dashboard_main_form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/login_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/login_form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/machine_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/machine_form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/mechanic_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/mechanic_form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/payment_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/payment_form.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/rentMachine_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/rentMachine_form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/reservation_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/reservation_form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/sell_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/sell_form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/signup_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/signup_form.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/supplier_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/supplier_form.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/retunMachine_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/retunMachine_form.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -353,7 +69,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jgkin/IdeaProjects/tea-craft-layered&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jgkin/IdeaProjects/Validations-And-JasperReports-GDSE70&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -375,6 +91,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jgkin\IdeaProjects\gearup-rental-solutions\src\main\resources\asserts" />
+      <recent name="C:\Users\jgkin\IdeaProjects\gearup-rental-solutions\src\main\resources\view" />
+      <recent name="C:\Users\jgkin\IdeaProjects\gearup-rental-solutions\src\main\java\lk\ijse\rental" />
+      <recent name="C:\Users\jgkin\IdeaProjects\gearup-rental-solutions\src\main\resources\reports" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="lk.ijse.rental.util" />
@@ -483,6 +202,11 @@
       <workItem from="1714960545903" duration="1343000" />
       <workItem from="1714962613361" duration="16168000" />
       <workItem from="1714994499898" duration="4910000" />
+      <workItem from="1715075657073" duration="1438000" />
+      <workItem from="1715084947937" duration="7782000" />
+      <workItem from="1715152996968" duration="831000" />
+      <workItem from="1715181161768" duration="12272000" />
+      <workItem from="1715242266990" duration="455000" />
     </task>
     <servers />
   </component>

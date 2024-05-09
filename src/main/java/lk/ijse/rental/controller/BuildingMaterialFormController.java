@@ -15,6 +15,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import lk.ijse.rental.model.BuildingMaterial;
 import lk.ijse.rental.model.tm.BuildingMaterialTm;
+import lk.ijse.rental.qrGenerate.QrcodeForMachine;
 import lk.ijse.rental.repository.BuildingMaterialRepo;
 
 import java.io.IOException;
@@ -68,6 +69,7 @@ public class BuildingMaterialFormController {
     @FXML
     private TextField txtMaterialType;
     private List<BuildingMaterial> bmList = new ArrayList<>();
+    private QrcodeForMachine qrcodeForUser = new QrcodeForMachine();
 
     public void initialize() {
 
@@ -148,6 +150,7 @@ public class BuildingMaterialFormController {
             boolean isAdded = BuildingMaterialRepo.save(buildingMaterial);
             if (isAdded) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Saved..").show();
+                qrcodeForUser.CreateQr(MaterialId);
                 bmList.add(buildingMaterial);
                 loadBuildingMaterialTable();
             } else {

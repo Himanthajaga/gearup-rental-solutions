@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import lk.ijse.rental.model.Admin;
 import lk.ijse.rental.model.tm.AdminTm;
+import lk.ijse.rental.qrGenerate.QrcodeForMachine;
 import lk.ijse.rental.repository.AdminRepo;
 
 import java.sql.SQLException;
@@ -63,7 +64,7 @@ public class AdminFormController {
     private TextField txtPassword;
     private List<Admin> adminList = new ArrayList<>();
 
-
+    private QrcodeForMachine qrcodeForUser = new QrcodeForMachine();
     AdminRepo adminRepo = new AdminRepo();
 
     @FXML
@@ -170,6 +171,7 @@ public class AdminFormController {
             boolean isAdded = adminRepo.save(admin);
             if (isAdded) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Saved..").show();
+                qrcodeForUser.CreateQr(id);
                 adminList.add(admin);
                 loadAdminTable();
             } else {

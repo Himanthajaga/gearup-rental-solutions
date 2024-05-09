@@ -65,6 +65,18 @@ public class DashbordFormController {
         setCellValueFactory();
         loadrent_orderTable();
         loadSellTable();
+        loadTotalRentOrders();
+        loadTotalSellOrders();
+    }
+
+    private void loadTotalRentOrders() {
+        lblTotalRentOrders.setText(rentOrderList.size() + "");
+
+    }
+
+    private void loadTotalSellOrders() {
+        lblTotalSellorders.setText(sellList.size() + "");
+
     }
 
     private List<Sell> getAllSellOrders() {

@@ -91,6 +91,30 @@ public static  String m_id;
         pstm.setString(5, machine.getIsAvaiable());
         return pstm.executeUpdate() > 0;
     }
+    public static List <Machine> searchIsavailable() throws SQLException, ClassNotFoundException {
+
+        String sql = "SELECT * FROM machine WHERE isAvailable = 0";
+        PreparedStatement pstm = DbConnection.getInstance().getConnection()
+                .prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+
+        Machine machine = null;
+        List<Machine> machineList = new ArrayList<>();
+        if (resultSet.next()) {
+            String m_id = resultSet.getString(1);
+            String m_name = resultSet.getString(2);
+            String m_desc = resultSet.getString(3);
+            String m_rental_price = resultSet.getString(4);
+            String isAvailable = resultSet.getString(5);
+
+            Machine machine1 = new Machine(m_id, m_name, m_desc, m_rental_price,isAvailable);
+
+            machine = machine1;
+
+        }
+      return machineList;
+
+    }
     public static Machine searchById(String id) throws SQLException, ClassNotFoundException {
         String sql = "SELECT * FROM machine WHERE m_id = ?";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
@@ -162,5 +186,16 @@ public static  String m_id;
             idList.add(resultSet.getString(1));
         }
         return idList;
+    }
+
+    public static boolean updateIsAvailable(String code, String number) throws SQLException, ClassNotFoundException {
+        String sql = "UPDATE machine SET isAvailable = ? WHERE m_id = ?";
+
+        PreparedStatement pstm = DbConnection.getInstance().getConnection()
+                .prepareStatement(sql);
+
+        pstm.setString(1, number);
+        pstm.setString(2, code);
+        return pstm.executeUpdate() > 0;
     }
 }

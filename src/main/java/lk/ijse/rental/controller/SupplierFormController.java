@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import lk.ijse.rental.model.Customer;
 import lk.ijse.rental.model.Supplier;
 import lk.ijse.rental.model.tm.SupplierTm;
+import lk.ijse.rental.qrGenerate.QrcodeForMachine;
 import lk.ijse.rental.repository.CustomerRepo;
 import lk.ijse.rental.repository.SupplierRepo;
 
@@ -65,6 +66,7 @@ public class SupplierFormController {
     private TextField txtSupplierTele;
 
     private List<Supplier> supplierList = new ArrayList<>();
+    private QrcodeForMachine qrcodeForUser = new QrcodeForMachine();
     public void initialize() {
 
         this.supplierList=getAllSuppliers();
@@ -146,6 +148,7 @@ public class SupplierFormController {
         try {
             boolean isSaved = SupplierRepo.save(supplier);
             if (isSaved) {
+                qrcodeForUser.CreateQr(s_id);
                 supplierList.add(supplier);
                 loadSupplierTable();
                 clearFields();

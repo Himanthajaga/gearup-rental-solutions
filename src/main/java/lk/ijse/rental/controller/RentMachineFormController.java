@@ -6,26 +6,42 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Cursor;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import lk.ijse.rental.db.DbConnection;
 import lk.ijse.rental.model.*;
 import lk.ijse.rental.model.tm.TblOrderCartTm;
 import lk.ijse.rental.repository.CustomerRepo;
 import lk.ijse.rental.repository.MachineRepo;
 import lk.ijse.rental.repository.PlaceOrderRepo;
 import lk.ijse.rental.repository.RentOrderRepo;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
+import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class RentMachineFormController {
     @FXML
+    private JFXButton btnQrScan;
+    @FXML
     private JFXButton btnAddToCart;
+
+
+    @FXML
+    private AnchorPane qrRoot;
 
     @FXML
     private JFXComboBox<String>cmbCustomerId;
@@ -62,9 +78,13 @@ public class RentMachineFormController {
 
     @FXML
     private Label lblOrderId;
+    @FXML
+    private JFXButton btnClear;
 
     @FXML
     private Label lblUnitprice;
+    @FXML
+    private JFXButton btnPrintBill;
 
     @FXML
     private TableView<TblOrderCartTm> tblOrderCart;
@@ -80,6 +100,35 @@ public class RentMachineFormController {
         getCustomerIds();
         getItemCodes();
     }
+    @FXML
+    void btnPrintBillOnAction(ActionEvent event) throws JRException, SQLException, ClassNotFoundException {
+        JasperDesign jasperDesign =
+                JRXmlLoader.load("src/main/resources/reports/RentOrderReport.jrxml");
+        JasperReport jasperReport =
+                JasperCompileManager.compileReport(jasperDesign);
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("CustomerID",cmbCustomerId.getValue());
+        data.put("NetTotal",lblNetTotal.getText());
+
+        JasperPrint jasperPrint =
+                JasperFillManager.fillReport(
+                        jasperReport,
+                        data,
+                        DbConnection.getInstance().getConnection());
+
+        JasperViewer.viewReport(jasperPrint,false);
+    }
+    @FXML
+    void btnQrScanlOnAction(ActionEvent event) throws IOException {
+        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/empQRscannerPopUp_form.fxml"));
+        Scene scene = new Scene(rootNode);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Machine");
+        stage.show();
+       // stage.getIcons().add(new Image("/assets/png/QrPng.png"));
+    }
 
     private void setCellValueFactory() {
         colMachineID.setCellValueFactory(new PropertyValueFactory<>("colMachineID"));
@@ -88,7 +137,21 @@ public class RentMachineFormController {
         colTotal.setCellValueFactory(new PropertyValueFactory<>("colTotal"));
         colAction.setCellValueFactory(new PropertyValueFactory<>("colAction"));
     }
+    @FXML
+    void btnClearCustomerOnAction(ActionEvent event) {
+        clearFields();
 
+    }
+private void clearFields() {
+        cmbCustomerId.setValue(null);
+        cmbMachineId.setValue(null);
+        lblCustomerName.setText("");
+        lblDescription.setText("");
+        lblUnitprice.setText("");
+        lblNetTotal.setText("");
+        TblOrdercartList.clear();
+        tblOrderCart.refresh();
+    }
     private void getItemCodes() {
         ObservableList<String> obList = FXCollections.observableArrayList();
         try {
@@ -271,6 +334,24 @@ public class RentMachineFormController {
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+
+    }
+
+    void as(String ids) throws SQLException, ClassNotFoundException {
+
+
+
+            Machine machine= MachineRepo.searchById(ids);
+            if (machine != null) {
+                System.out.println("machine = " + machine.getM_Name());
+                System.out.println("machine desc = " + machine.getM_desc());
+                lblDescription.setText(machine.getM_desc());
+                lblUnitprice.setText(String.valueOf(machine.getM_rental_price()));
+
+
+            }else {
+                new Alert(Alert.AlertType.ERROR, "Machine not found!").show();
+            }
 
     }
 

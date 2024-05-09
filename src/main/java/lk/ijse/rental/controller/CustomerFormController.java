@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import lk.ijse.rental.model.Customer;
 import lk.ijse.rental.model.tm.CustomerTm;
+import lk.ijse.rental.qrGenerate.QrcodeForMachine;
 import lk.ijse.rental.repository.CustomerRepo;
 
 import java.sql.SQLException;
@@ -61,6 +62,7 @@ public class CustomerFormController {
 
     @FXML
     private TextField txtTele;
+    private QrcodeForMachine qrcodeForUser = new QrcodeForMachine();
 
     private List<Customer> customerList = new ArrayList<>();
 
@@ -154,6 +156,7 @@ public class CustomerFormController {
             boolean isSaved = CustomerRepo.save(customer);
             if (isSaved) {
                 customerList.add(customer);
+                qrcodeForUser.CreateQr(id);
                 loadCustomerTable();
                 clearFeilds();
             }

@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import lk.ijse.rental.model.Mechanic;
 import lk.ijse.rental.model.tm.MechanicTm;
+import lk.ijse.rental.qrGenerate.QrcodeForMachine;
 import lk.ijse.rental.repository.MechanicRepo;
 
 import java.sql.SQLException;
@@ -70,6 +71,7 @@ public class MechanicFormController {
 
     @FXML
     private TextField txtMid;
+    private QrcodeForMachine qrcodeForUser = new QrcodeForMachine();
     public void initialize() {
 
         this.mechanicList=getAllMechanics();
@@ -170,6 +172,7 @@ public class MechanicFormController {
             boolean isSaved = MechanicRepo.save(mechanic);
             if (isSaved) {
                 new Alert(Alert.AlertType.INFORMATION, "Saved..").show();
+                qrcodeForUser.CreateQr(id);
                 mechanicList.add(mechanic);
                 loadMechanicTable();
                 clearFields();
