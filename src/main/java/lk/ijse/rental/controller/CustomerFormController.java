@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import lk.ijse.rental.model.Customer;
 import lk.ijse.rental.model.tm.CustomerTm;
 import lk.ijse.rental.qrGenerate.QrcodeForMachine;
@@ -15,6 +16,7 @@ import lk.ijse.rental.repository.CustomerRepo;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class CustomerFormController {
 
@@ -142,6 +144,69 @@ public class CustomerFormController {
         }
     }
 
+    @FXML
+    void txtCustomerAddressReleasedOnAction(KeyEvent event) {
+    Pattern idPattern = Pattern.compile("^([A-z0-9]|[-/,.@+]|\\\\s){4,}$");
+        if (!idPattern.matcher(txtAddress.getText()).matches()) {
+            addError(txtAddress);
+
+        }else{
+            removeError(txtAddress);
+        }
+    }
+
+    private void addError(TextField textField) {
+        textField.setStyle("-fx-border-color: red; -fx-border-width: 5");
+    }
+
+    private void removeError(TextField textField) {
+       textField.setStyle("-fx-border-color: green; -fx-border-width: 5");
+    }
+
+    @FXML
+    void txtCustomerEmailReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^([A-z])([A-z0-9.]){1,}[@]([A-z0-9]){1,10}[.]([A-z]){2,5}$");
+        if (!idPattern.matcher(txtEmail.getText()).matches()) {
+            addError(txtEmail);
+
+        }else{
+            removeError(txtEmail);
+        }
+    }
+
+    @FXML
+    void txtCustomerIdReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^(C)[0-9]{1,}$");
+        if (!idPattern.matcher(txtCId.getText()).matches()) {
+            addError(txtCId);
+
+        }else{
+            removeError(txtCId);
+        }
+    }
+
+    @FXML
+    void txtCustomerNameReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^[a-zA-Z ]*$");
+        if (!idPattern.matcher(txtName.getText()).matches()) {
+            addError(txtName);
+
+        }else{
+            removeError(txtName);
+        }
+    }
+
+    @FXML
+    void txtCustomerTeleReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^[0]{1}[7]{1}[01245678]{1}[0-9]{7}$");
+        if (!idPattern.matcher(txtTele.getText()).matches()) {
+            addError(txtTele);
+
+        }else{
+            removeError(txtTele);
+        }
+    }
+
 
     @FXML
     void btnSaveCustomerOnAction(ActionEvent event) {
@@ -155,10 +220,13 @@ public class CustomerFormController {
         try {
             boolean isSaved = CustomerRepo.save(customer);
             if (isSaved) {
+                new Alert(Alert.AlertType.CONFIRMATION, "customer saved!").show();
                 customerList.add(customer);
                 qrcodeForUser.CreateQr(id);
                 loadCustomerTable();
                 clearFeilds();
+            }else {
+                new Alert(Alert.AlertType.ERROR, "Try Again!").show();
             }
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);

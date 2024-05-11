@@ -108,7 +108,7 @@ public class RentMachineFormController {
                 JasperCompileManager.compileReport(jasperDesign);
 
         Map<String, Object> data = new HashMap<>();
-        data.put("CustomerID",cmbCustomerId.getValue());
+        data.put("OrderID",lblOrderId.getLabelFor());
         data.put("NetTotal",lblNetTotal.getText());
 
         JasperPrint jasperPrint =
@@ -205,7 +205,7 @@ private void clearFields() {
         if (currentId != null) {
             String[] split = currentId.split("O");
 //            System.out.println("Arrays.toString(split) = " + Arrays.toString(split));
-            int id = Integer.parseInt(split[1]);    //2
+            int id = Integer.parseInt(split[1],10);    //2
             return "O" + ++id;
 
         }

@@ -56,22 +56,22 @@
             <Image url="@../asserts/Icons/Delete.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtEmail" layoutX="156.0" layoutY="110.0" onAction="#txtSearchOnAction" prefHeight="40.0" prefWidth="188.0" promptText="Customer_Email">
+      <TextField fx:id="txtEmail" layoutX="156.0" layoutY="118.0" onAction="#txtSearchOnAction" onKeyReleased="#txtCustomerEmailReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtAddress" layoutX="156.0" layoutY="179.0" prefHeight="40.0" prefWidth="188.0" promptText="Customer_Address">
+      <TextField fx:id="txtAddress" layoutX="156.0" layoutY="199.0" onKeyReleased="#txtCustomerAddressReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtName" layoutX="475.0" layoutY="110.0" prefHeight="40.0" prefWidth="188.0" promptText="Customer_Name">
+      <TextField fx:id="txtName" layoutX="475.0" layoutY="118.0" onKeyReleased="#txtCustomerNameReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtTele" layoutX="475.0" layoutY="179.0" prefHeight="40.0" prefWidth="188.0" promptText="Customer_Tele">
+      <TextField fx:id="txtTele" layoutX="475.0" layoutY="199.0" onKeyReleased="#txtCustomerTeleReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
@@ -86,10 +86,35 @@
             <Image url="@../asserts/Icons/Clear.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtCId" layoutX="710.0" layoutY="110.0" prefHeight="40.0" prefWidth="188.0" promptText="Customer_Id">
+      <TextField fx:id="txtCId" layoutX="770.0" layoutY="118.0" onKeyReleased="#txtCustomerIdReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
+      <Text layoutX="156.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer_Email">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="156.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer_Address">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="478.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer_Name">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="478.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer_Tele">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="770.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer_Id">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

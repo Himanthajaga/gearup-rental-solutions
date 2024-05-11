@@ -56,17 +56,17 @@
             <Image url="@../asserts/Icons/Delete.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtMachineId" layoutX="147.0" layoutY="69.0" onAction="#txtSearchOnAction" prefHeight="40.0" prefWidth="188.0" promptText="Machine_Id">
+      <TextField fx:id="txtMachineId" layoutX="147.0" layoutY="87.0" onAction="#txtSearchOnAction" onKeyReleased="#txtMachineidOnReleased" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtDesc" layoutX="147.0" layoutY="119.0" prefHeight="40.0" prefWidth="188.0" promptText="Machine_Desc">
+      <TextField fx:id="txtDesc" layoutX="147.0" layoutY="183.0" onKeyReleased="#txtMachineDescOnReleased" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtMachineName" layoutX="524.0" layoutY="60.0" prefHeight="40.0" prefWidth="188.0" promptText="Machine_Name">
+      <TextField fx:id="txtMachineName" layoutX="515.0" layoutY="87.0" onKeyReleased="#txtMachinenameOnReleased" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
@@ -81,15 +81,40 @@
             <Image url="@../asserts/Icons/Clear.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtRentalprice" layoutX="147.0" layoutY="176.0" prefHeight="40.0" prefWidth="188.0" promptText="Machine_Rental_price">
+      <TextField fx:id="txtRentalprice" layoutX="775.0" layoutY="87.0" onKeyReleased="#txtMachineRentalOnReleased" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtisavailable" layoutX="524.0" layoutY="119.0" prefHeight="40.0" prefWidth="188.0" promptText="IsAvailable">
+      <TextField fx:id="txtisavailable" layoutX="515.0" layoutY="183.0" onKeyReleased="#txtMachineIsAvailableOnReleased" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
+      <Text layoutX="147.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Machine_Id">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="149.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Machine_Desc">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="516.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Machine_Name">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="516.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IsAvailable">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="773.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Machine_Rental_price">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

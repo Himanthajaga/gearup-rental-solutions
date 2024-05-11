@@ -10,6 +10,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import lk.ijse.rental.model.Mechanic;
 import lk.ijse.rental.model.tm.MechanicTm;
 import lk.ijse.rental.qrGenerate.QrcodeForMachine;
@@ -18,6 +19,7 @@ import lk.ijse.rental.repository.MechanicRepo;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class MechanicFormController {
     private List<Mechanic> mechanicList = new ArrayList<>();
@@ -206,6 +208,79 @@ public class MechanicFormController {
             }
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
+        }
+    }
+    @FXML
+    void txtMechanicAddressOnReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^([A-z0-9]|[-/,.@+]|\\\\s){4,}$");
+        if (!idPattern.matcher(txtMAddress.getText()).matches()) {
+            addError(txtMAddress);
+
+        }else{
+            removeError(txtMAddress);
+        }
+    }
+
+    private void removeError(TextField txtMAddress) {
+        txtMAddress.setStyle("-fx-border-color: green; -fx-border-width: 5");
+    }
+
+    private void addError(TextField txtMAddress) {
+        txtMAddress.setStyle("-fx-border-color: red; -fx-border-width: 5");
+    }
+
+    @FXML
+    void txtMechanicDescriptionOnReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^[a-zA-Z ]*$");
+        if (!idPattern.matcher(txtMDescription.getText()).matches()) {
+            addError(txtMDescription);
+
+        }else{
+            removeError(txtMDescription);
+        }
+    }
+
+    @FXML
+    void txtMechanicIdOnReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^(ME)[0-9]{1,}$");
+        if (!idPattern.matcher(txtMid.getText()).matches()) {
+            addError(txtMid);
+
+        }else{
+            removeError(txtMid);
+        }
+    }
+
+    @FXML
+    void txtMechanicNameOnReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^[a-zA-Z ]*$");
+        if (!idPattern.matcher(txtMName.getText()).matches()) {
+            addError(txtMName);
+
+        }else{
+            removeError(txtMName);
+        }
+    }
+
+    @FXML
+    void txtMechanicSalaryOnReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^([0-9]){1,}[.]([0-9]){1,}$");
+        if (!idPattern.matcher(txtMSalary.getText()).matches()) {
+            addError(txtMSalary);
+
+        }else{
+            removeError(txtMSalary);
+        }
+    }
+
+    @FXML
+    void txtMechanicTeleOnReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^[0]{1}[7]{1}[01245678]{1}[0-9]{7}$");
+        if (!idPattern.matcher(txtMTele.getText()).matches()) {
+            addError(txtMTele);
+
+        }else{
+            removeError(txtMTele);
         }
     }
 

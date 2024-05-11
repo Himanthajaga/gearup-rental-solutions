@@ -55,22 +55,22 @@
             <Image url="@../asserts/Icons/Delete.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtSupplierId" layoutX="160.0" layoutY="86.0" prefHeight="40.0" prefWidth="188.0" promptText="Supplier_Id">
+      <TextField fx:id="txtSupplierId" layoutX="161.0" layoutY="99.0" onKeyReleased="#txtSupplierIdReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtSupplierAdddress" layoutX="160.0" layoutY="166.0" prefHeight="40.0" prefWidth="188.0" promptText="Supplier_Address">
+      <TextField fx:id="txtSupplierAdddress" layoutX="161.0" layoutY="202.0" onKeyReleased="#txtSupplierAddressReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtSupplierName" layoutX="635.0" layoutY="86.0" prefHeight="40.0" prefWidth="188.0" promptText="Supplier_Name">
+      <TextField fx:id="txtSupplierName" layoutX="643.0" layoutY="99.0" onKeyReleased="#txtSupplierNamereleasedonAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtSupplierTele" layoutX="635.0" layoutY="154.0" prefHeight="40.0" prefWidth="188.0" promptText="Supplier_Tele">
+      <TextField fx:id="txtSupplierTele" layoutX="643.0" layoutY="202.0" onKeyReleased="#txtSupplierteleOnReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
@@ -85,5 +85,30 @@
             <Image url="@../asserts/Icons/Clear.png" />
          </image>
       </ImageView>
+      <Text layoutX="161.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="161.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier_Address">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="643.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier_Name">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="643.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier_Tele">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="161.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier_Id">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

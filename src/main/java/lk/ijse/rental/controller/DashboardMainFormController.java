@@ -20,6 +20,7 @@ import javafx.util.Duration;
 import lk.ijse.rental.util.DateTimeUtil;
 
 import java.io.IOException;
+import java.time.LocalTime;
 
 public class DashboardMainFormController {
     @FXML
@@ -88,10 +89,15 @@ public class DashboardMainFormController {
         timeline.play();
         lblSetTime.setText(DateTimeUtil.dateNow());
     }
-
+    private void setGreetings() {
+        LocalTime currentTime = LocalTime.now();
+        String greeting = (currentTime.getHour() < 12) ? "Good Morning Welcome!" : "Good Evening Welcome!";
+        lblName.setText(greeting);
+    }
     public void initialize() throws IOException {
 
        // setAdminName();
+        setGreetings();
         realTime();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/dashboard_form.fxml"));
         Pane registePane = (Pane) fxmlLoader.load();

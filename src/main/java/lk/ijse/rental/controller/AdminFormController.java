@@ -5,16 +5,22 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import lk.ijse.rental.model.Admin;
 import lk.ijse.rental.model.tm.AdminTm;
 import lk.ijse.rental.qrGenerate.QrcodeForMachine;
 import lk.ijse.rental.repository.AdminRepo;
+import lk.ijse.rental.util.Regex;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class AdminFormController {
 
@@ -49,17 +55,14 @@ public class AdminFormController {
     private TableView<AdminTm> tblAdmin;
 
     @FXML
-    private TextField txtConfirmPassword;
-
-    @FXML
-    private TextField txtEmail;
-
-    @FXML
     private TextField txtId;
 
     @FXML
     private TextField txtName;
-
+    @FXML
+    private TextField txtEmail;
+    @FXML
+    private TextField txtConfirmPassword;
     @FXML
     private TextField txtPassword;
     private List<Admin> adminList = new ArrayList<>();
@@ -141,21 +144,6 @@ public class AdminFormController {
             e.printStackTrace();
         }
     }
-//    @FXML
-//    void txtSearchOnAction(ActionEvent event) {
-//        String adminId = txtId.getText();
-//        try {
-//            Admin admin = adminRepo.searchById(adminId);
-//            if (admin != null) {
-//                txtName.setText(admin.getA_name());
-//                txtPassword.setText(admin.getA_password());
-//            } else {
-//                new Alert(Alert.AlertType.WARNING, "Empty Result Set").show();
-//            }
-//        } catch (SQLException | ClassNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//    }
 
     @FXML
     void btnSaveAdminOnAction(ActionEvent event) {
@@ -188,7 +176,7 @@ public class AdminFormController {
         String adminId = txtId.getText();
         String adminName = txtName.getText();
         String adminPassword = txtPassword.getText();
-        String confirmPassword = txtPassword.getText();
+        String confirmPassword = txtConfirmPassword.getText();
         String adminEmail = txtPassword.getText();
 
 
@@ -205,6 +193,68 @@ public class AdminFormController {
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
+        }
+    }
+    @FXML
+    void txtAdminConfirmPasswordOnreleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^[a-zA-Z ]*$");
+        if (!idPattern.matcher(txtConfirmPassword.getText()).matches()) {
+            addError(txtConfirmPassword);
+
+        }else{
+            removeError(txtConfirmPassword);
+        }
+    }
+
+    private void removeError(TextField textField) {
+        textField.setStyle("-fx-border-color: green; -fx-border-width: 5");
+    }
+
+    private void addError(TextField textField) {
+        textField.setStyle("-fx-border-color: red; -fx-border-width: 5");
+    }
+
+    @FXML
+    void txtAdminEmailOnreleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("(^[a-zA-Z0-9_.]+[@]{1}[a-z0-9]+[\\.][a-z]+$)");
+        if (!idPattern.matcher(txtEmail.getText()).matches()) {
+            addError(txtEmail);
+
+        }else{
+            removeError(txtEmail);
+        }
+    }
+
+    @FXML
+    void txtAdminIdOnreleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^(A)[0-9]{1,}$");
+        if (!idPattern.matcher(txtId.getText()).matches()) {
+            addError(txtId);
+
+        }else{
+            removeError(txtId);
+        }
+    }
+
+    @FXML
+    void txtAdminnameOnreleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^[A-z|\\\\s]{3,}$");
+        if (!idPattern.matcher(txtName.getText()).matches()) {
+            addError(txtName);
+
+        }else{
+            removeError(txtName);
+        }
+    }
+
+    @FXML
+    void txtAdminpasswordOnreleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^[a-zA-Z ]*$");
+        if (!idPattern.matcher(txtPassword.getText()).matches()) {
+            addError(txtPassword);
+
+        }else{
+            removeError(txtPassword);
         }
     }
     }

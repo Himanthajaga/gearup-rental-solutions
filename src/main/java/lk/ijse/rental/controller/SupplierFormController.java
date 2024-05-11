@@ -5,24 +5,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
-import lk.ijse.rental.model.Customer;
+import javafx.scene.input.KeyEvent;
 import lk.ijse.rental.model.Supplier;
 import lk.ijse.rental.model.tm.SupplierTm;
 import lk.ijse.rental.qrGenerate.QrcodeForMachine;
-import lk.ijse.rental.repository.CustomerRepo;
 import lk.ijse.rental.repository.SupplierRepo;
 
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class SupplierFormController {
 
@@ -146,19 +140,52 @@ public class SupplierFormController {
 
         Supplier supplier = new Supplier(s_id, s_name, s_address, s_tel);
         try {
-            boolean isSaved = SupplierRepo.save(supplier);
-            if (isSaved) {
-                qrcodeForUser.CreateQr(s_id);
-                supplierList.add(supplier);
-                loadSupplierTable();
-                clearFields();
-            }
+                boolean isSaved = SupplierRepo.save(supplier);
+                if (isSaved) {
+                    qrcodeForUser.CreateQr(s_id);
+                    supplierList.add(supplier);
+                    loadSupplierTable();
+                    clearFields();
+                }
+
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
+//    public boolean IsSaved(){
+//        if (!Regex.setTextColor(TextField.ID,txtSupplierId)) return false;
+//        if (!Regex.setTextColor(TextField.ADDRESS,txtSupplierAdddress)) return false;
+//        return true;
+//    }
+    @FXML
+    void txtSupplierAddressReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^[a-zA-Z ]*$");
+        if (!idPattern.matcher(txtSupplierAdddress.getText()).matches()) {
+            addError(txtSupplierAdddress);
 
+        }else{
+            removeError(txtSupplierAdddress);
+        }
+    }
 
+    private void removeError(TextField txtSupplierAdddress) {
+        txtSupplierAdddress.setStyle("-fx-border-color: green; -fx-border-width: 5");
+    }
+
+    private void addError(TextField txtSupplierAdddress) {
+        txtSupplierAdddress.setStyle("-fx-border-color: red; -fx-border-width: 5");
+    }
+
+    @FXML
+    void txtSupplierIdReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^(S)[0-9]{1,}$");
+        if (!idPattern.matcher(txtSupplierId.getText()).matches()) {
+            addError(txtSupplierId);
+
+        }else{
+            removeError(txtSupplierId);
+        }
+    }
     @FXML
     void btnUpdateSupplierOnAction(ActionEvent event) {
         String id =txtSupplierId.getText();
@@ -194,5 +221,24 @@ public class SupplierFormController {
     }
 
 
+    public void txtSupplierNamereleasedonAction(KeyEvent keyEvent) {
+        Pattern idPattern = Pattern.compile("^[a-zA-Z ]*$");
+        if (!idPattern.matcher(txtSupplierName.getText()).matches()) {
+            addError(txtSupplierName);
 
+        }else{
+            removeError(txtSupplierName);
+        }
+
+    }
+
+    public void txtSupplierteleOnReleasedOnAction(KeyEvent keyEvent) {
+        Pattern idPattern = Pattern.compile("^[0]{1}[7]{1}[01245678]{1}[0-9]{7}$");
+        if (!idPattern.matcher(txtSupplierTele.getText()).matches()) {
+            addError(txtSupplierTele);
+
+        }else{
+            removeError(txtSupplierTele);
+        }
+    }
 }

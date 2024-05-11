@@ -53,12 +53,12 @@
             <Image url="@../asserts/Icons/Delete.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtReservationId" layoutX="141.0" layoutY="107.0" prefHeight="40.0" prefWidth="188.0" promptText="Reservation_Id">
+      <TextField fx:id="txtReservationId" layoutX="139.0" layoutY="127.0" onKeyReleased="#txtReserReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtReservationType" layoutX="630.0" layoutY="107.0" prefHeight="40.0" prefWidth="188.0" promptText="Reservation_Type">
+      <TextField fx:id="txtReservationType" layoutX="630.0" layoutY="127.0" onKeyReleased="#txtReserTypeReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -73,5 +73,15 @@
             <Image url="@../asserts/Icons/Clear.png" />
          </image>
       </ImageView>
+      <Text layoutX="139.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation_Id">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="630.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation_Type">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

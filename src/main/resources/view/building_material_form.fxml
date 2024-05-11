@@ -56,22 +56,22 @@
             <Image url="@../asserts/Icons/Delete.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtMaterialId" layoutX="264.0" layoutY="98.0" onAction="#txtSearchOnAction" prefHeight="40.0" prefWidth="188.0" promptText="Material_Id">
+      <TextField fx:id="txtMaterialId" layoutX="200.0" layoutY="99.0" onAction="#txtSearchOnAction" onKeyReleased="#txtMaterialIdOnReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtMaterialType" layoutX="264.0" layoutY="150.0" prefHeight="40.0" prefWidth="188.0" promptText="Material_Type">
+      <TextField fx:id="txtMaterialType" layoutX="203.0" layoutY="220.0" onKeyReleased="#txtMaterialTypeOnReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtMateriaDescription" layoutX="575.0" layoutY="98.0" prefHeight="40.0" prefWidth="188.0" promptText="Material_Description">
+      <TextField fx:id="txtMateriaDescription" layoutX="438.0" layoutY="220.0" onKeyReleased="#txtMaterialDescriptionOnReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtMaterialPrice" layoutX="575.0" layoutY="150.0" prefHeight="40.0" prefWidth="188.0" promptText="Material_Price">
+      <TextField fx:id="txtMaterialPrice" layoutX="666.0" layoutY="99.0" onKeyReleased="#txtMaterialPriceOnReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
@@ -86,10 +86,35 @@
             <Image url="@../asserts/Icons/Clear.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtMaterialQty" layoutX="264.0" layoutY="207.0" prefHeight="40.0" prefWidth="188.0" promptText="Material_Qty">
+      <TextField fx:id="txtMaterialQty" layoutX="438.0" layoutY="99.0" onKeyReleased="#txtMaterialQtyOnReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
+      <Text layoutX="201.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Material_Id">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="210.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Material_Type">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="440.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Material_Qty">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="438.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Material_Description">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="673.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Material_Price">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

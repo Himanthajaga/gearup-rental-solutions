@@ -16,26 +16,26 @@
             <Image url="@../asserts/login2.jpg" />
          </image>
       </ImageView>
-      <TextField fx:id="txtuserId" layoutX="619.0" layoutY="113.0" onAction="#btnuserIdOnAction" prefHeight="42.0" prefWidth="342.0" promptText="username">
+      <TextField fx:id="txtuserId" layoutX="619.0" layoutY="188.0" onAction="#btnuserIdOnAction" onKeyReleased="#txtUsernameOnReleased" prefHeight="42.0" prefWidth="342.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font></TextField>
-      <JFXButton fx:id="btnlogin" buttonType="RAISED" layoutX="628.0" layoutY="298.0" onAction="#btnloginOnAction" prefHeight="25.0" prefWidth="143.0" style="-fx-background-color: #2ecc71;" text="Login" textFill="WHITE">
+      <JFXButton fx:id="btnlogin" buttonType="RAISED" layoutX="619.0" layoutY="384.0" onAction="#btnloginOnAction" prefHeight="25.0" prefWidth="143.0" style="-fx-background-color: #2ecc71;" text="Login" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="20.0" />
          </font>
       </JFXButton>
-      <Text fx:id="ForgotPassword" fill="WHITE" layoutX="783.0" layoutY="321.0" onMouseClicked="#btnForgotPasswordOnAction" strokeType="OUTSIDE" strokeWidth="0.0" text="forgot password?" wrappingWidth="135.0224609375">
+      <Text fx:id="ForgotPassword" fill="WHITE" layoutX="774.0" layoutY="407.0" onMouseClicked="#btnForgotPasswordOnAction" strokeType="OUTSIDE" strokeWidth="0.0" text="forgot password?" wrappingWidth="135.0224609375">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="628.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New User?">
+      <Text fill="WHITE" layoutX="619.0" layoutY="469.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New User?">
          <font>
             <Font name="Calibri Bold" size="25.0" />
          </font>
       </Text>
-      <Text fx:id="Signup" fill="#2ecc71" layoutX="752.0" layoutY="382.0" onMouseClicked="#btnSignupOnAction" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up">
+      <Text fx:id="Signup" fill="#2ecc71" layoutX="743.0" layoutY="468.0" onMouseClicked="#btnSignupOnAction" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up">
          <font>
             <Font name="Calibri Bold" size="20.0" />
          </font>
@@ -47,7 +47,7 @@
       </Text>
       <Text fill="WHITE" layoutX="619.0" layoutY="85.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" text="Login to continue">
          <font>
-            <Font name="Calibri Bold" size="18.0" />
+            <Font name="Calibri Bold" size="26.0" />
          </font>
       </Text>
       <Text fill="WHITE" layoutX="1024.0" layoutY="593.0" strokeType="OUTSIDE" strokeWidth="0.0" text="074-1411520">
@@ -74,7 +74,7 @@
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font></Text>
-      <PasswordField fx:id="txtpassword" layoutX="619.0" layoutY="217.0" onAction="#txtpasswordOnAction" prefHeight="42.0" prefWidth="342.0" promptText="password">
+      <PasswordField fx:id="txtpassword" layoutX="619.0" layoutY="283.0" onAction="#txtpasswordOnAction" onKeyReleased="#txtPasswordOnReleased" prefHeight="42.0" prefWidth="342.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
@@ -92,6 +92,16 @@
       <Text fx:id="txtGreetings" fill="WHITE" layoutX="357.0" layoutY="49.0" wrappingWidth="237.7412109375">
          <font>
             <Font name="Calibri Bold" size="40.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="619.0" layoutY="175.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="619.0" layoutY="269.0" opacity="0.55" strokeType="OUTSIDE" strokeWidth="0.0" text="password">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
          </font>
       </Text>
    </children>

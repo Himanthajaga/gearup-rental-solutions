@@ -16,12 +16,12 @@
             <Font name="Calibri Bold" size="40.0" />
          </font>
       </Text>
-      <JFXButton fx:id="btnReturn" buttonType="RAISED" layoutX="151.0" layoutY="213.0" onAction="#btnReturnOnActionOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #44bd32;" text="Return" textAlignment="CENTER" textFill="WHITE">
+      <JFXButton fx:id="btnReturn" buttonType="RAISED" layoutX="152.0" layoutY="303.0" onAction="#btnReturnOnActionOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #44bd32;" text="Return" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="151.0" layoutY="213.0">
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="152.0" layoutY="303.0">
          <image>
             <Image url="@../asserts/Icons/Update.png" />
          </image>
@@ -35,6 +35,11 @@
             <Font name="Calibri Bold" size="20.0" />
          </font>
       </Text>
-      <ComboBox fx:id="cmbmachineId" layoutX="140.0" layoutY="125.0" onAction="#cmbmachineIdOnAction" prefHeight="43.0" prefWidth="187.0" />
+      <ComboBox fx:id="cmbmachineId" layoutX="142.0" layoutY="178.0" onAction="#cmbmachineIdOnAction" prefHeight="43.0" prefWidth="187.0" />
+      <Text layoutX="145.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Machine_Id">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

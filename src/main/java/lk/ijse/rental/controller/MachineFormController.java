@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.rental.model.Machine;
 import lk.ijse.rental.model.tm.MachineTm;
@@ -16,6 +17,7 @@ import lk.ijse.rental.repository.MachineRepo;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class MachineFormController {
     @FXML
@@ -227,6 +229,68 @@ public class MachineFormController {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
 
+    }
+    @FXML
+    void txtMachineDescOnReleased(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^[a-zA-Z ]*$");
+        if (!idPattern.matcher(txtDesc.getText()).matches()) {
+            addError(txtDesc);
+
+        }else{
+            removeError(txtDesc);
+        }
+    }
+
+    private void addError(TextField txtDesc) {
+        txtDesc.setStyle("-fx-border-color: red; -fx-border-width: 5");
+    }
+
+    private void removeError(TextField txtDesc) {
+        txtDesc.setStyle("-fx-border-color: green; -fx-border-width: 5");
+    }
+
+    @FXML
+    void txtMachineIsAvailableOnReleased(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^\\\\d+$");
+        if (!idPattern.matcher(txtisavailable.getText()).matches()) {
+            addError(txtisavailable);
+
+        }else{
+            removeError(txtisavailable);
+        }
+    }
+
+    @FXML
+    void txtMachineRentalOnReleased(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^([0-9]){1,}[.]([0-9]){1,}$");
+        if (!idPattern.matcher(txtRentalprice.getText()).matches()) {
+            addError(txtRentalprice);
+
+        }else{
+            removeError(txtRentalprice);
+        }
+    }
+
+    @FXML
+    void txtMachineidOnReleased(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^(M)[0-9]{1,}$");
+        if (!idPattern.matcher(txtMachineId.getText()).matches()) {
+            addError(txtMachineId);
+
+        }else{
+            removeError(txtMachineId);
+        }
+    }
+
+    @FXML
+    void txtMachinenameOnReleased(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^[a-zA-Z ]*$");
+        if (!idPattern.matcher(txtMachineName.getText()).matches()) {
+            addError(txtMachineName);
+
+        }else{
+            removeError(txtMachineName);
+        }
     }
 
     private void clearFields() {

@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import lk.ijse.rental.model.Mechanic;
@@ -22,6 +23,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class ReservationFormController {
     private JFXButton btnClear;
@@ -172,6 +174,35 @@ public class ReservationFormController {
     txtReservationId.clear();
     txtReservationType.clear();
 
+    }
+    @FXML
+    void txtReserReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^(R)[0-9]{1,}$");
+        if (!idPattern.matcher(txtReservationId.getText()).matches()) {
+            addError(txtReservationId);
+
+        }else{
+            removeError(txtReservationId);
+        }
+    }
+
+    private void removeError(TextField txtReservationId) {
+        txtReservationId.setStyle("-fx-border-color: green; -fx-border-width: 5");
+    }
+
+    private void addError(TextField txtReservationId) {
+        txtReservationId.setStyle("-fx-border-color: red; -fx-border-width: 5");
+    }
+
+    @FXML
+    void txtReserTypeReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^[a-zA-Z ]*$");
+        if (!idPattern.matcher(txtReservationType.getText()).matches()) {
+            addError(txtReservationType);
+
+        }else{
+            removeError(txtReservationType);
+        }
     }
 
 }

@@ -160,7 +160,7 @@
             <Image url="@../asserts/Icons/icons8-clock-94.png" />
          </image>
       </ImageView>
-      <Label fx:id="lblName" layoutX="223.0" layoutY="-1.0" prefHeight="37.0" prefWidth="291.0" text="Welcome to Jaga Renters!!">
+      <Label fx:id="lblName" layoutX="223.0" layoutY="-1.0" prefHeight="37.0" prefWidth="291.0">
          <font>
             <Font name="Calibri Bold" size="26.0" />
          </font>

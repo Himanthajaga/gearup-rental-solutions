@@ -87,6 +87,27 @@ public class AdminRepo {
 
         return pstm.executeQuery().next();
     }
+    public boolean searchByName(String id) throws SQLException, ClassNotFoundException {
+        String sql = "SELECT * FROM admin WHERE a_name = ?";
+        PreparedStatement pstm = DbConnection.getInstance().getConnection()
+                .prepareStatement(sql);
+
+        pstm.setObject(1, id);
+        ResultSet resultSet = pstm.executeQuery();
+
+        Admin admin = null;
+
+        if (resultSet.next()) {
+            String a_id = resultSet.getString(1);
+            String a_name = resultSet.getString(2);
+            String a_pasword = resultSet.getString(3);
+            String a_confirmPasword = resultSet.getString(4);
+            String a_email = resultSet.getString(5);
+
+            admin = new Admin(a_id, a_name, a_pasword, a_confirmPasword, a_email);
+        }
+        return admin != null;
+    }
     public boolean searchById(String id) throws SQLException, ClassNotFoundException {
         String sql = "SELECT * FROM admin WHERE a_id = ?";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()

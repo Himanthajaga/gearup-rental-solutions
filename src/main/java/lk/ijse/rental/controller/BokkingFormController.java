@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import lk.ijse.rental.model.Bokking;
 import lk.ijse.rental.model.Customer;
@@ -17,9 +18,11 @@ import lk.ijse.rental.repository.BokkingRepo;
 import lk.ijse.rental.repository.CustomerRepo;
 import lk.ijse.rental.repository.MachineRepo;
 
+import javax.swing.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class BokkingFormController {
     private List<Bokking> bokkingList = new ArrayList<>();
@@ -205,6 +208,24 @@ public class BokkingFormController {
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+    }
+    @FXML
+    void txtBokkingOnReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^(B)[0-9]{1,}$");
+        if (!idPattern.matcher(txtBokkingId.getText()).matches()) {
+            addError(txtBokkingId);
+
+        }else{
+            removeError(txtBokkingId);
+        }
+    }
+
+    private void removeError(TextField textField) {
+        textField.setStyle("-fx-border-color: green; -fx-border-width: 5");
+    }
+
+    private void addError(TextField textField) {
+        textField.setStyle("-fx-border-color: red; -fx-border-width: 5");
     }
 
     @FXML

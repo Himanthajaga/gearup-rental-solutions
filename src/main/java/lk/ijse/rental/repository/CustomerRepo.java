@@ -14,7 +14,7 @@ public class CustomerRepo {
     public static String c_id;
     public static boolean save(Customer customer) throws SQLException, ClassNotFoundException {
 //        In here you can now save your customer
-        String sql = "INSERT INTO customer VALUES(?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO customer VALUES(?, ?, ?, ?, ?)";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
         pstm.setString(1, customer.getC_mail());
@@ -22,7 +22,6 @@ public class CustomerRepo {
         pstm.setString(3, customer.getC_address());
         pstm.setString(4, customer.getC_tel());
         pstm.setString(5, customer.getC_id());
-        pstm.setString(6, AdminRepo.adminId);
 
         return pstm.executeUpdate() > 0;
 

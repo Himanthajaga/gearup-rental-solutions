@@ -56,17 +56,17 @@
             <Image url="@../asserts/Icons/Delete.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtId" layoutX="94.0" layoutY="109.0" prefHeight="40.0" prefWidth="222.0" promptText="Admin_Id">
+      <TextField fx:id="txtId" layoutX="94.0" layoutY="109.0" onKeyReleased="#txtAdminIdOnreleasedOnAction" prefHeight="40.0" prefWidth="222.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtPassword" layoutX="94.0" layoutY="172.0" prefHeight="40.0" prefWidth="222.0" promptText="Admin_Password">
+      <TextField fx:id="txtPassword" layoutX="387.0" layoutY="109.0" onKeyReleased="#txtAdminpasswordOnreleasedOnAction" prefHeight="40.0" prefWidth="222.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtName" layoutX="473.0" layoutY="109.0" prefHeight="40.0" prefWidth="222.0" promptText="Admin_Name">
+      <TextField fx:id="txtName" layoutX="95.0" layoutY="227.0" onKeyReleased="#txtAdminnameOnreleasedOnAction" prefHeight="40.0" prefWidth="222.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
@@ -81,15 +81,40 @@
             <Image url="@../asserts/Icons/Clear.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtEmail" layoutX="473.0" layoutY="192.0" prefHeight="40.0" prefWidth="222.0" promptText="Admin_Email">
+      <TextField fx:id="txtEmail" layoutX="687.0" layoutY="109.0" onKeyReleased="#txtAdminEmailOnreleasedOnAction" prefHeight="40.0" prefWidth="222.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtConfirmPassword" layoutX="94.0" layoutY="232.0" prefHeight="40.0" prefWidth="222.0" promptText="Admin_Confirm_Password">
+      <TextField fx:id="txtConfirmPassword" layoutX="387.0" layoutY="227.0" onKeyReleased="#txtAdminConfirmPasswordOnreleasedOnAction" prefHeight="40.0" prefWidth="222.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
+      <Text layoutX="97.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin_Id">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="387.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin_Password">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="387.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin_Confirm_Password">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="94.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin_Name">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="699.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin_Email">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

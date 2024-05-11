@@ -49,9 +49,7 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.28</version>
         </dependency>
-        <!--         https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->
 
-        <!--qrcan-->
         <dependency>
             <groupId>org.apache.maven.surefire</groupId>
             <artifactId>surefire-api</artifactId>
@@ -77,18 +75,18 @@
             <artifactId>webcam-capture</artifactId>
             <version>0.3.12</version>
         </dependency>
-        <!--QRSCAN END -->
 
-        <!--Email -->
         <dependency>
             <groupId>com.sun.mail</groupId>
             <artifactId>javax.mail</artifactId>
-            <version>1.6.2</version> <!-- or the latest version available -->
+            <version>1.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.palexdev</groupId>
+            <artifactId>materialfx</artifactId>
+            <version>11.16.1</version>
         </dependency>
 
-        <!--Email End -->
-
-        <!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>

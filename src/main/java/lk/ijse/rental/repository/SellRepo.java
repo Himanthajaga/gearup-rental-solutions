@@ -50,11 +50,8 @@ public class SellRepo {
             java.sql.Date se_date = resultSet.getDate(2);
             String c_email = resultSet.getString(3);
             double se_total = resultSet.getDouble(4);
+
             Sell sell = new Sell(se_id, se_date, c_email, se_total);
-
-            selllList.add(sell);
-
-
             selllList.add(sell);
         }
         return selllList;

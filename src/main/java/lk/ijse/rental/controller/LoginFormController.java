@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
@@ -21,6 +22,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalTime;
+import java.util.regex.Pattern;
 
 public class LoginFormController {
 
@@ -94,9 +96,37 @@ public class LoginFormController {
             e.printStackTrace();
         }
     }
+    private void addError(TextField textField) {
+        textField.setStyle("-fx-border-color: red; -fx-border-width: 5");
+    }
 
+    private void removeError(TextField textField) {
+        textField.setStyle("-fx-border-color: green; -fx-border-width: 5");
+    }
+    @FXML
+    void txtPasswordOnReleased(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^[0-9]{1,}$");
+        if (!idPattern.matcher(txtpassword.getText()).matches()) {
+            addError(txtpassword);
+
+        }else{
+            removeError(txtpassword);
+        }
+    }
+
+    @FXML
+    void txtUsernameOnReleased(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^[a-zA-Z ]*$");
+        if (!idPattern.matcher(txtuserId.getText()).matches()) {
+            addError(txtuserId);
+
+        }else{
+            removeError(txtuserId);
+        }
+
+    }
     private void checkCredential(String userId, String pw) throws SQLException, IOException, ClassNotFoundException {
-        String sql = "SELECT a_id, a_password FROM admin WHERE a_id = ?";
+        String sql = "SELECT a_id, a_password FROM admin WHERE a_name = ?";
 
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);

@@ -7,12 +7,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import lk.ijse.rental.model.BuildingMaterial;
 import lk.ijse.rental.model.RentOrder;
 import lk.ijse.rental.model.Sell;
 import lk.ijse.rental.model.tm.Rent_orderTm;
 import lk.ijse.rental.model.tm.SellTm;
-import lk.ijse.rental.repository.BuildingMaterialRepo;
 import lk.ijse.rental.repository.RentOrderRepo;
 import lk.ijse.rental.repository.SellRepo;
 

@@ -57,32 +57,32 @@
             <Image url="@../asserts/Icons/Delete.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtMid" layoutX="169.0" layoutY="75.0" prefHeight="40.0" prefWidth="188.0" promptText="Mechanic_Id">
+      <TextField fx:id="txtMid" layoutX="169.0" layoutY="101.0" onKeyReleased="#txtMechanicIdOnReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtMAddress" layoutX="169.0" layoutY="127.0" prefHeight="40.0" prefWidth="188.0" promptText="Mechanic_Address">
+      <TextField fx:id="txtMAddress" layoutX="475.0" layoutY="101.0" onKeyReleased="#txtMechanicAddressOnReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtMName" layoutX="590.0" layoutY="75.0" prefHeight="40.0" prefWidth="188.0" promptText="Mechanic_Name">
+      <TextField fx:id="txtMName" layoutX="169.0" layoutY="205.0" onKeyReleased="#txtMechanicNameOnReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtMTele" layoutX="590.0" layoutY="127.0" prefHeight="40.0" prefWidth="188.0" promptText="Mechanic_Tele">
+      <TextField fx:id="txtMTele" layoutX="754.0" layoutY="101.0" onKeyReleased="#txtMechanicTeleOnReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtMDescription" layoutX="169.0" layoutY="182.0" prefHeight="40.0" prefWidth="188.0" promptText="Mechanic_Description">
+      <TextField fx:id="txtMDescription" layoutX="475.0" layoutY="205.0" onKeyReleased="#txtMechanicDescriptionOnReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtMSalary" layoutX="590.0" layoutY="182.0" prefHeight="40.0" prefWidth="188.0" promptText="Mechanic_Salary">
+      <TextField fx:id="txtMSalary" layoutX="754.0" layoutY="205.0" onKeyReleased="#txtMechanicSalaryOnReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
@@ -97,5 +97,35 @@
             <Image url="@../asserts/Icons/Clear.png" />
          </image>
       </ImageView>
+      <Text layoutX="168.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mechanic_Id">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="168.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mechanic_Name">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="475.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mechanic_Address">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="475.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mechanic_Description">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="754.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mechanic_Tele">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="754.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mechanic_Salary">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

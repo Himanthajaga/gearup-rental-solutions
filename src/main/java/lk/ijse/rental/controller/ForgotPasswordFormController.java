@@ -7,12 +7,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.rental.repository.AdminRepo;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.regex.Pattern;
 
 public class ForgotPasswordFormController {
 
@@ -68,10 +70,39 @@ public class ForgotPasswordFormController {
 
 
     }
+    @FXML
+    void txtEmailOnReleased(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("(^[a-zA-Z0-9_.]+[@]{1}[a-z0-9]+[\\.][a-z]+$)");
+        if (!idPattern.matcher(txtEmail.getText()).matches()) {
+            addError(txtEmail);
 
+        }else{
+            removeError(txtEmail);
+        }
+    }
+
+    private void removeError(TextField txtEmail) {
+        txtEmail.setStyle("-fx-border-color: green; -fx-border-width: 5");
+
+    }
+
+    private void addError(TextField txtEmail) {
+        txtEmail.setStyle("-fx-border-color: red; -fx-border-width: 5");
+    }
+
+    @FXML
+    void txtUsernameOnReleased(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^[a-zA-Z ]*$");
+        if (!idPattern.matcher(txtuserId.getText()).matches()) {
+            addError(txtuserId);
+
+        }else{
+            removeError(txtuserId);
+        }
+    }
     private boolean validateDetails() {
 
-        String userName = txtuserId.getText();
+        String userName =txtuserId.getText();
         boolean isUserNameValidated = userName.matches("[A-Za-z]{3,}");
 
         if (!isUserNameValidated){
@@ -84,7 +115,7 @@ public class ForgotPasswordFormController {
         boolean isUsernameExist = false;
 
         try {
-            isUsernameExist = adminRepo.searchById(userName);
+            isUsernameExist = adminRepo.searchByName(userName);
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }

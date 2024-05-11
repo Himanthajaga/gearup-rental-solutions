@@ -10,7 +10,7 @@ import java.util.List;
 
 public class RentOrderRepo {
     public static String currentId() throws SQLException, ClassNotFoundException {
-        String sql = "SELECT o_id FROM rent_order ORDER BY o_id desc LIMIT 1";
+        String sql = "SELECT o_id FROM rent_order ORDER BY CAST(SUBSTRING(o_id, 2) AS UNSIGNED) desc LIMIT 1";
 
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);

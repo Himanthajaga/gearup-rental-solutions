@@ -6,17 +6,25 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lk.ijse.rental.model.Admin;
+import lk.ijse.rental.model.Customer;
+import lk.ijse.rental.qrGenerate.QrcodeForMachine;
 import lk.ijse.rental.repository.AdminRepo;
+import lk.ijse.rental.repository.CustomerRepo;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
 
 public class SignupFormController {
 
@@ -45,7 +53,8 @@ public class SignupFormController {
     @FXML
     private Text txtMassage;
 
-
+    private List<Admin> adminList = new ArrayList<>();
+    private QrcodeForMachine qrcodeForUser = new QrcodeForMachine();
     AdminRepo adminRepo = new AdminRepo();
 
     @FXML
@@ -70,35 +79,101 @@ public class SignupFormController {
     void btnPwOnAction(ActionEvent event) {
 
     }
+    @FXML
+    void txtAdminConfirmPasswordOnReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$");
+        if (!idPattern.matcher(txtConfirmPassword.getText()).matches()) {
+            addError(txtConfirmPassword);
+
+        }else{
+            removeError(txtConfirmPassword);
+        }
+    }
+
+    private void removeError(TextField textfield) {
+        textfield.setStyle("-fx-border-color: green; -fx-border-width: 5");
+    }
+
+    private void addError(TextField textfield) {
+        textfield.setStyle("-fx-border-color: red; -fx-border-width: 5");
+    }
 
     @FXML
-    void btnSignInOnAction(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
+    void txtAdminEmailOnReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("(^[a-zA-Z0-9_.]+[@]{1}[a-z0-9]+[\\.][a-z]+$)");
+        if (!idPattern.matcher(txtAdminEmail.getText()).matches()) {
+            addError( txtAdminEmail);
 
-        boolean isACoountValidated = validateAccount();
-        if (isACoountValidated) {
-            return;
+        }else{
+            removeError( txtAdminEmail);
         }
+    }
+
+    @FXML
+    void txtAdminIdOnReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^(A)[0-9]{1,}$");
+        if (!idPattern.matcher(txtAdminId.getText()).matches()) {
+            addError(txtAdminId);
+
+        }else{
+            removeError(txtAdminId);
+        }
+    }
+
+    @FXML
+    void txtAdminNameOnReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^[a-zA-Z ]*$");
+        if (!idPattern.matcher(txtAdminName.getText()).matches()) {
+            addError(txtAdminName);
+
+        }else{
+            removeError(txtAdminName);
+        }
+    }
+
+    @FXML
+    void txtAdminPasswordOnReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$");
+        if (!idPattern.matcher(txtPassword.getText()).matches()) {
+            addError(txtPassword);
+
+        }else{
+            removeError(txtPassword);
+        }
+    }
+    @FXML
+    void btnSignInOnAction(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
+        String id = txtAdminId.getText();
+        String name = txtAdminName.getText();
+        String password = txtPassword.getText();
+        String confirmPassword = txtConfirmPassword.getText();
+        String email = txtAdminEmail.getText();
 
 
-        String AdminId = txtAdminId.getText();
-        String AdminName = txtAdminName.getText();
-        String AdminPassword = txtPassword.getText();
-        String AdminConfirmPassword = txtConfirmPassword.getText();
-        String AdminEmail = txtAdminEmail.getText();
+        Admin admin = new Admin(id, name, password,confirmPassword,email);
+        try {
+            boolean isAdded = adminRepo.save(admin);
+            if (isAdded) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Saved..").show();
+                qrcodeForUser.CreateQr(id);
+                adminList.add(admin);
+                Stage stage1 = (Stage)btnLogin.getScene().getWindow();
+                stage1.close();
+                Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/login_form.fxml"));
 
+                Scene scene = new Scene(rootNode);
+                Stage stage = new Stage();
+                stage.setScene(scene);
 
-        Admin admin = new Admin(AdminId, AdminName, AdminPassword,AdminConfirmPassword,AdminEmail);
-        Stage stage1 = (Stage) btnLogin.getScene().getWindow();
-        stage1.close();
-        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/login_form.fxml"));
+                stage.setTitle("Sign up Form");
 
-        Scene scene = new Scene(rootNode);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-
-        stage.setTitle("Sign up Form");
-
-        stage.show();
+                stage.show();
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Try Again..").show();
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
         private boolean validateAccount () {
             String email = txtAdminEmail.getText();

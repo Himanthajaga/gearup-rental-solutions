@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -22,6 +23,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class BuildingMaterialFormController {
     @FXML
@@ -182,6 +184,68 @@ public class BuildingMaterialFormController {
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+    @FXML
+    void txtMaterialDescriptionOnReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^[a-zA-Z ]*$");
+        if (!idPattern.matcher(txtMateriaDescription.getText()).matches()) {
+            addError(txtMateriaDescription);
+
+        }else{
+            removeError(txtMateriaDescription);
+        }
+    }
+
+    @FXML
+    void txtMaterialIdOnReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^(BM)[0-9]{1,}$");
+        if (!idPattern.matcher(txtMaterialId.getText()).matches()) {
+            addError(txtMaterialId);
+
+        }else{
+            removeError(txtMaterialId);
+        }
+    }
+
+    @FXML
+    void txtMaterialPriceOnReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^([0-9]){1,}[.]([0-9]){1,}$");
+        if (!idPattern.matcher(txtMaterialPrice.getText()).matches()) {
+            addError(txtMaterialPrice);
+
+        }else{
+            removeError(txtMaterialPrice);
+        }
+    }
+
+    @FXML
+    void txtMaterialQtyOnReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^[0-9]{1,}$");
+        if (!idPattern.matcher(txtMaterialQty.getText()).matches()) {
+            addError(txtMaterialQty);
+
+        }else{
+            removeError(txtMaterialQty);
+        }
+    }
+
+    @FXML
+    void txtMaterialTypeOnReleasedOnAction(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^[a-zA-Z ]*$");
+        if (!idPattern.matcher(txtMaterialType.getText()).matches()) {
+            addError(txtMaterialType);
+
+        }else{
+            removeError(txtMaterialType);
+        }
+    }
+
+    private void removeError(TextField txtMaterialType) {
+        txtMaterialType.setStyle("-fx-border-color: green; -fx-border-width: 5");
+    }
+
+    private void addError(TextField txtMaterialType) {
+        txtMaterialType.setStyle("-fx-border-color: red; -fx-border-width: 5");
     }
 
     @FXML

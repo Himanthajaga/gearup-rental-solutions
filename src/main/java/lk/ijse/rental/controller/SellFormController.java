@@ -147,8 +147,8 @@ public class SellFormController {
         if (currentId != null) {
             String[] split = currentId.split("O");
 //            System.out.println("Arrays.toString(split) = " + Arrays.toString(split));
-            int id = Integer.parseInt(split[1]);    //2
-            return "O" + ++id;
+            int id = Integer.parseInt(split[1],10);    //2
+            return "S" + ++id;
 
         }
         return "O1";

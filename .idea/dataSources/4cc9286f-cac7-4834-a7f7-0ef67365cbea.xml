@@ -1035,7 +1035,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="301" parent="1" name="gearup">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-05-06.12:31:47</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-05-11.11:09:19</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="302" parent="1" name="tfms">
@@ -1263,481 +1263,466 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <DasType>varchar(20)|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="354" parent="311" name="a_id">
-      <DasType>varchar(20)|0s</DasType>
-      <Position>6</Position>
-    </column>
-    <foreign-key id="355" parent="311" name="customer_ibfk_1">
-      <ColNames>a_id</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <OnUpdate>cascade</OnUpdate>
-      <RefColNames>a_id</RefColNames>
-      <RefTableName>admin</RefTableName>
-    </foreign-key>
-    <index id="356" parent="311" name="PRIMARY">
+    <index id="354" parent="311" name="PRIMARY">
       <ColNames>c_email</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="357" parent="311" name="a_id">
-      <ColNames>a_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="358" parent="311" name="PRIMARY">
+    <key id="355" parent="311" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="359" parent="312" name="r_id">
+    <column id="356" parent="312" name="r_id">
       <DasType>varchar(20)|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="360" parent="312" name="c_email">
+    <column id="357" parent="312" name="c_email">
       <DasType>varchar(50)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="361" parent="312" name="date">
+    <column id="358" parent="312" name="date">
       <DasType>date|0s</DasType>
       <Position>3</Position>
     </column>
-    <foreign-key id="362" parent="312" name="customer_reservation_ibfk_1">
+    <foreign-key id="359" parent="312" name="customer_reservation_ibfk_1">
       <ColNames>c_email</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>c_email</RefColNames>
       <RefTableName>customer</RefTableName>
     </foreign-key>
-    <index id="363" parent="312" name="c_email">
+    <index id="360" parent="312" name="c_email">
       <ColNames>c_email</ColNames>
       <Type>btree</Type>
     </index>
-    <column id="364" parent="313" name="m_id">
+    <column id="361" parent="313" name="m_id">
       <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="365" parent="313" name="m_name">
+    <column id="362" parent="313" name="m_name">
       <DasType>varchar(40)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="366" parent="313" name="m_desc">
+    <column id="363" parent="313" name="m_desc">
       <DasType>varchar(40)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="367" parent="313" name="m_rental_price">
+    <column id="364" parent="313" name="m_rental_price">
       <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="368" parent="313" name="isAvailable">
+    <column id="365" parent="313" name="isAvailable">
       <DasType>int|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="369" parent="313" name="c_email">
+    <column id="366" parent="313" name="c_email">
       <DasType>varchar(50)|0s</DasType>
       <Position>6</Position>
     </column>
-    <foreign-key id="370" parent="313" name="machine_ibfk_1">
+    <foreign-key id="367" parent="313" name="machine_ibfk_1">
       <ColNames>c_email</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>c_email</RefColNames>
       <RefTableName>customer</RefTableName>
     </foreign-key>
-    <index id="371" parent="313" name="PRIMARY">
+    <index id="368" parent="313" name="PRIMARY">
       <ColNames>m_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="372" parent="313" name="c_email">
+    <index id="369" parent="313" name="c_email">
       <ColNames>c_email</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="373" parent="313" name="PRIMARY">
+    <key id="370" parent="313" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="374" parent="314" name="mmd_id">
+    <column id="371" parent="314" name="mmd_id">
       <DasType>varchar(30)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="375" parent="314" name="m_id">
+    <column id="372" parent="314" name="m_id">
       <DasType>varchar(20)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="376" parent="314" name="mec_id">
+    <column id="373" parent="314" name="mec_id">
       <DasType>varchar(40)|0s</DasType>
       <Position>3</Position>
     </column>
-    <foreign-key id="377" parent="314" name="machine_mechanic_detail_ibfk_1">
+    <foreign-key id="374" parent="314" name="machine_mechanic_detail_ibfk_1">
       <ColNames>m_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>m_id</RefColNames>
       <RefTableName>machine</RefTableName>
     </foreign-key>
-    <foreign-key id="378" parent="314" name="machine_mechanic_detail_ibfk_2">
+    <foreign-key id="375" parent="314" name="machine_mechanic_detail_ibfk_2">
       <ColNames>mec_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>mec_id</RefColNames>
       <RefTableName>mechanic</RefTableName>
     </foreign-key>
-    <index id="379" parent="314" name="PRIMARY">
+    <index id="376" parent="314" name="PRIMARY">
       <ColNames>mmd_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="380" parent="314" name="m_id">
+    <index id="377" parent="314" name="m_id">
       <ColNames>m_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="381" parent="314" name="mec_id">
+    <index id="378" parent="314" name="mec_id">
       <ColNames>mec_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="382" parent="314" name="PRIMARY">
+    <key id="379" parent="314" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="383" parent="315" name="mec_id">
+    <column id="380" parent="315" name="mec_id">
       <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="384" parent="315" name="mec_name">
+    <column id="381" parent="315" name="mec_name">
       <DasType>varchar(40)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="385" parent="315" name="mec_address">
+    <column id="382" parent="315" name="mec_address">
       <DasType>varchar(40)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="386" parent="315" name="mec_tel">
+    <column id="383" parent="315" name="mec_tel">
       <DasType>varchar(20)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="387" parent="315" name="mec_desc">
+    <column id="384" parent="315" name="mec_desc">
       <DasType>varchar(40)|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="388" parent="315" name="mec_salary">
+    <column id="385" parent="315" name="mec_salary">
       <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>6</Position>
     </column>
-    <index id="389" parent="315" name="PRIMARY">
+    <index id="386" parent="315" name="PRIMARY">
       <ColNames>mec_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="390" parent="315" name="PRIMARY">
+    <key id="387" parent="315" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="391" parent="316" name="o_id">
+    <column id="388" parent="316" name="o_id">
       <DasType>varchar(20)|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="392" parent="316" name="m_id">
+    <column id="389" parent="316" name="m_id">
       <DasType>varchar(20)|0s</DasType>
       <Position>2</Position>
     </column>
-    <foreign-key id="393" parent="316" name="order_detail_ibfk_1">
+    <foreign-key id="390" parent="316" name="order_detail_ibfk_1">
       <ColNames>o_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>o_id</RefColNames>
       <RefTableName>rent_order</RefTableName>
     </foreign-key>
-    <foreign-key id="394" parent="316" name="order_detail_ibfk_2">
+    <foreign-key id="391" parent="316" name="order_detail_ibfk_2">
       <ColNames>m_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>m_id</RefColNames>
       <RefTableName>machine</RefTableName>
     </foreign-key>
-    <index id="395" parent="316" name="o_id">
+    <index id="392" parent="316" name="o_id">
       <ColNames>o_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="396" parent="316" name="m_id">
+    <index id="393" parent="316" name="m_id">
       <ColNames>m_id</ColNames>
       <Type>btree</Type>
     </index>
-    <column id="397" parent="317" name="p_id">
+    <column id="394" parent="317" name="p_id">
       <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="398" parent="317" name="p_amount">
+    <column id="395" parent="317" name="p_amount">
       <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="399" parent="317" name="p_type">
+    <column id="396" parent="317" name="p_type">
       <DasType>varchar(20)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="400" parent="317" name="c_email">
+    <column id="397" parent="317" name="c_email">
       <DasType>varchar(50)|0s</DasType>
       <Position>4</Position>
     </column>
-    <foreign-key id="401" parent="317" name="payment_ibfk_1">
+    <foreign-key id="398" parent="317" name="payment_ibfk_1">
       <ColNames>c_email</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>c_email</RefColNames>
       <RefTableName>customer</RefTableName>
     </foreign-key>
-    <index id="402" parent="317" name="PRIMARY">
+    <index id="399" parent="317" name="PRIMARY">
       <ColNames>p_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="403" parent="317" name="c_email">
+    <index id="400" parent="317" name="c_email">
       <ColNames>c_email</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="404" parent="317" name="PRIMARY">
+    <key id="401" parent="317" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="405" parent="318" name="o_id">
+    <column id="402" parent="318" name="o_id">
       <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="406" parent="318" name="o_date">
+    <column id="403" parent="318" name="o_date">
       <DasType>date|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="407" parent="318" name="r_date">
+    <column id="404" parent="318" name="r_date">
       <DasType>date|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="408" parent="318" name="c_email">
+    <column id="405" parent="318" name="c_email">
       <DasType>varchar(20)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="409" parent="318" name="r_total">
+    <column id="406" parent="318" name="r_total">
       <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>5</Position>
     </column>
-    <foreign-key id="410" parent="318" name="rent_order_ibfk_1">
+    <foreign-key id="407" parent="318" name="rent_order_ibfk_1">
       <ColNames>c_email</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>c_email</RefColNames>
       <RefTableName>customer</RefTableName>
     </foreign-key>
-    <index id="411" parent="318" name="PRIMARY">
+    <index id="408" parent="318" name="PRIMARY">
       <ColNames>o_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="412" parent="318" name="c_email">
+    <index id="409" parent="318" name="c_email">
       <ColNames>c_email</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="413" parent="318" name="PRIMARY">
+    <key id="410" parent="318" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="414" parent="319" name="r_id">
+    <column id="411" parent="319" name="r_id">
       <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="415" parent="319" name="r_type">
+    <column id="412" parent="319" name="r_type">
       <DasType>varchar(20)|0s</DasType>
       <Position>2</Position>
     </column>
-    <index id="416" parent="319" name="PRIMARY">
+    <index id="413" parent="319" name="PRIMARY">
       <ColNames>r_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="417" parent="319" name="PRIMARY">
+    <key id="414" parent="319" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="418" parent="320" name="bm_id">
+    <column id="415" parent="320" name="bm_id">
       <DasType>varchar(20)|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="419" parent="320" name="r_id">
+    <column id="416" parent="320" name="r_id">
       <DasType>varchar(20)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="420" parent="320" name="date">
+    <column id="417" parent="320" name="date">
       <DasType>date|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="421" parent="320" name="amount">
+    <column id="418" parent="320" name="amount">
       <DasType>varchar(10)|0s</DasType>
       <Position>4</Position>
     </column>
-    <foreign-key id="422" parent="320" name="reservation_building_material_ibfk_1">
+    <foreign-key id="419" parent="320" name="reservation_building_material_ibfk_1">
       <ColNames>bm_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>bm_id</RefColNames>
       <RefTableName>building_material</RefTableName>
     </foreign-key>
-    <foreign-key id="423" parent="320" name="reservation_building_material_ibfk_2">
+    <foreign-key id="420" parent="320" name="reservation_building_material_ibfk_2">
       <ColNames>r_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>r_id</RefColNames>
       <RefTableName>reservation</RefTableName>
     </foreign-key>
-    <index id="424" parent="320" name="bm_id">
+    <index id="421" parent="320" name="bm_id">
       <ColNames>bm_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="425" parent="320" name="r_id">
+    <index id="422" parent="320" name="r_id">
       <ColNames>r_id</ColNames>
       <Type>btree</Type>
     </index>
-    <column id="426" parent="321" name="se_id">
+    <column id="423" parent="321" name="se_id">
       <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="427" parent="321" name="se_date">
+    <column id="424" parent="321" name="se_date">
       <DasType>date|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="428" parent="321" name="c_email">
+    <column id="425" parent="321" name="c_email">
       <DasType>varchar(20)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="429" parent="321" name="s_total">
+    <column id="426" parent="321" name="s_total">
       <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>4</Position>
     </column>
-    <foreign-key id="430" parent="321" name="sell_ibfk_1">
+    <foreign-key id="427" parent="321" name="sell_ibfk_1">
       <ColNames>c_email</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>c_email</RefColNames>
       <RefTableName>customer</RefTableName>
     </foreign-key>
-    <index id="431" parent="321" name="PRIMARY">
+    <index id="428" parent="321" name="PRIMARY">
       <ColNames>se_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="432" parent="321" name="c_email">
+    <index id="429" parent="321" name="c_email">
       <ColNames>c_email</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="433" parent="321" name="PRIMARY">
+    <key id="430" parent="321" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="434" parent="322" name="se_id">
+    <column id="431" parent="322" name="se_id">
       <DasType>varchar(20)|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="435" parent="322" name="bm_id">
+    <column id="432" parent="322" name="bm_id">
       <DasType>varchar(20)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="436" parent="322" name="bm_unit_price">
+    <column id="433" parent="322" name="bm_unit_price">
       <DasType>decimal(10,2 digit)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="437" parent="322" name="bm_qty">
+    <column id="434" parent="322" name="bm_qty">
       <DasType>int|0s</DasType>
       <Position>4</Position>
     </column>
-    <foreign-key id="438" parent="322" name="sell_material_ibfk_1">
+    <foreign-key id="435" parent="322" name="sell_material_ibfk_1">
       <ColNames>se_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>se_id</RefColNames>
       <RefTableName>sell</RefTableName>
     </foreign-key>
-    <foreign-key id="439" parent="322" name="sell_material_ibfk_2">
+    <foreign-key id="436" parent="322" name="sell_material_ibfk_2">
       <ColNames>bm_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>bm_id</RefColNames>
       <RefTableName>building_material</RefTableName>
     </foreign-key>
-    <index id="440" parent="322" name="se_id">
+    <index id="437" parent="322" name="se_id">
       <ColNames>se_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="441" parent="322" name="bm_id">
+    <index id="438" parent="322" name="bm_id">
       <ColNames>bm_id</ColNames>
       <Type>btree</Type>
     </index>
-    <column id="442" parent="323" name="s_id">
+    <column id="439" parent="323" name="s_id">
       <DasType>varchar(20)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="443" parent="323" name="s_name">
+    <column id="440" parent="323" name="s_name">
       <DasType>varchar(20)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="444" parent="323" name="s_address">
+    <column id="441" parent="323" name="s_address">
       <DasType>varchar(40)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="445" parent="323" name="s_tel">
+    <column id="442" parent="323" name="s_tel">
       <DasType>varchar(12)|0s</DasType>
       <Position>4</Position>
     </column>
-    <index id="446" parent="323" name="PRIMARY">
+    <index id="443" parent="323" name="PRIMARY">
       <ColNames>s_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="447" parent="323" name="PRIMARY">
+    <key id="444" parent="323" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="448" parent="324" name="bm_id">
+    <column id="445" parent="324" name="bm_id">
       <DasType>varchar(20)|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="449" parent="324" name="s_id">
+    <column id="446" parent="324" name="s_id">
       <DasType>varchar(20)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="450" parent="324" name="amount">
+    <column id="447" parent="324" name="amount">
       <DasType>varchar(10)|0s</DasType>
       <Position>3</Position>
     </column>
-    <foreign-key id="451" parent="324" name="supplier_building_material_ibfk_1">
+    <foreign-key id="448" parent="324" name="supplier_building_material_ibfk_1">
       <ColNames>bm_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>bm_id</RefColNames>
       <RefTableName>building_material</RefTableName>
     </foreign-key>
-    <foreign-key id="452" parent="324" name="supplier_building_material_ibfk_2">
+    <foreign-key id="449" parent="324" name="supplier_building_material_ibfk_2">
       <ColNames>s_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>s_id</RefColNames>
       <RefTableName>supplier</RefTableName>
     </foreign-key>
-    <index id="453" parent="324" name="bm_id">
+    <index id="450" parent="324" name="bm_id">
       <ColNames>bm_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="454" parent="324" name="s_id">
+    <index id="451" parent="324" name="s_id">
       <ColNames>s_id</ColNames>
       <Type>btree</Type>
     </index>
