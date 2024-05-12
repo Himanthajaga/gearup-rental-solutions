@@ -47,7 +47,28 @@ public class CustomerRepo {
 
         return pstm.executeUpdate() > 0;
     }
+    public static Customer searchbyname(String c_mail) throws SQLException, ClassNotFoundException {
+        String sql = "SELECT * FROM customer WHERE c_name = ?";
+        PreparedStatement pstm = DbConnection.getInstance().getConnection()
+                .prepareStatement(sql);
 
+        pstm.setObject(1, c_mail);
+        ResultSet resultSet = pstm.executeQuery();
+
+        Customer customer = null;
+
+        if (resultSet.next()) {
+            String email = resultSet.getString(1);
+            String name = resultSet.getString(2);
+            String address = resultSet.getString(3);
+            String tel = resultSet.getString(4);
+            String cus_id = resultSet.getString(5);
+
+
+            customer = new Customer(email, name, address, tel, cus_id);
+        }
+        return customer;
+    }
     public static Customer searchByemail(String c_mail) throws SQLException, ClassNotFoundException {
         String sql = "SELECT * FROM customer WHERE c_email = ?";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()

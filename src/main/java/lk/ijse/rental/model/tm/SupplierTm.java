@@ -12,5 +12,6 @@ public class SupplierTm {
     private String colSupplierName;
     private String colSupplierAddress;
     private String colSupplierTele;
+    private String colSupplierEmail;
 
 }

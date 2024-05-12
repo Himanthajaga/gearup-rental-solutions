@@ -7,10 +7,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PaymentTm {
+public class TblPaymentCartTm {
     private String colPaymentId;
     private String colPaymentType;
-    private String colSEmail;
-    private double colPaymentAmount;
-
+     private String colSEmail;
+     private String colSName;
+        private String colMaterialName;
+        private double colPaymentAmount;
 }

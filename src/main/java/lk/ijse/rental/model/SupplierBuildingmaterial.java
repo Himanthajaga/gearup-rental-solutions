@@ -4,16 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class BuildingMaterial {
+public class SupplierBuildingmaterial {
     private String bm_id;
-    private String bm_desc;
-    private String bm_type;
-    private String bm_price;
-    private String bm_qty;
     private String s_email;
+    private String amount;
+    private String bm_desc;
 }

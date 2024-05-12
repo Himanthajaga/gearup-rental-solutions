@@ -19,7 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DashbordFormController {
-
+    @FXML
+    private TableColumn<?, ?> colCEmail1;
     @FXML
     private TableColumn<?, ?> ColReturnDate;
 
@@ -65,6 +66,7 @@ public class DashbordFormController {
         loadSellTable();
         loadTotalRentOrders();
         loadTotalSellOrders();
+
     }
 
     private void loadTotalRentOrders() {
@@ -118,7 +120,7 @@ public class DashbordFormController {
         colOrderId.setCellValueFactory(new PropertyValueFactory<>("colOrderId"));
         colOrderDate.setCellValueFactory(new PropertyValueFactory<>("colOrderDate"));
         ColReturnDate.setCellValueFactory(new PropertyValueFactory<>("ColReturnDate"));
-        colCEmail.setCellValueFactory(new PropertyValueFactory<>("colCEmail"));
+        colCEmail1.setCellValueFactory(new PropertyValueFactory<>("colCEmail1"));
         colTotal.setCellValueFactory(new PropertyValueFactory<>("colTotal"));
         colSellId.setCellValueFactory(new PropertyValueFactory<>("colSellId"));
         colSellDate.setCellValueFactory(new PropertyValueFactory<>("colSellDate"));

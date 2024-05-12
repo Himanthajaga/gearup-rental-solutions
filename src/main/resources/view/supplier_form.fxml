@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="605.0" prefWidth="1048.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rental.controller.SupplierFormController">
+<AnchorPane fx:id="paneholder" prefHeight="605.0" prefWidth="1048.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rental.controller.SupplierFormController">
    <children>
       <Text layoutX="20.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Manage">
          <font>
@@ -19,10 +19,11 @@
       </Text>
       <TableView fx:id="tblSupplier" layoutX="75.0" layoutY="348.0" prefHeight="230.0" prefWidth="907.0">
          <columns>
-            <TableColumn fx:id="colSupplierId" prefWidth="206.0" text="Supplier_Id" />
-            <TableColumn fx:id="colSupplierName" prefWidth="222.0" text="Supplier_Name" />
-            <TableColumn fx:id="colSupplierAddress" prefWidth="215.0" text="Supplier_Address" />
-            <TableColumn fx:id="colSupplierTele" prefWidth="263.0" text="Supplier_Tele" />
+            <TableColumn fx:id="colSupplierId" prefWidth="150.0" text="Supplier_Id" />
+            <TableColumn fx:id="colSupplierName" prefWidth="184.0" text="Supplier_Name" />
+            <TableColumn fx:id="colSupplierAddress" prefWidth="193.0" text="Supplier_Address" />
+            <TableColumn fx:id="colSupplierTele" prefWidth="167.0" text="Supplier_Tele" />
+            <TableColumn fx:id="colSupplierEmail" prefWidth="214.0" text="Supplier_Email" />
          </columns>
       </TableView>
       <JFXButton fx:id="btnUpdateSupplier" buttonType="RAISED" layoutX="311.0" layoutY="294.0" onAction="#btnUpdateSupplierOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #55E6C1;" text="      Update" textAlignment="CENTER" textFill="WHITE">
@@ -65,12 +66,12 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtSupplierName" layoutX="643.0" layoutY="99.0" onKeyReleased="#txtSupplierNamereleasedonAction" prefHeight="40.0" prefWidth="188.0">
+      <TextField fx:id="txtSupplierName" layoutX="468.0" layoutY="99.0" onKeyReleased="#txtSupplierNamereleasedonAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="txtSupplierTele" layoutX="643.0" layoutY="202.0" onKeyReleased="#txtSupplierteleOnReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
+      <TextField fx:id="txtSupplierTele" layoutX="468.0" layoutY="202.0" onKeyReleased="#txtSupplierteleOnReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
@@ -95,12 +96,12 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="643.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier_Name">
+      <Text layoutX="468.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier_Name">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="643.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier_Tele">
+      <Text layoutX="468.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier_Tele">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
@@ -110,5 +111,25 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </Text>
+      <TextField fx:id="txtSupplierEmail" layoutX="739.0" layoutY="99.0" onKeyReleased="#txtSupplierEmailreleasedonAction" prefHeight="40.0" prefWidth="188.0">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </TextField>
+      <Text layoutX="739.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier_Email">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="btnPaySupplier" buttonType="RAISED" layoutX="739.0" layoutY="181.0" onAction="#btnPaySupplierOnAction" prefHeight="43.0" prefWidth="188.0" style="-fx-background-color: #60a3bc;" text="Payment" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="745.0" layoutY="185.0">
+         <image>
+            <Image url="@../asserts/Icons/icons8-payment-96.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

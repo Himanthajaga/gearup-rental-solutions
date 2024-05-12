@@ -28,8 +28,6 @@ public class DashboardMainFormController {
     @FXML
     private Label lblName;
     @FXML
-    private JFXButton btnPayment;
-    @FXML
     private ImageView IconBack;
     @FXML
     private ImageView btnExit;
@@ -158,14 +156,6 @@ System.exit(0);
         Pane registePane = (Pane) fxmlLoader.load();
         paneHolder.getChildren().clear();
         paneHolder.getChildren().add(registePane);
-    }
-    @FXML
-    void btnPaymentOnAction(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/payment_form.fxml"));
-        Pane registePane = (Pane) fxmlLoader.load();
-        paneHolder.getChildren().clear();
-        paneHolder.getChildren().add(registePane);
-
     }
     @FXML
     void btnLogoutOnAction(ActionEvent event) throws IOException {

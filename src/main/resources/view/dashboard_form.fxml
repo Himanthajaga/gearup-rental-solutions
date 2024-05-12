@@ -41,7 +41,7 @@
           <TableColumn fx:id="colOrderId" prefWidth="57.0" text="Order_ID" />
           <TableColumn fx:id="colOrderDate" prefWidth="93.0" text="Order_Date" />
             <TableColumn fx:id="ColReturnDate" prefWidth="82.0" text="Return_Date" />
-            <TableColumn fx:id="colCEmail" prefWidth="200.0" text="C_Email" />
+            <TableColumn fx:id="colCEmail1" prefWidth="200.0" text="C_Email" />
             <TableColumn fx:id="colTotal" prefWidth="85.0" text="Total" />
         </columns>
       </TableView>

@@ -147,7 +147,7 @@ public class BuildingMaterialFormController {
         String MaterialQty = txtMaterialQty.getText();
 
 
-        BuildingMaterial buildingMaterial = new BuildingMaterial(MaterialId, MaterialDesc, MaterialType, MaterialPrice, MaterialQty);
+        BuildingMaterial buildingMaterial = new BuildingMaterial(MaterialId, MaterialDesc, MaterialType, MaterialPrice, MaterialQty, "null");
         try {
             boolean isAdded = BuildingMaterialRepo.save(buildingMaterial);
             if (isAdded) {
@@ -172,7 +172,7 @@ public class BuildingMaterialFormController {
         String MaterialPrice = txtMaterialPrice.getText();
         String MaterialQty = txtMaterialQty.getText();
 
-        BuildingMaterial buildingMaterial = new BuildingMaterial(MaterialId, MaterialDesc, MaterialType, MaterialPrice, MaterialQty);
+        BuildingMaterial buildingMaterial = new BuildingMaterial(MaterialId, MaterialDesc, MaterialType, MaterialPrice, MaterialQty, "null");
         try {
             boolean isUpdated = BuildingMaterialRepo.update(buildingMaterial);
             if (isUpdated) {

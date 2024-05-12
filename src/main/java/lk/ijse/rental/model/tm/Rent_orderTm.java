@@ -13,6 +13,6 @@ public class Rent_orderTm {
     private String colOrderId;
     private Date colOrderDate;
     private Date colReturnDate;
-    private String colCEmail;
+    private String colCEmail1;
     private double colTotal;
 }

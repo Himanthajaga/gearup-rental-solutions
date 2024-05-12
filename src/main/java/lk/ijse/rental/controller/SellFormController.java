@@ -9,16 +9,19 @@ import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import lk.ijse.rental.db.DbConnection;
 import lk.ijse.rental.model.*;
 import lk.ijse.rental.model.tm.TblMaterialcartTm;
 import lk.ijse.rental.repository.*;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class SellFormController {
     @FXML
@@ -56,7 +59,8 @@ public class SellFormController {
 
     @FXML
     private TableColumn<?, ?> colUnitPrice;
-
+    @FXML
+    private JFXButton btnPrintBill;
     @FXML
     private Label lblCustomerName;
 
@@ -109,7 +113,25 @@ public class SellFormController {
 
         }
     }
+    @FXML
+    void btnPrintBillOnAction(ActionEvent event) throws JRException, SQLException, ClassNotFoundException {
+        JasperDesign jasperDesign =
+                JRXmlLoader.load("src/main/resources/reports/RentOrderReport.jrxml");
+        JasperReport jasperReport =
+                JasperCompileManager.compileReport(jasperDesign);
 
+        Map<String, Object> data = new HashMap<>();
+        data.put("OrderID",lblSellId.getLabelFor());
+        data.put("NetTotal",lblNetTotal.getText());
+
+        JasperPrint jasperPrint =
+                JasperFillManager.fillReport(
+                        jasperReport,
+                        data,
+                        DbConnection.getInstance().getConnection());
+
+        JasperViewer.viewReport(jasperPrint,false);
+    }
     private void getCustomerIds() {
         ObservableList<String> obList = FXCollections.observableArrayList();
 
@@ -144,14 +166,20 @@ public class SellFormController {
     }
 
     private String nextId(String currentId) {
-        if (currentId != null) {
-            String[] split = currentId.split("O");
-//            System.out.println("Arrays.toString(split) = " + Arrays.toString(split));
-            int id = Integer.parseInt(split[1],10);    //2
-            return "S" + ++id;
-
+        if (currentId == null) {
+            return "SE001";
         }
-        return "O1";
+        int maxId = Integer.parseInt(currentId.replace("SE", ""));
+        maxId = maxId + 1;
+        String id = "";
+        if (maxId < 10) {
+            id = "SE00" + maxId;
+        } else if (maxId < 100) {
+            id = "SE0" + maxId;
+        } else {
+            id = "SE" + maxId;
+        }
+        return id;
     }
 
     private void setCellValueFactory() {

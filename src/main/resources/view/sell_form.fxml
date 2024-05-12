@@ -12,7 +12,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="605.0" prefWidth="1048.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.rental.controller.SellFormController">
    <children>
       <Text layoutX="46.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sell Building Material">
@@ -148,5 +147,10 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
+      <JFXButton fx:id="btnPrintBill" buttonType="RAISED" layoutX="53.0" layoutY="549.0" onAction="#btnPrintBillOnAction" prefHeight="43.0" prefWidth="170.0" style="-fx-background-color: #44bd32;" text="Print Bill" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

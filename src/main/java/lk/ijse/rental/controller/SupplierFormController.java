@@ -5,14 +5,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import lk.ijse.rental.model.Supplier;
 import lk.ijse.rental.model.tm.SupplierTm;
 import lk.ijse.rental.qrGenerate.QrcodeForMachine;
 import lk.ijse.rental.repository.SupplierRepo;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +31,9 @@ public class SupplierFormController {
     private JFXButton btnDeleteSupplier;
 
     @FXML
+    private JFXButton btnPaySupplier;
+
+    @FXML
     private JFXButton btnSaveSupplier;
 
     @FXML
@@ -34,6 +41,9 @@ public class SupplierFormController {
 
     @FXML
     private TableColumn<?, ?> colSupplierAddress;
+
+    @FXML
+    private TableColumn<?, ?> colSupplierEmail;
 
     @FXML
     private TableColumn<?, ?> colSupplierId;
@@ -45,10 +55,16 @@ public class SupplierFormController {
     private TableColumn<?, ?> colSupplierTele;
 
     @FXML
+    private AnchorPane paneholder;
+
+    @FXML
     private TableView<SupplierTm> tblSupplier;
 
     @FXML
     private TextField txtSupplierAdddress;
+
+    @FXML
+    private TextField txtSupplierEmail;
 
     @FXML
     private TextField txtSupplierId;
@@ -68,12 +84,20 @@ public class SupplierFormController {
         loadSupplierTable();
     }
 
+    @FXML
+    void btnPaySupplierOnAction(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/payment_form.fxml"));
+        Pane registePane = (Pane) fxmlLoader.load();
+        paneholder.getChildren().clear();
+        paneholder.getChildren().add(registePane);
 
+    }
     private void setCellValueFactory() {
         colSupplierId.setCellValueFactory(new PropertyValueFactory<>("colSupplierId"));
         colSupplierName.setCellValueFactory(new PropertyValueFactory<>("colSupplierName"));
         colSupplierAddress.setCellValueFactory(new PropertyValueFactory<>("colSupplierAddress"));
         colSupplierTele.setCellValueFactory(new PropertyValueFactory<>("colSupplierTele"));
+        colSupplierEmail.setCellValueFactory(new PropertyValueFactory<>("colSupplierEmail"));
 
 
 
@@ -88,7 +112,8 @@ public class SupplierFormController {
                     supplier.getS_id(),
                     supplier.getS_name(),
                     supplier.getS_address(),
-                    supplier.getS_tel()
+                    supplier.getS_tel(),
+                    supplier.getS_email()
 
 
 
@@ -137,8 +162,9 @@ public class SupplierFormController {
         String s_name = txtSupplierName.getText();
         String s_address = txtSupplierAdddress.getText();
         String s_tel = txtSupplierTele.getText();
+        String s_email = txtSupplierEmail.getText();
 
-        Supplier supplier = new Supplier(s_id, s_name, s_address, s_tel);
+        Supplier supplier = new Supplier(s_id, s_name, s_address, s_tel,s_email);
         try {
                 boolean isSaved = SupplierRepo.save(supplier);
                 if (isSaved) {
@@ -192,8 +218,9 @@ public class SupplierFormController {
         String name = txtSupplierName.getText();
         String address = txtSupplierAdddress.getText();
         String tel = txtSupplierTele.getText();
+        String email = txtSupplierEmail.getText();
 
-        Supplier supplier = new Supplier(id, name, address, tel);
+        Supplier supplier = new Supplier(id, name, address, tel,email);
 
         try {
             boolean isUpdated = SupplierRepo.update(supplier);
@@ -239,6 +266,16 @@ public class SupplierFormController {
 
         }else{
             removeError(txtSupplierTele);
+        }
+    }
+
+    public void txtSupplierEmailreleasedonAction(KeyEvent keyEvent) {
+        Pattern idPattern = Pattern.compile("^([A-z])([A-z0-9.]){1,}[@]([A-z0-9]){1,10}[.]([A-z]){2,5}$");
+        if (!idPattern.matcher(txtSupplierEmail.getText()).matches()) {
+            addError(txtSupplierEmail);
+
+        }else{
+            removeError(txtSupplierEmail);
         }
     }
 }

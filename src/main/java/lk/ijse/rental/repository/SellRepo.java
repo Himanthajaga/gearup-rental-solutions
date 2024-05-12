@@ -12,7 +12,8 @@ import java.util.List;
 
 public class SellRepo {
     public static String currentId() throws SQLException, ClassNotFoundException {
-        String sql = "SELECT se_id FROM sell ORDER BY se_id desc LIMIT 1";
+        String sql = "SELECT se_id FROM sell ORDER BY CAST(SUBSTRING(se_id, 2) AS UNSIGNED) desc LIMIT 1";
+
 
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);

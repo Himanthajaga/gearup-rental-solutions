@@ -14,7 +14,7 @@ import java.util.List;
 public class BuildingMaterialRepo {
     public static boolean save(BuildingMaterial buildingMaterial) throws SQLException, ClassNotFoundException {
 //        In here you can now save your customer
-        String sql = "INSERT INTO building_material VALUES(?,?,?,?,?)";
+        String sql = "INSERT INTO building_material VALUES(?,?,?,?,?,?)";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
 
@@ -23,6 +23,7 @@ public class BuildingMaterialRepo {
         pstm.setString(3, buildingMaterial.getBm_type());
         pstm.setString(4, buildingMaterial.getBm_price());
         pstm.setString(5, buildingMaterial.getBm_qty());
+        pstm.setString(6, buildingMaterial.getS_email());
 
 
 
@@ -38,7 +39,7 @@ public class BuildingMaterialRepo {
     }
 
     public static boolean update(BuildingMaterial buildingMaterial) throws SQLException, ClassNotFoundException {
-        String sql = "UPDATE building_material SET  bm_desc = ?,bm_Type = ?,bm_price = ?,bm_amount = ? WHERE bm_id = ?";
+        String sql = "UPDATE building_material SET  bm_desc = ?,bm_Type = ?,bm_price = ?,bm_amount = ?,s_email WHERE bm_id = ?";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
@@ -48,8 +49,30 @@ public class BuildingMaterialRepo {
         pstm.setString(3, buildingMaterial.getBm_price());
         pstm.setString(4, buildingMaterial.getBm_qty());
         pstm.setObject(5, buildingMaterial.getBm_id());
-
+        pstm.setString(6, buildingMaterial.getS_email());
         return pstm.executeUpdate() > 0;
+    }
+    public static BuildingMaterial searchByEmail(String id) throws SQLException, ClassNotFoundException {
+        String sql = "SELECT * FROM building_material WHERE s_email = ?";
+        PreparedStatement pstm = DbConnection.getInstance().getConnection()
+                .prepareStatement(sql);
+
+        pstm.setObject(1,id);
+        ResultSet resultSet = pstm.executeQuery();
+
+        BuildingMaterial buildingMaterial = null;
+
+        if (resultSet.next()) {
+            String bm_id = resultSet.getString(1);
+            String bm_desc = resultSet.getString(2);
+            String bm_type = resultSet.getString(3);
+            String bm_price = resultSet.getString(4);
+            String bm_qty = resultSet.getString(5);
+            String s_email = resultSet.getString(6);
+            buildingMaterial = new BuildingMaterial(bm_id, bm_desc, bm_type, bm_price, bm_qty, s_email);
+
+        }
+        return buildingMaterial;
     }
     public static BuildingMaterial searchById(String id) throws SQLException, ClassNotFoundException {
         String sql = "SELECT * FROM building_material WHERE bm_id = ?";
@@ -67,7 +90,8 @@ public class BuildingMaterialRepo {
             String bm_type = resultSet.getString(3);
             String bm_price = resultSet.getString(4);
             String bm_qty = resultSet.getString(5);
-           buildingMaterial = new BuildingMaterial(bm_id, bm_desc, bm_type, bm_price, bm_qty);
+            String s_email = resultSet.getString(6);
+           buildingMaterial = new BuildingMaterial(bm_id, bm_desc, bm_type, bm_price, bm_qty, s_email);
 
         }
         return buildingMaterial;
@@ -98,7 +122,8 @@ public class BuildingMaterialRepo {
             String bm_type = resultSet.getString(3);
             String bm_price = resultSet.getString(4);
             String bm_qty = resultSet.getString(5);
-           BuildingMaterial buildingMaterial = new BuildingMaterial(bm_id, bm_desc, bm_type, bm_price, bm_qty);
+            String s_email = resultSet.getString(6);
+           BuildingMaterial buildingMaterial = new BuildingMaterial(bm_id, bm_desc, bm_type, bm_price, bm_qty,s_email);
 
 
             buildingMaterialList.add(buildingMaterial);

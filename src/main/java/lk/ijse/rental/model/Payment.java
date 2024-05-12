@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Payment {
     private String paymentId;
-    private String paymentAmount;
     private String paymentType;
-    private String cid;
+    private String s_email;
+    private double paymentAmount;
 
 }

@@ -12,4 +12,5 @@ public class Supplier {
     private String s_name;
     private String s_address;
     private String s_tel;
+    private String s_email;
 }

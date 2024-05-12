@@ -145,16 +145,6 @@
             <Image url="@../asserts/Icons/icons8-exit-button-480.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btnPayment" buttonType="RAISED" layoutX="14.0" layoutY="6.0" onAction="#btnPaymentOnAction" prefHeight="37.0" prefWidth="202.0" style="-fx-background-color: #2ecc71;" text="Payment" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font name="Calibri Bold" size="20.0" />
-         </font>
-      </JFXButton>
-      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="17.0" layoutY="6.0">
-         <image>
-            <Image url="@../asserts/Icons/icons8-payment-96.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="930.0" layoutY="1.0">
          <image>
             <Image url="@../asserts/Icons/icons8-clock-94.png" />
