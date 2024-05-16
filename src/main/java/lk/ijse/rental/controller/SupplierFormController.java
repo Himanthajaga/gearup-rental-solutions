@@ -57,7 +57,8 @@ public class SupplierFormController {
 
     @FXML
     private AnchorPane paneholder;
-
+    @FXML
+    private TextField txtSupplierIdnew;
     @FXML
     private TableView<SupplierTm> tblSupplier;
 
@@ -239,7 +240,7 @@ public class SupplierFormController {
 //    }
     @FXML
     void btnUpdateSupplierOnAction(ActionEvent event) {
-        String id =txtSupplierId.getText();
+        String id =txtSupplierIdnew.getText();
         String name = txtSupplierName.getText();
         String address = txtSupplierAdddress.getText();
         String tel = txtSupplierTele.getText();

@@ -61,7 +61,8 @@ public class MachineFormController {
     @FXML
     private TextField txtMachineName;
 
-
+    @FXML
+    private TextField txtMachineIdNew;
     @FXML
     private TextField txtRentalprice;
 
@@ -152,7 +153,7 @@ public class MachineFormController {
 
     @FXML
     void btnDeleteMachineOnAction(ActionEvent event) {
-        String id = txtMachineId.getText();
+        String id = txtMachineIdNew.getText();
 
         try {
             boolean isDeleted = MachineRepo.delete(id);
@@ -203,7 +204,7 @@ public class MachineFormController {
 
     @FXML
     void btnUpdateMachineOnAction(ActionEvent event) {
-        String id = txtMachineId.getText();
+        String id = txtMachineIdNew.getText();
         String name = txtMachineName.getText();
         String desc = txtDesc.getText();
         String rentalPrice = txtRentalprice.getText();

@@ -46,7 +46,8 @@ public class BuildingMaterialFormController {
 
     @FXML
     private TableColumn<?, ?> colMaterialPrice;
-
+    @FXML
+    private TextField txtMaterialIdIn;
     @FXML
     private TableColumn<?, ?> colMaterialQty;
 
@@ -144,7 +145,7 @@ public class BuildingMaterialFormController {
 
     @FXML
     void btnDeleteMaterialOnAction(ActionEvent event) {
-        String id = txtMaterialId.getText();
+        String id = txtMaterialIdIn.getText();
 
         try {
             boolean isDeleted = BuildingMaterialRepo.delete(id);
@@ -187,7 +188,7 @@ public class BuildingMaterialFormController {
 
     @FXML
     void btnUpdateMaterialOnAction(ActionEvent event) {
-        String MaterialId = txtMaterialId.getText();
+        String MaterialId = txtMaterialIdIn.getText();
         String MaterialDesc = txtMateriaDescription.getText();
         String MaterialType = txtMaterialType.getText();
         String MaterialPrice = txtMaterialPrice.getText();

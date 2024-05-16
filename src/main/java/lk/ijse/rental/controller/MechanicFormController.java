@@ -51,7 +51,8 @@ public class MechanicFormController {
 
     @FXML
     private TableColumn<?, ?> colMTele;
-
+    @FXML
+    private TextField txtMidnew;
     @FXML
     private TableView<MechanicTm> tblMechanic;
 
@@ -209,7 +210,7 @@ public class MechanicFormController {
 
     @FXML
     void btnUpdateMechanicOnAction(ActionEvent event) {
-        String id = txtMid.getText();
+        String id = txtMidnew.getText();
         String name = txtMName.getText();
         String address = txtMAddress.getText();
         String tele = txtMTele.getText();

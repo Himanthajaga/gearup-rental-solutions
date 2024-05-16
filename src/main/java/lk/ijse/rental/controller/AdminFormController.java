@@ -53,6 +53,8 @@ public class AdminFormController {
     @FXML
     private TableView<AdminTm> tblAdmin;
 
+    @FXML
+    private TextField txtAid;
 
     @FXML
     private TextField txtName;
@@ -150,7 +152,7 @@ public class AdminFormController {
 
     @FXML
     void btnDeleteAdminOnAction(ActionEvent event) {
-        String adminId = txtId.getText();
+        String adminId = txtAid.getText();
         try {
             boolean isDeleted =adminRepo.delete(adminId);
             if (isDeleted) {
@@ -193,7 +195,7 @@ public class AdminFormController {
 
     @FXML
     void btnUpdateAdminOnAction(ActionEvent event) {
-        String adminId = txtId.getText();
+        String adminId = txtAid.getText();
         String adminName = txtName.getText();
         String adminPassword = txtPassword.getText();
         String confirmPassword = txtConfirmPassword.getText();
