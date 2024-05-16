@@ -5,10 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import lk.ijse.rental.model.Mechanic;
@@ -22,6 +19,8 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 public class MechanicFormController {
+    @FXML
+    private Label txtMid;
     private List<Mechanic> mechanicList = new ArrayList<>();
     @FXML
     private JFXButton btnClear;
@@ -71,14 +70,32 @@ public class MechanicFormController {
     @FXML
     private TextField txtMTele;
 
-    @FXML
-    private TextField txtMid;
     private QrcodeForMachine qrcodeForUser = new QrcodeForMachine();
     public void initialize() {
 
         this.mechanicList=getAllMechanics();
         setCellValueFactory();
         loadMechanicTable();
+        loadNextMechanicId();
+    }
+
+    private void loadNextMechanicId() {
+        if (mechanicList.size() <= 0) {
+            txtMid.setText("ME001");
+        } else {
+            Mechanic lastMechanic = mechanicList.get(mechanicList.size() - 1);
+            String lastId = lastMechanic.getMec_id();
+            String[] split = lastId.split("ME");
+            int id = Integer.parseInt(split[1]);
+            id = id + 1;
+            if (id < 10) {
+                txtMid.setText("ME00" + id);
+            } else if (id < 100) {
+                txtMid.setText("ME0" + id);
+            } else {
+                txtMid.setText("ME" + id);
+            }
+        }
     }
 
     private void setCellValueFactory() {
@@ -131,7 +148,7 @@ public class MechanicFormController {
     }
 
     private void clearFields() {
-        txtMid.clear();
+        txtMid.setText("");
         txtMName.clear();
         txtMAddress.clear();
         txtMTele.clear();
@@ -144,7 +161,7 @@ public class MechanicFormController {
 
     @FXML
     void btnDeleteMechanicOnAction(ActionEvent event) {
-        String id = txtMid.getText();
+        String id =txtMName.getText();
         try {
             boolean isDeleted = MechanicRepo.delete(id);
             if (isDeleted) {
@@ -168,6 +185,10 @@ public class MechanicFormController {
         String tele = txtMTele.getText();
         String desc = txtMDescription.getText();
         String salary = txtMSalary.getText();
+        if (id.trim().isEmpty() || name.trim().isEmpty() || address.trim().isEmpty() || tele.trim().isEmpty() || desc.trim().isEmpty() || salary.trim().isEmpty()) {
+            new Alert(Alert.AlertType.WARNING, "Please fill all fields").show();
+            return;
+        }
 
         Mechanic mechanic = new Mechanic(id, name, address, tele, desc, salary);
         try {
@@ -240,16 +261,16 @@ public class MechanicFormController {
         }
     }
 
-    @FXML
-    void txtMechanicIdOnReleasedOnAction(KeyEvent event) {
-        Pattern idPattern = Pattern.compile("^(ME)[0-9]{1,}$");
-        if (!idPattern.matcher(txtMid.getText()).matches()) {
-            addError(txtMid);
-
-        }else{
-            removeError(txtMid);
-        }
-    }
+//    @FXML
+//    void txtMechanicIdOnReleasedOnAction(KeyEvent event) {
+//        Pattern idPattern = Pattern.compile("^(ME)[0-9]{1,}$");
+//        if (!idPattern.matcher(txtMid.getText()).matches()) {
+//            addError(txtMid);
+//
+//        }else{
+//            removeError(txtMid);
+//        }
+//    }
 
     @FXML
     void txtMechanicNameOnReleasedOnAction(KeyEvent event) {

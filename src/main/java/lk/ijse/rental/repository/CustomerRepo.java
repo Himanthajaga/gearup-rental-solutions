@@ -34,16 +34,17 @@ public class CustomerRepo {
     }
 
     public static boolean update(Customer customer) throws SQLException, ClassNotFoundException {
-        String sql = "UPDATE customer SET c_name = ?, c_address = ?, c_tel = ?,c_id = ? WHERE c_email = ?";
+        String sql = "UPDATE customer SET c_email = ?,c_name=?,c_address = ?,c_tel = ? WHERE c_id = ?";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
+        pstm.setObject(1, customer.getC_mail());
+        pstm.setObject(2, customer.getC_name());
+        pstm.setObject(3, customer.getC_address());
+        pstm.setObject(4, customer.getC_tel());
+        pstm.setObject(5, customer.getC_id());
 
-        pstm.setObject(1, customer.getC_name());
-        pstm.setObject(2, customer.getC_address());
-        pstm.setObject(3, customer.getC_tel());
-        pstm.setObject(4, customer.getC_id());
-        pstm.setObject(5, customer.getC_mail());
+
 
         return pstm.executeUpdate() > 0;
     }
@@ -93,7 +94,7 @@ public class CustomerRepo {
     }
 
     public static boolean delete(String id) throws SQLException, ClassNotFoundException {
-        String sql = "DELETE FROM customer WHERE c_email = ?";
+        String sql = "DELETE FROM customer WHERE c_id = ?";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
 
@@ -136,6 +137,19 @@ public class CustomerRepo {
             idList.add(resultSet.getString(1));
         }
         return idList;
+    }
+
+    public static String currentId() throws SQLException, ClassNotFoundException {
+        String sql = "SELECT c_id FROM customer ORDER BY CAST(SUBSTRING(c_id, 2) AS UNSIGNED) desc LIMIT 1";
+
+        Connection connection = DbConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+
+        if (resultSet.next()) {
+            return resultSet.getString(1);
+        }
+        return null;
     }
 }
 

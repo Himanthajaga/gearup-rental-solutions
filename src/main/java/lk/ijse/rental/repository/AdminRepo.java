@@ -36,7 +36,7 @@ public class AdminRepo {
     }
 
     public boolean update(Admin admin) throws SQLException, ClassNotFoundException {
-        String sql = "UPDATE admin SET a_name = ?,a_password = ?,a_confirmPassword =?,a_email=? WHERE a_id = ?";
+        String sql = "UPDATE admin SET a_name = ?,a_password = ?,a_confirmPassword =? WHERE a_email = ?";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
@@ -46,8 +46,6 @@ public class AdminRepo {
         pstm.setObject(2, admin.getA_password());
         pstm.setObject(3, admin.getA_confirmPassword());
         pstm.setObject(4, admin.getA_email());
-        pstm.setObject(3, admin.getA_id());
-
 
         return pstm.executeUpdate() > 0;
     }
@@ -175,6 +173,20 @@ public class AdminRepo {
         }
         return idList;
     }
-}
+
+    public String getLastAdminId() throws SQLException, ClassNotFoundException {
+        String sql = "SELECT a_id FROM admin ORDER BY CAST(SUBSTRING(a_id, 2) AS UNSIGNED) desc LIMIT 1";
+
+        Connection connection = DbConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+
+        if (resultSet.next()) {
+            return resultSet.getString(1);
+        }
+        return null;
+    }
+    }
+
 
 

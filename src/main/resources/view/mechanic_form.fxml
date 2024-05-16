@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -27,7 +28,7 @@
             <TableColumn fx:id="colMSalary" prefWidth="138.0" text="Mechanic_Salary" />
          </columns>
       </TableView>
-      <JFXButton fx:id="btnUpdateMechanic" buttonType="RAISED" layoutX="331.0" layoutY="294.0" onAction="#btnUpdateMechanicOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #55E6C1;" text="      Update" textAlignment="CENTER" textFill="WHITE">
+      <JFXButton fx:id="btnUpdateMechanic" buttonType="RAISED" layoutX="331.0" layoutY="294.0" onAction="#btnUpdateMechanicOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #55E6C1;" text="        Update" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
@@ -37,31 +38,11 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnSaveMechanic" buttonType="RAISED" layoutX="77.0" layoutY="295.0" onAction="#btnSaveMechanicOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #44bd32;" text="Save" textAlignment="CENTER" textFill="WHITE">
+      <JFXButton fx:id="btnSaveMechanic" buttonType="RAISED" layoutX="77.0" layoutY="295.0" onAction="#btnSaveMechanicOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #44bd32;" text="  Save" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="77.0" layoutY="295.0">
-         <image>
-            <Image url="@../asserts/Icons/Save.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="331.0" layoutY="294.0">
-         <image>
-            <Image url="@../asserts/Icons/Update.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="784.0" layoutY="295.0">
-         <image>
-            <Image url="@../asserts/Icons/Delete.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="txtMid" layoutX="169.0" layoutY="101.0" onKeyReleased="#txtMechanicIdOnReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
-         <font>
-            <Font name="Calibri Bold" size="18.0" />
-         </font>
-      </TextField>
       <TextField fx:id="txtMAddress" layoutX="475.0" layoutY="101.0" onKeyReleased="#txtMechanicAddressOnReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
@@ -87,16 +68,11 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="556.0" layoutY="295.0" onAction="#btnClearCustomerOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #7f8c8d;" text="Clear" textAlignment="CENTER" textFill="WHITE">
+      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="556.0" layoutY="295.0" onAction="#btnClearCustomerOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #7f8c8d;" text="  Clear" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="562.0" layoutY="298.0">
-         <image>
-            <Image url="@../asserts/Icons/Clear.png" />
-         </image>
-      </ImageView>
       <Text layoutX="168.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mechanic_Id">
          <font>
             <Font name="Calibri Bold" size="18.0" />
@@ -127,5 +103,30 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </Text>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="77.0" layoutY="295.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-save%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="331.0" layoutY="294.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-update%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="784.0" layoutY="295.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-delete%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="556.0" layoutY="295.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-clearanimated.gif" />
+         </image>
+      </ImageView>
+      <Label fx:id="txtMid" layoutX="169.0" layoutY="101.0" prefHeight="40.0" prefWidth="188.0">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

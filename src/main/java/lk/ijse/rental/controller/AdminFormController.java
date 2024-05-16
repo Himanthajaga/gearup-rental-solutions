@@ -5,10 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import lk.ijse.rental.model.Admin;
@@ -23,6 +20,8 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 public class AdminFormController {
+    @FXML
+    private Label txtId;
 
     @FXML
     private JFXButton btnClear;
@@ -54,8 +53,6 @@ public class AdminFormController {
     @FXML
     private TableView<AdminTm> tblAdmin;
 
-    @FXML
-    private TextField txtId;
 
     @FXML
     private TextField txtName;
@@ -79,7 +76,30 @@ public class AdminFormController {
         this.adminList = getAllAdmins();
         setCellValueFactory();
         loadAdminTable();
+        loadNextAdminId();
     }
+
+    private void loadNextAdminId() {
+        try {
+            String lastAdminId = adminRepo.getLastAdminId();
+            if (lastAdminId != null) {
+                int id = Integer.parseInt(lastAdminId.replace("A", ""));
+                id++;
+                if (id < 10) {
+                    txtId.setText("A00" + id);
+                } else if (id < 100) {
+                    txtId.setText("A0" + id);
+                } else {
+                    txtId.setText("A" + id);
+                }
+            } else {
+                txtId.setText("A001");
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void setCellValueFactory() {
         cola_id.setCellValueFactory(new PropertyValueFactory<>("cola_id"));
         cola_name.setCellValueFactory(new PropertyValueFactory<>("cola_name"));
@@ -225,16 +245,16 @@ public class AdminFormController {
         }
     }
 
-    @FXML
-    void txtAdminIdOnreleasedOnAction(KeyEvent event) {
-        Pattern idPattern = Pattern.compile("^(A)[0-9]{1,}$");
-        if (!idPattern.matcher(txtId.getText()).matches()) {
-            addError(txtId);
-
-        }else{
-            removeError(txtId);
-        }
-    }
+//    @FXML
+//    void txtAdminIdOnreleasedOnAction(KeyEvent event) {
+//        Pattern idPattern = Pattern.compile("^(A)[0-9]{1,}$");
+//        if (!idPattern.matcher(txtId.getText()).matches()) {
+//            addError(txtId);
+//
+//        }else{
+//            removeError(txtId);
+//        }
+//    }
 
     @FXML
     void txtAdminnameOnreleasedOnAction(KeyEvent event) {

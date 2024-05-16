@@ -49,12 +49,13 @@ public class CustomerFormController {
 
     @FXML
     private TableView<CustomerTm> tblCustomer;
-
+    @FXML
+    private Label lblCId;
     @FXML
     private TextField txtAddress;
-
     @FXML
     private TextField txtCId;
+
 
     @FXML
     private TextField txtEmail;
@@ -73,6 +74,33 @@ public class CustomerFormController {
         this.customerList=getAllCustomers();
         setCellValueFactory();
         loadCustomerTable();
+        loadnextCusId();
+    }
+
+    private void loadnextCusId() {
+        try {
+            String currentId = CustomerRepo.currentId();
+            String nextId = nextId(currentId);
+
+            lblCId.setText(nextId);
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private String nextId(String currentId) {
+        if (currentId == null) {
+            return "C001";
+        }
+        int currentIdNum = Integer.parseInt(currentId.replace("C", ""));
+        currentIdNum++;
+        if (currentIdNum < 10) {
+            return "C00" + currentIdNum;
+        } else if (currentIdNum < 100) {
+            return "C0" + currentIdNum;
+        } else {
+            return "C" + currentIdNum;
+        }
     }
 
 
@@ -82,6 +110,7 @@ public class CustomerFormController {
         colAddress.setCellValueFactory(new PropertyValueFactory<>("colAddress"));
         colTelephone.setCellValueFactory(new PropertyValueFactory<>("colTelephone"));
        colCustomerId.setCellValueFactory(new PropertyValueFactory<>("colCustomerId"));
+
     }
     @FXML
     void btnClearCustomerOnAction(ActionEvent event) {
@@ -89,7 +118,7 @@ public class CustomerFormController {
     }
 
     private void clearFeilds() {
-       txtCId.setText("");
+       lblCId.setText("");
         txtName.setText("");
         txtAddress.setText("");
         txtTele.setText("");
@@ -130,7 +159,7 @@ public class CustomerFormController {
 
     @FXML
     void btnDeleteCustomerOnAction(ActionEvent event) {
-        String id = txtEmail.getText();
+        String id = txtCId.getText();
 
         try {
             boolean isDeleted = CustomerRepo.delete(id);
@@ -174,16 +203,16 @@ public class CustomerFormController {
         }
     }
 
-    @FXML
-    void txtCustomerIdReleasedOnAction(KeyEvent event) {
-        Pattern idPattern = Pattern.compile("^(C)[0-9]{1,}$");
-        if (!idPattern.matcher(txtCId.getText()).matches()) {
-            addError(txtCId);
-
-        }else{
-            removeError(txtCId);
-        }
-    }
+//    @FXML
+//    void txtCustomerIdReleasedOnAction(KeyEvent event) {
+//        Pattern idPattern = Pattern.compile("^(C)[0-9]{1,}$");
+//        if (!idPattern.matcher(txtCId.getText()).matches()) {
+//            addError(txtCId);
+//
+//        }else{
+//            removeError(txtCId);
+//        }
+//    }
 
     @FXML
     void txtCustomerNameReleasedOnAction(KeyEvent event) {
@@ -214,7 +243,7 @@ public class CustomerFormController {
         String name = txtName.getText();
         String address = txtAddress.getText();
         String tel = txtTele.getText();
-        String id = txtCId.getText();
+        String id = lblCId.getText();
 
         Customer customer= new Customer(email,name,address,tel,id);
         try {
@@ -244,7 +273,6 @@ public class CustomerFormController {
         String tel = txtTele.getText();
         String id = txtCId.getText();
 
-
         Customer customer = new Customer(email, name, address, tel, id);
 
         try {
@@ -257,6 +285,7 @@ public class CustomerFormController {
         } catch (SQLException | ClassNotFoundException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+
     }
 
     @FXML
@@ -271,7 +300,7 @@ public class CustomerFormController {
                 txtName.setText(customer.getC_name());
                 txtAddress.setText(customer.getC_address());
                 txtTele.setText(customer.getC_tel());
-               txtCId.setText(customer.getC_id());
+              lblCId.setText(customer.getC_id());
             }
         } catch (SQLException | ClassNotFoundException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();

@@ -74,5 +74,20 @@
             <Font name="Calibri Bold" size="20.0" />
          </font>
       </Text>
+      <ImageView fitHeight="37.0" fitWidth="44.0" layoutX="402.0" layoutY="279.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-lock%20login%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView layoutX="211.0" layoutY="444.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-male-user%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="44.0" layoutX="402.0" layoutY="342.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-lock%20login%20animated.gif" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

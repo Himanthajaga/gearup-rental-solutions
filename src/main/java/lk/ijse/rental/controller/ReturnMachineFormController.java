@@ -16,7 +16,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class ReturnMachineFormController {
-
+    @FXML
+    private Label lblDate;
+    @FXML
+    private Label lblMachineName;
     @FXML
     private JFXButton btnReturn;
 
@@ -28,7 +31,22 @@ public class ReturnMachineFormController {
     public void initialize() {
         //getIsavailableMachines();
         getItemCodes();
+        realTime();
     }
+
+    private void realTime() {
+        new Thread(() -> {
+            while (true) {
+                try {
+                    Thread.sleep(1000);
+                    lblDate.setText(String.valueOf(java.time.LocalDate.now()));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
     @FXML
     void btnReturnOnActionOnAction(ActionEvent event) {
         String code = cmbmachineId.getValue();
@@ -53,6 +71,7 @@ public class ReturnMachineFormController {
             if (machine != null) {
                 System.out.println(machine.getM_desc());
                 lblDescription.setText(machine.getM_desc());
+                lblMachineName.setText(machine.getM_Name());
             }
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);

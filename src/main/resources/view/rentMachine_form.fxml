@@ -99,7 +99,7 @@
             <Font name="Calibri Bold" size="22.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btnAddToCart" buttonType="RAISED" layoutX="813.0" layoutY="262.0" onAction="#btnAddToCartOnAction" prefHeight="43.0" prefWidth="170.0" style="-fx-background-color: #44bd32;" text="        Add To Cart" textAlignment="CENTER" textFill="WHITE">
+      <JFXButton fx:id="btnAddToCart" buttonType="RAISED" layoutX="813.0" layoutY="262.0" onAction="#btnAddToCartOnAction" prefHeight="43.0" prefWidth="170.0" style="-fx-background-color: #44bd32;" text="      Add To Cart" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
@@ -109,35 +109,50 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="40.0" fitWidth="37.0" layoutX="831.0" layoutY="263.0">
-         <image>
-            <Image url="@../asserts/Icons/icons8-add-to-cart-96.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="37.0" layoutX="831.0" layoutY="556.0">
-         <image>
-            <Image url="@../asserts/Icons/icons8-order-96.png" />
-         </image>
-      </ImageView>
       <JFXButton fx:id="btnPrintBill" buttonType="RAISED" layoutX="63.0" layoutY="555.0" onAction="#btnPrintBillOnAction" prefHeight="43.0" prefWidth="170.0" style="-fx-background-color: #44bd32;" text="Print Bill" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="571.0" layoutY="268.0" onAction="#btnClearCustomerOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #7f8c8d;" text="Clear" textAlignment="CENTER" textFill="WHITE">
+      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="571.0" layoutY="268.0" onAction="#btnClearCustomerOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #7f8c8d;" text="  Clear" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="577.0" layoutY="271.0">
+      <JFXButton fx:id="btnQrScan" buttonType="RAISED" layoutX="23.0" layoutY="66.0" onAction="#btnQrScanlOnAction" prefHeight="35.0" prefWidth="128.0" style="-fx-background-color: #a29bfe;" text="         QR Scan" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="43.0" fitWidth="40.0" layoutX="812.0" layoutY="262.0">
          <image>
-            <Image url="@../asserts/Icons/Clear.png" />
+            <Image url="@../asserts/animated%20icons/icons8-add-to-cart%20animated.gif" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btnQrScan" buttonType="RAISED" layoutX="23.0" layoutY="102.0" onAction="#btnQrScanlOnAction" prefHeight="35.0" prefWidth="128.0" style="-fx-background-color: #a29bfe;" text="QR Scan" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font name="Calibri Bold" size="18.0" />
-         </font>
-      </JFXButton>
+      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="23.0" layoutY="66.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-qr-code%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView layoutX="63.0" layoutY="552.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-print%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="40.0" layoutX="571.0" layoutY="268.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-clearanimated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="48.0" layoutX="814.0" layoutY="553.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-paid%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView layoutX="712.0" layoutY="35.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-date%20animated.gif" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

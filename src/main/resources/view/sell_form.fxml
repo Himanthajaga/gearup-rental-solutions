@@ -67,11 +67,6 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="584.0" layoutY="280.0">
-         <image>
-            <Image url="@../asserts/Icons/Clear.png" />
-         </image>
-      </ImageView>
       <JFXButton fx:id="btnAddToCart" buttonType="RAISED" layoutX="793.0" layoutY="277.0" onAction="#btnAddToCartOnAction" prefHeight="43.0" prefWidth="170.0" style="-fx-background-color: #44bd32;" text="        Add To Cart" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
@@ -82,16 +77,6 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="40.0" fitWidth="37.0" layoutX="806.0" layoutY="279.0">
-         <image>
-            <Image url="@../asserts/Icons/icons8-add-to-cart-96.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="37.0" layoutX="810.0" layoutY="552.0">
-         <image>
-            <Image url="@../asserts/Icons/icons8-order-96.png" />
-         </image>
-      </ImageView>
       <TextField fx:id="txtMaterialQty" layoutX="71.0" layoutY="257.0" prefHeight="40.0" prefWidth="188.0" promptText="Material_Qty">
          <font>
             <Font name="Calibri Bold" size="18.0" />
@@ -127,12 +112,12 @@
             <Font name="Calibri Bold" size="22.0" />
          </font>
       </Label>
-      <Label layoutX="669.0" layoutY="49.0" text="Sell date:">
+      <Label layoutX="735.0" layoutY="35.0" text="Sell date:">
          <font>
             <Font name="Calibri Bold" size="22.0" />
          </font>
       </Label>
-      <Label fx:id="lblOrderDate" layoutX="776.0" layoutY="48.0" prefHeight="30.0" prefWidth="128.0">
+      <Label fx:id="lblOrderDate" layoutX="842.0" layoutY="34.0" prefHeight="30.0" prefWidth="128.0">
          <font>
             <Font name="Calibri Bold" size="22.0" />
          </font>
@@ -152,5 +137,30 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
+      <ImageView fitHeight="43.0" fitWidth="40.0" layoutX="793.0" layoutY="277.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-add-to-cart%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView layoutX="53.0" layoutY="545.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-print%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="40.0" layoutX="578.0" layoutY="277.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-clearanimated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="40.0" layoutX="793.0" layoutY="549.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-paid%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView layoutX="685.0" layoutY="25.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-date%20animated.gif" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

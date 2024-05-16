@@ -6,7 +6,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -28,7 +27,7 @@
             <TableColumn fx:id="colMachineId" prefWidth="306.0" text="Machine_ID" />
          </columns>
       </TableView>
-      <JFXButton fx:id="btnUpdateBokking" buttonType="RAISED" layoutX="328.0" layoutY="311.0" onAction="#btnUpdateBokkingOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #55E6C1;" text="  Update" textAlignment="CENTER" textFill="WHITE">
+      <JFXButton fx:id="btnUpdateBokking" buttonType="RAISED" layoutX="328.0" layoutY="311.0" onAction="#btnUpdateBokkingOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #55E6C1;" text="     Update" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
@@ -43,31 +42,11 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="71.0" layoutY="311.0">
-         <image>
-            <Image url="@../asserts/Icons/Save.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="328.0" layoutY="311.0">
-         <image>
-            <Image url="@../asserts/Icons/Update.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="800.0" layoutY="314.0">
-         <image>
-            <Image url="@../asserts/Icons/Delete.png" />
-         </image>
-      </ImageView>
       <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="575.0" layoutY="311.0" onAction="#btnClearBokkingOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #7f8c8d;" text="Clear" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="581.0" layoutY="314.0">
-         <image>
-            <Image url="@../asserts/Icons/Clear.png" />
-         </image>
-      </ImageView>
       <DatePicker fx:id="txtBokkkingDate" layoutX="603.0" layoutY="107.0" prefHeight="40.0" prefWidth="189.0" promptText="Bokking_Date" />
       <JFXComboBox fx:id="cmbMachineId" layoutX="260.0" layoutY="230.0" onAction="#cmbMachineIdOnaction" prefHeight="40.0" prefWidth="189.0" />
       <Label layoutX="123.0" layoutY="182.0" text="Customer_Email">
@@ -101,15 +80,35 @@
          </font>
       </Label>
       <JFXComboBox fx:id="cmbCustomerID" layoutX="260.0" layoutY="162.0" onAction="#cmbCustomerIdOnAction" prefHeight="40.0" prefWidth="189.0" />
-      <TextField fx:id="txtBokkingId" layoutX="97.0" layoutY="107.0" onAction="#txtSearchOnAction" onKeyReleased="#txtBokkingOnReleasedOnAction" prefHeight="40.0" prefWidth="189.0">
-         <font>
-            <Font name="Calibri Bold" size="18.0" />
-         </font>
-      </TextField>
       <Text layoutX="97.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Booking_Id">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </Text>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="71.0" layoutY="311.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-save%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="328.0" layoutY="311.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-update%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="799.0" layoutY="314.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-delete%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="575.0" layoutY="311.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-clearanimated.gif" />
+         </image>
+      </ImageView>
+      <Label fx:id="txtBokkingId" layoutX="97.0" layoutY="107.0" prefHeight="40.0" prefWidth="189.0">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

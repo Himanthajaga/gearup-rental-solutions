@@ -27,7 +27,8 @@ import java.util.regex.Pattern;
 public class BokkingFormController {
     private List<Bokking> bokkingList = new ArrayList<>();
 
-
+    @FXML
+    private Label txtBokkingId;
     @FXML
     private JFXButton btnClear;
 
@@ -67,8 +68,6 @@ public class BokkingFormController {
     @FXML
     private TableView<BokkingTm> tblBokking;
 
-    @FXML
-    private TextField txtBokkingId;
 
     @FXML
     private DatePicker txtBokkkingDate;
@@ -88,6 +87,23 @@ public class BokkingFormController {
         loadBokkingTable();
         getCustomerIds();
         getMachineIds();
+        loadNextBokkingId();
+    }
+
+    private void loadNextBokkingId() {
+        try {
+            String currentId = BokkingRepo.currentId();
+            if (currentId != null) {
+                currentId = currentId.split("B")[1];
+                currentId = (Integer.parseInt(currentId) + 1) + "";
+                currentId = currentId.length() == 1 ? "B00" + currentId : currentId.length() == 2 ? "B0" + currentId : "B" + currentId;
+                txtBokkingId.setText(currentId);
+            } else {
+                txtBokkingId.setText("B001");
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void getMachineIds() {
@@ -209,16 +225,16 @@ public class BokkingFormController {
             throw new RuntimeException(e);
         }
     }
-    @FXML
-    void txtBokkingOnReleasedOnAction(KeyEvent event) {
-        Pattern idPattern = Pattern.compile("^(B)[0-9]{1,}$");
-        if (!idPattern.matcher(txtBokkingId.getText()).matches()) {
-            addError(txtBokkingId);
-
-        }else{
-            removeError(txtBokkingId);
-        }
-    }
+//    @FXML
+//    void txtBokkingOnReleasedOnAction(KeyEvent event) {
+//        Pattern idPattern = Pattern.compile("^(B)[0-9]{1,}$");
+//        if (!idPattern.matcher(txtBokkingId.getText()).matches()) {
+//            addError(txtBokkingId);
+//
+//        }else{
+//            removeError(txtBokkingId);
+//        }
+//    }
 
     private void removeError(TextField textField) {
         textField.setStyle("-fx-border-color: green; -fx-border-width: 5");
@@ -288,7 +304,7 @@ public class BokkingFormController {
     }
 
     private void clearFields() {
-        txtBokkingId.clear();
+        txtBokkingId.setText("");
         txtBokkkingDate.getEditor().clear();
         cmbCustomerID.getEditor().clear();
         cmbMachineId.getEditor().clear();

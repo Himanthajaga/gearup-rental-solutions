@@ -46,17 +46,37 @@ public class ReservationFormController {
     @FXML
     private TableView<ReservationTm> tblReservation;
 
-    @FXML
-    private TextField txtReservationId;
 
     @FXML
     private TextField txtReservationType;
+    @FXML
+    private Label txtReservationId;
     private List<Reservation> reservationList = new ArrayList<>();
     public void initialize() {
 
         this.reservationList=getAllReservations();
         setCellValueFactory();
         loadReservationTable();
+        loadNextReservationid();
+    }
+
+    private void loadNextReservationid() {
+        if (reservationList.size() <= 0) {
+            txtReservationId.setText("R001");
+        } else {
+            Reservation lastMechanic = reservationList.get(reservationList.size() - 1);
+            String lastId = lastMechanic.getR_id();
+            String[] split = lastId.split("R");
+            int id = Integer.parseInt(split[1]);
+            id = id + 1;
+            if (id < 10) {
+                txtReservationId.setText("R00" + id);
+            } else if (id < 100) {
+                txtReservationId.setText("R0" + id);
+            } else {
+                txtReservationId.setText("R" + id);
+            }
+        }
     }
 
 
@@ -171,20 +191,20 @@ public class ReservationFormController {
     }
 
     private void clearFields() {
-    txtReservationId.clear();
+    txtReservationId.setText("");
     txtReservationType.clear();
 
     }
-    @FXML
-    void txtReserReleasedOnAction(KeyEvent event) {
-        Pattern idPattern = Pattern.compile("^(R)[0-9]{1,}$");
-        if (!idPattern.matcher(txtReservationId.getText()).matches()) {
-            addError(txtReservationId);
-
-        }else{
-            removeError(txtReservationId);
-        }
-    }
+//    @FXML
+//    void txtReserReleasedOnAction(KeyEvent event) {
+//        Pattern idPattern = Pattern.compile("^(R)[0-9]{1,}$");
+//        if (!idPattern.matcher(txtReservationId.getText()).matches()) {
+//            addError(txtReservationId);
+//
+//        }else{
+//            removeError(txtReservationId);
+//        }
+//    }
 
     private void removeError(TextField txtReservationId) {
         txtReservationId.setStyle("-fx-border-color: green; -fx-border-width: 5");

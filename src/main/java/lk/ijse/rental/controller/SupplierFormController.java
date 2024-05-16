@@ -11,6 +11,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import lk.ijse.rental.model.Reservation;
 import lk.ijse.rental.model.Supplier;
 import lk.ijse.rental.model.tm.SupplierTm;
 import lk.ijse.rental.qrGenerate.QrcodeForMachine;
@@ -65,9 +66,9 @@ public class SupplierFormController {
 
     @FXML
     private TextField txtSupplierEmail;
-
     @FXML
-    private TextField txtSupplierId;
+    private Label txtSupplierId;
+
 
     @FXML
     private TextField txtSupplierName;
@@ -82,6 +83,26 @@ public class SupplierFormController {
         this.supplierList=getAllSuppliers();
         setCellValueFactory();
         loadSupplierTable();
+        loadNextSupplierId();
+    }
+
+    private void loadNextSupplierId() {
+        if (supplierList.size() <= 0) {
+            txtSupplierId.setText("S001");
+        } else {
+            Supplier lastMechanic = supplierList.get(supplierList.size() - 1);
+            String lastId = lastMechanic.getS_id();
+            String[] split = lastId.split("S");
+            int id = Integer.parseInt(split[1]);
+            id = id + 1;
+            if (id < 10) {
+                txtSupplierId.setText("S00" + id);
+            } else if (id < 100) {
+                txtSupplierId.setText("S0" + id);
+            } else {
+                txtSupplierId.setText("S" + id);
+            }
+        }
     }
 
     @FXML
@@ -140,7 +161,7 @@ public class SupplierFormController {
 
     @FXML
     void btnDeleteSupplierOnAction(ActionEvent event) {
-        String id = txtSupplierId.getText();
+        String id = txtSupplierName.getText();
         try {
             boolean isDeleted = SupplierRepo.delete(id);
             if (isDeleted) {
@@ -163,6 +184,10 @@ public class SupplierFormController {
         String s_address = txtSupplierAdddress.getText();
         String s_tel = txtSupplierTele.getText();
         String s_email = txtSupplierEmail.getText();
+        if (s_id.trim().length() == 0 || s_name.trim().length() == 0 || s_address.trim().length() == 0 || s_tel.trim().length() == 0 || s_email.trim().length() == 0) {
+            new Alert(Alert.AlertType.ERROR, "Please fill all the fields").show();
+            return;
+        }
 
         Supplier supplier = new Supplier(s_id, s_name, s_address, s_tel,s_email);
         try {
@@ -202,16 +227,16 @@ public class SupplierFormController {
         txtSupplierAdddress.setStyle("-fx-border-color: red; -fx-border-width: 5");
     }
 
-    @FXML
-    void txtSupplierIdReleasedOnAction(KeyEvent event) {
-        Pattern idPattern = Pattern.compile("^(S)[0-9]{1,}$");
-        if (!idPattern.matcher(txtSupplierId.getText()).matches()) {
-            addError(txtSupplierId);
-
-        }else{
-            removeError(txtSupplierId);
-        }
-    }
+//    @FXML
+//    void txtSupplierIdReleasedOnAction(KeyEvent event) {
+//        Pattern idPattern = Pattern.compile("^(S)[0-9]{1,}$");
+//        if (!idPattern.matcher(txtSupplierId.getText()).matches()) {
+//            addError(txtSupplierId);
+//
+//        }else{
+//            removeError(txtSupplierId);
+//        }
+//    }
     @FXML
     void btnUpdateSupplierOnAction(ActionEvent event) {
         String id =txtSupplierId.getText();
@@ -241,7 +266,7 @@ public class SupplierFormController {
     }
 
     private void clearFields() {
-        txtSupplierId.clear();
+        txtSupplierId.setText("");
         txtSupplierName.clear();
         txtSupplierAdddress.clear();
         txtSupplierTele.clear();
@@ -261,11 +286,12 @@ public class SupplierFormController {
 
     public void txtSupplierteleOnReleasedOnAction(KeyEvent keyEvent) {
         Pattern idPattern = Pattern.compile("^[0]{1}[7]{1}[01245678]{1}[0-9]{7}$");
-        if (!idPattern.matcher(txtSupplierTele.getText()).matches()) {
+        if (!idPattern.matcher(txtSupplierTele.getText()).matches())
+        {
             addError(txtSupplierTele);
-
         }else{
             removeError(txtSupplierTele);
+
         }
     }
 
@@ -273,7 +299,6 @@ public class SupplierFormController {
         Pattern idPattern = Pattern.compile("^([A-z])([A-z0-9.]){1,}[@]([A-z0-9]){1,10}[.]([A-z]){2,5}$");
         if (!idPattern.matcher(txtSupplierEmail.getText()).matches()) {
             addError(txtSupplierEmail);
-
         }else{
             removeError(txtSupplierEmail);
         }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -36,31 +37,11 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnSaveMaterial" buttonType="RAISED" layoutX="73.0" layoutY="295.0" onAction="#btnSaveMaterialOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #44bd32;" text="Save" textAlignment="CENTER" textFill="WHITE">
+      <JFXButton fx:id="btnSaveMaterial" buttonType="RAISED" layoutX="73.0" layoutY="295.0" onAction="#btnSaveMaterialOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #44bd32;" text="  Save" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="73.0" layoutY="295.0">
-         <image>
-            <Image url="@../asserts/Icons/Save.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="294.0" layoutY="295.0">
-         <image>
-            <Image url="@../asserts/Icons/Update.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="784.0" layoutY="295.0">
-         <image>
-            <Image url="@../asserts/Icons/Delete.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="txtMaterialId" layoutX="200.0" layoutY="99.0" onAction="#txtSearchOnAction" onKeyReleased="#txtMaterialIdOnReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
-         <font>
-            <Font name="Calibri Bold" size="18.0" />
-         </font>
-      </TextField>
       <TextField fx:id="txtMaterialType" layoutX="203.0" layoutY="220.0" onKeyReleased="#txtMaterialTypeOnReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
@@ -76,16 +57,11 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="532.0" layoutY="295.0" onAction="#btnClearAdminOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #7f8c8d;" text="Clear" textAlignment="CENTER" textFill="WHITE">
+      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="532.0" layoutY="295.0" onAction="#btnClearAdminOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #7f8c8d;" text="   Clear" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="538.0" layoutY="298.0">
-         <image>
-            <Image url="@../asserts/Icons/Clear.png" />
-         </image>
-      </ImageView>
       <TextField fx:id="txtMaterialQty" layoutX="438.0" layoutY="99.0" onKeyReleased="#txtMaterialQtyOnReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
@@ -116,5 +92,30 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </Text>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="73.0" layoutY="295.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-save%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="294.0" layoutY="295.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-update%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="784.0" layoutY="295.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-delete%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="532.0" layoutY="295.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-clearanimated.gif" />
+         </image>
+      </ImageView>
+      <Label fx:id="txtMaterialId" layoutX="200.0" layoutY="99.0" prefHeight="40.0" prefWidth="188.0">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

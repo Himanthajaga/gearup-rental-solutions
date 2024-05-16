@@ -55,9 +55,8 @@ public class MachineFormController {
 
     @FXML
     private TextField txtDesc;
-
     @FXML
-    private TextField txtMachineId;
+    private Label txtMachineId;
 
     @FXML
     private TextField txtMachineName;
@@ -80,8 +79,31 @@ public class MachineFormController {
         this.machineList=getAllMachines();
         setCellValueFactory();
         loadMachineTable();
+        loadNextMachineId();
     }
 
+    private void loadNextMachineId() {
+        try {
+            String lastMachineId = MachineRepo.getLastMachineId();
+
+            if (lastMachineId != null) {
+                lastMachineId = lastMachineId.split("M")[1];
+                int newId = Integer.parseInt(lastMachineId) + 1;
+
+                if (newId < 10) {
+                    txtMachineId.setText("M00" + newId);
+                } else if (newId < 100) {
+                    txtMachineId.setText("M0" + newId);
+                } else {
+                    txtMachineId.setText("M" + newId);
+                }
+            } else {
+                txtMachineId.setText("M001");
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
+    }
 
 
     private void setCellValueFactory() {
@@ -211,7 +233,7 @@ public class MachineFormController {
     }
     @FXML
     void txtSearchOnAction(ActionEvent event) {
-        String id = txtMachineId.getText();
+        String id = txtMachineName.getText();
 
         try {
             Machine machine = MachineRepo.searchById(id);
@@ -271,16 +293,16 @@ public class MachineFormController {
         }
     }
 
-    @FXML
-    void txtMachineidOnReleased(KeyEvent event) {
-        Pattern idPattern = Pattern.compile("^(M)[0-9]{1,}$");
-        if (!idPattern.matcher(txtMachineId.getText()).matches()) {
-            addError(txtMachineId);
-
-        }else{
-            removeError(txtMachineId);
-        }
-    }
+//    @FXML
+//    void txtMachineidOnReleased(KeyEvent event) {
+//        Pattern idPattern = Pattern.compile("^(M)[0-9]{1,}$");
+//        if (!idPattern.matcher(txtMachineId.getText()).matches()) {
+//            addError(txtMachineId);
+//
+//        }else{
+//            removeError(txtMachineId);
+//        }
+//    }
 
     @FXML
     void txtMachinenameOnReleased(KeyEvent event) {
@@ -295,7 +317,7 @@ public class MachineFormController {
 
     private void clearFields() {
         txtDesc.clear();
-        txtMachineId.clear();
+        txtMachineId.setText("");
         txtMachineName.clear();
         txtRentalprice.clear();
         txtisavailable.clear();

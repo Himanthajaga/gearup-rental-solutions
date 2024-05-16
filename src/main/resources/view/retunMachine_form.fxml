@@ -16,21 +16,16 @@
             <Font name="Calibri Bold" size="40.0" />
          </font>
       </Text>
-      <JFXButton fx:id="btnReturn" buttonType="RAISED" layoutX="152.0" layoutY="303.0" onAction="#btnReturnOnActionOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #44bd32;" text="Return" textAlignment="CENTER" textFill="WHITE">
+      <JFXButton fx:id="btnReturn" buttonType="RAISED" layoutX="152.0" layoutY="303.0" onAction="#btnReturnOnActionOnAction" prefHeight="43.0" prefWidth="170.0" style="-fx-background-color: #44bd32;" text="          Return" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="152.0" layoutY="303.0">
-         <image>
-            <Image url="@../asserts/Icons/Update.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="lblDescription" layoutX="650.0" layoutY="121.0" prefHeight="33.0" prefWidth="187.0">
+      <Label fx:id="lblDescription" layoutX="642.0" layoutY="174.0" prefHeight="33.0" prefWidth="187.0">
          <font>
             <Font name="Calibri Bold" size="20.0" />
          </font></Label>
-      <Text layoutX="544.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+      <Text layoutX="536.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description:">
          <font>
             <Font name="Calibri Bold" size="20.0" />
          </font>
@@ -39,6 +34,31 @@
       <Text layoutX="145.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Machine_Id">
          <font>
             <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="43.0" fitWidth="49.0" layoutX="152.0" layoutY="303.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-return%20animated.gif" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblMachineName" layoutX="668.0" layoutY="236.0" prefHeight="33.0" prefWidth="187.0">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Label>
+      <Text layoutX="536.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Machine Name:">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblDate" layoutX="594.0" layoutY="38.0" prefHeight="33.0" prefWidth="187.0">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Label>
+      <Text layoutX="544.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date:">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
          </font>
       </Text>
    </children>

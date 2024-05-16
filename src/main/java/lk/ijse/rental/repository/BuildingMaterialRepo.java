@@ -168,5 +168,18 @@ public class BuildingMaterialRepo {
         return false;
     }
 
+    public static String getLastBuildingMaterialId() throws SQLException, ClassNotFoundException {
+        String sql = "SELECT bm_id FROM building_material ORDER BY CAST(SUBSTRING(bm_id, 2) AS UNSIGNED) desc LIMIT 1";
+
+        Connection connection = DbConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+
+        if (resultSet.next()) {
+            return resultSet.getString(1);
+        }
+        return null;
+    }
 }
+
 

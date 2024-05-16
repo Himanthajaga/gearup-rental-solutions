@@ -1,7 +1,5 @@
 package lk.ijse.rental.util;
 
-import javafx.scene.paint.Paint;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -56,11 +54,9 @@ public class Regex {
 
         if (Regex.isTextFieldValid(location, String.valueOf(textField.getClass()))){
             textField.compareTo(textField.valueOf("Green"));
-            textField.compareTo(textField.valueOf("Green"));
 
             return true;
         }else {
-            textField.compareTo(textField.valueOf("Red"));
             textField.compareTo(textField.valueOf("Red"));
 
             return false;

@@ -15,6 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import lk.ijse.rental.model.BuildingMaterial;
+import lk.ijse.rental.model.Mechanic;
 import lk.ijse.rental.model.tm.BuildingMaterialTm;
 import lk.ijse.rental.qrGenerate.QrcodeForMachine;
 import lk.ijse.rental.repository.BuildingMaterialRepo;
@@ -26,6 +27,8 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 public class BuildingMaterialFormController {
+    @FXML
+    private Label txtMaterialId;
     @FXML
     private JFXButton btnClear;
 
@@ -59,8 +62,6 @@ public class BuildingMaterialFormController {
     @FXML
     private TextField txtMateriaDescription;
 
-    @FXML
-    private TextField txtMaterialId;
 
     @FXML
     private TextField txtMaterialPrice;
@@ -78,6 +79,26 @@ public class BuildingMaterialFormController {
         this.bmList = getAllBuildingMaterials();
         setCellValueFactory();
         loadBuildingMaterialTable();
+        loadNextBuildingMaterialId();
+    }
+
+    private void loadNextBuildingMaterialId() {
+        if (bmList.size() <= 0) {
+            txtMaterialId.setText("BM001");
+        } else {
+            BuildingMaterial lastMechanic = bmList.get(bmList.size() - 1);
+            String lastId = lastMechanic.getBm_id();
+            String[] split = lastId.split("BM");
+            int id = Integer.parseInt(split[1]);
+            id = id + 1;
+            if (id < 10) {
+               txtMaterialId.setText("BM00" + id);
+            } else if (id < 100) {
+                txtMaterialId.setText("BM0" + id);
+            } else {
+                txtMaterialId.setText("BM" + id);
+            }
+        }
     }
 
     private void loadBuildingMaterialTable() {
@@ -196,16 +217,16 @@ public class BuildingMaterialFormController {
         }
     }
 
-    @FXML
-    void txtMaterialIdOnReleasedOnAction(KeyEvent event) {
-        Pattern idPattern = Pattern.compile("^(BM)[0-9]{1,}$");
-        if (!idPattern.matcher(txtMaterialId.getText()).matches()) {
-            addError(txtMaterialId);
-
-        }else{
-            removeError(txtMaterialId);
-        }
-    }
+//    @FXML
+//    void txtMaterialIdOnReleasedOnAction(KeyEvent event) {
+//        Pattern idPattern = Pattern.compile("^(BM)[0-9]{1,}$");
+//        if (!idPattern.matcher(txtMaterialId.getText()).matches()) {
+//            addError(txtMaterialId);
+//
+//        }else{
+//            removeError(txtMaterialId);
+//        }
+//    }
 
     @FXML
     void txtMaterialPriceOnReleasedOnAction(KeyEvent event) {
@@ -273,7 +294,7 @@ public class BuildingMaterialFormController {
     }
 
     private void clearFields() {
-        txtMaterialId.clear();
+        txtMaterialId.setText("");
         txtMaterialType.clear();
         txtMateriaDescription.clear();
         txtMaterialPrice.clear();

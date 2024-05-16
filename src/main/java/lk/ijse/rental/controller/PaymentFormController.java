@@ -32,6 +32,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 public class PaymentFormController {
     private List<Payment> paymentList = new ArrayList<>();
@@ -77,7 +78,8 @@ public class PaymentFormController {
 
     @FXML
     private Label lblSupplierName;
-
+    @FXML
+    private JFXButton btnClear;
     @FXML
     private TableView<PaymentTm> tblPayment;
 
@@ -88,13 +90,29 @@ public class PaymentFormController {
 
 
     private ObservableList<TblPaymentCartTm> TblPaymentcartList = FXCollections.observableArrayList();
+
     public void initialize() {
-        this.paymentList=getALLPayments();
+        this.paymentList = getALLPayments();
         setCellValueFactory();
         loadPaymentTable();
         loadNextOrderId();
         setDate();
         getSupplierEmails();
+    }
+
+    @FXML
+    void btnClearSellBuildingMaterialOnAction(ActionEvent event) {
+        clearFields();
+    }
+
+    private void clearFields() {
+        lblSellId.setText("");
+        lblOrderDate.setText("");
+        lblMaterialId.setText("");
+        lblMaterialDescription.setText("");
+        lblSupplierName.setText("");
+        txtPaymentAmount.clear();
+        cmbCustomerEmail.setValue(null);
     }
 
     private void getSupplierEmails() {
@@ -114,6 +132,7 @@ public class PaymentFormController {
 
         }
     }
+
     @FXML
     void btnPrintBillOnAction(ActionEvent event) throws JRException, SQLException, ClassNotFoundException {
         JasperDesign jasperDesign =
@@ -122,7 +141,7 @@ public class PaymentFormController {
                 JasperCompileManager.compileReport(jasperDesign);
 
         Map<String, Object> data = new HashMap<>();
-        data.put("OrderID",lblSellId.getLabelFor());
+        data.put("OrderID", lblSellId.getLabelFor());
 
         JasperPrint jasperPrint =
                 JasperFillManager.fillReport(
@@ -130,8 +149,9 @@ public class PaymentFormController {
                         data,
                         DbConnection.getInstance().getConnection());
 
-        JasperViewer.viewReport(jasperPrint,false);
+        JasperViewer.viewReport(jasperPrint, false);
     }
+
     private void setDate() {
         LocalDate now = LocalDate.now();
         lblOrderDate.setText(String.valueOf(now));
@@ -142,11 +162,12 @@ public class PaymentFormController {
             String currentId = PaymentRepo.currentId();
             String nextId = nextId(currentId);
 
-          lblSellId.setText(nextId);
+            lblSellId.setText(nextId);
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
+
     @FXML
     void btnPaySupplierOnAction(ActionEvent event) {
         String paymentId = lblSellId.getText();
@@ -164,6 +185,7 @@ public class PaymentFormController {
             throw new RuntimeException(e);
         }
     }
+
     private String nextId(String currentId) {
         int currentIdNum = Integer.parseInt(currentId.replace("P", ""));
         currentIdNum = currentIdNum + 1;
@@ -178,14 +200,15 @@ public class PaymentFormController {
 
 
     private List<Payment> getALLPayments() {
-        List<Payment>paymentList = null;
+        List<Payment> paymentList = null;
         try {
-           paymentList = PaymentRepo.getAll();
+            paymentList = PaymentRepo.getAll();
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
         return paymentList;
     }
+
     private void setCellValueFactory() {
         colPaymentId.setCellValueFactory(new PropertyValueFactory<>("colPaymentId"));
         colPaymentType.setCellValueFactory(new PropertyValueFactory<>("colPaymentType"));
@@ -193,12 +216,13 @@ public class PaymentFormController {
         colPaymentAmount.setCellValueFactory(new PropertyValueFactory<>("colPaymentAmount"));
 
     }
+
     private void loadPaymentTable() {
 
         ObservableList<PaymentTm> tmList = FXCollections.observableArrayList();
 
         for (Payment payment : paymentList) {
-            PaymentTm paymentTm= new PaymentTm(
+            PaymentTm paymentTm = new PaymentTm(
                     payment.getPaymentId(),
                     payment.getPaymentType(),
                     payment.getS_email(),
@@ -213,6 +237,7 @@ public class PaymentFormController {
         PaymentTm selectedItem = (PaymentTm) tblPayment.getSelectionModel().getSelectedItem();
         System.out.println("selectedItem = " + selectedItem);
     }
+
     @FXML
     void cmbCustomerEmailOnAction(ActionEvent event) {
         String code = cmbCustomerEmail.getValue();
@@ -222,14 +247,39 @@ public class PaymentFormController {
             if (buildingMaterial != null) {
                 lblMaterialDescription.setText(buildingMaterial.getBm_desc());
                 lblMaterialId.setText(String.valueOf(buildingMaterial.getBm_id()));
-               lblSupplierName.setText(supplier.getS_name());
+                lblSupplierName.setText(supplier.getS_name());
             }
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
+
     @FXML
     void paymentAmountOnReleased(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^([0-9]){1,}[.]([0-9]){1,}$");
+        if (!idPattern.matcher(txtPaymentAmount.getText()).matches()) {
+            addError(txtPaymentAmount);
 
+        } else {
+            removeError(txtPaymentAmount);
+        }
+    }
+
+    private void removeError(TextField txtPaymentAmount) {
+        txtPaymentAmount.setStyle("-fx-border-color: green; -fx-border-width: 5");
+    }
+
+    private void addError(TextField txtPaymentAmount) {
+        txtPaymentAmount.setStyle("-fx-border-color: red; -fx-border-width: 5");
+    }
+
+    public void txtPaymentTypeOnReleasedOnAction(KeyEvent keyEvent) {
+        Pattern idPattern = Pattern.compile("^[a-zA-Z ]*$");
+        if (!idPattern.matcher(lblPayType.getText()).matches()) {
+            addError(lblPayType);
+
+        } else {
+            removeError(lblPayType);
+        }
     }
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -26,36 +27,21 @@
             <TableColumn fx:id="colCustomerId" prefWidth="214.0" text="Customer_Id" />
          </columns>
       </TableView>
-      <JFXButton fx:id="btnUpdateCustomer" buttonType="RAISED" layoutX="309.0" layoutY="290.0" onAction="#btnUpdateCustomerOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #55E6C1;" text="      Update" textAlignment="CENTER" textFill="WHITE">
+      <JFXButton fx:id="btnUpdateCustomer" buttonType="RAISED" layoutX="309.0" layoutY="290.0" onAction="#btnUpdateCustomerOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #55E6C1;" text="        Update" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnDeleteCustomer" buttonType="RAISED" layoutX="785.0" layoutY="290.0" onAction="#btnDeleteCustomerOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #ff5e57;" text="   Delete" textAlignment="CENTER" textFill="WHITE">
+      <JFXButton fx:id="btnDeleteCustomer" buttonType="RAISED" layoutX="785.0" layoutY="290.0" onAction="#btnDeleteCustomerOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #ff5e57;" text="     Delete" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="btnSaveCustomer" buttonType="RAISED" layoutX="73.0" layoutY="290.0" onAction="#btnSaveCustomerOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #44bd32;" text="Save" textAlignment="CENTER" textFill="WHITE">
+      <JFXButton fx:id="btnSaveCustomer" buttonType="RAISED" layoutX="73.0" layoutY="290.0" onAction="#btnSaveCustomerOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #44bd32;" text="  Save" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="80.0" layoutY="290.0">
-         <image>
-            <Image url="@../asserts/Icons/Save.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="309.0" layoutY="290.0">
-         <image>
-            <Image url="@../asserts/Icons/Update.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="785.0" layoutY="290.0">
-         <image>
-            <Image url="@../asserts/Icons/Delete.png" />
-         </image>
-      </ImageView>
       <TextField fx:id="txtEmail" layoutX="156.0" layoutY="118.0" onAction="#txtSearchOnAction" onKeyReleased="#txtCustomerEmailReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
@@ -76,21 +62,11 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </TextField>
-      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="558.0" layoutY="290.0" onAction="#btnClearCustomerOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #7f8c8d;" text="Clear" textAlignment="CENTER" textFill="WHITE">
+      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="558.0" layoutY="290.0" onAction="#btnClearCustomerOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #7f8c8d;" text="  Clear" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="564.0" layoutY="293.0">
-         <image>
-            <Image url="@../asserts/Icons/Clear.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="txtCId" layoutX="770.0" layoutY="118.0" onKeyReleased="#txtCustomerIdReleasedOnAction" prefHeight="40.0" prefWidth="188.0">
-         <font>
-            <Font name="Calibri Bold" size="18.0" />
-         </font>
-      </TextField>
       <Text layoutX="156.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer_Email">
          <font>
             <Font name="Calibri Bold" size="18.0" />
@@ -116,5 +92,31 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </Text>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="73.0" layoutY="290.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-save%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="309.0" layoutY="290.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-update%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="785.0" layoutY="290.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-delete%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="558.0" layoutY="290.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-clearanimated.gif" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblCId" layoutX="772.0" layoutY="118.0" prefHeight="40.0" prefWidth="188.0">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCId" layoutX="772.0" layoutY="166.0" prefHeight="40.0" prefWidth="188.0" />
    </children>
 </AnchorPane>

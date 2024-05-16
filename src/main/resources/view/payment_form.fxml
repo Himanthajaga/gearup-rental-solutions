@@ -33,7 +33,7 @@
             <Font name="Calibri Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="68.0" layoutY="188.0" text="Material_Id">
+      <Label layoutX="68.0" layoutY="188.0" text="Material_Id:">
          <font>
             <Font name="Calibri Bold" size="20.0" />
          </font>
@@ -48,12 +48,12 @@
             <Font name="Calibri Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="498.0" layoutY="147.0" text="Supplier_Name">
+      <Label layoutX="498.0" layoutY="147.0" text="Supplier_Name:">
          <font>
             <Font name="Calibri Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="498.0" layoutY="214.0" text="Material_Description">
+      <Label layoutX="498.0" layoutY="214.0" text="Material_Description:">
          <font>
             <Font name="Calibri Bold" size="20.0" />
          </font>
@@ -94,21 +94,41 @@
          </font>
       </Label>
       <TextField fx:id="txtPaymentAmount" layoutX="673.0" layoutY="256.0" onKeyReleased="#paymentAmountOnReleased" />
-      <JFXButton fx:id="btnPaySupplier" buttonType="RAISED" layoutX="777.0" layoutY="551.0" onAction="#btnPaySupplierOnAction" prefHeight="43.0" prefWidth="188.0" style="-fx-background-color: #60a3bc;" text="Payment" textAlignment="CENTER" textFill="WHITE">
+      <JFXButton fx:id="btnPaySupplier" buttonType="RAISED" layoutX="761.0" layoutY="551.0" onAction="#btnPaySupplierOnAction" prefHeight="43.0" prefWidth="188.0" style="-fx-background-color: #60a3bc;" text="Payment" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="789.0" layoutY="555.0">
-         <image>
-            <Image url="@../asserts/Icons/icons8-payment-96.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="lblPayType" layoutX="202.0" layoutY="240.0" />
+      <TextField fx:id="lblPayType" layoutX="202.0" layoutY="240.0" onKeyReleased="#txtPaymentTypeOnReleasedOnAction" />
       <JFXButton fx:id="btnPrintBill" buttonType="RAISED" layoutX="50.0" layoutY="551.0" onAction="#btnPrintBillOnAction" prefHeight="43.0" prefWidth="170.0" style="-fx-background-color: #44bd32;" text="Print Bill" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
+      <ImageView layoutX="632.0" layoutY="33.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-date%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView layoutX="50.0" layoutY="549.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-print%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView layoutX="761.0" layoutY="549.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-card-exchange%20animated.gif" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="834.0" layoutY="269.0" onAction="#btnClearSellBuildingMaterialOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #7f8c8d;" text="Clear" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="43.0" fitWidth="40.0" layoutX="834.0" layoutY="269.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-clearanimated.gif" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

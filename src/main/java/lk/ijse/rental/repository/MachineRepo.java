@@ -198,4 +198,18 @@ public static  String m_id;
         pstm.setString(2, code);
         return pstm.executeUpdate() > 0;
     }
-}
+
+    public static String getLastMachineId() throws SQLException, ClassNotFoundException {
+        String sql = "SELECT m_id FROM machine ORDER BY CAST(SUBSTRING(m_id, 2) AS UNSIGNED) desc LIMIT 1";
+
+        Connection connection = DbConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+
+        if (resultSet.next()) {
+            return resultSet.getString(1);
+        }
+        return null;
+    }
+    }
+

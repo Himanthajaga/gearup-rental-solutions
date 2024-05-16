@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -54,102 +55,27 @@
             <Font name="Calibri Bold" size="20.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="21.0" layoutY="416.0">
-         <image>
-            <Image url="@../asserts/Icons/icons8-attendance-96.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="IconBack" fitHeight="37.0" fitWidth="43.0" layoutX="19.0" layoutY="607.0" onMouseClicked="#IconBackOnAction" opacity="0.69">
-         <image>
-            <Image url="@../asserts/Icons/icons8-back-100.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="IconHome" fitHeight="44.0" fitWidth="51.0" layoutX="82.0" layoutY="603.0" onMouseClicked="#IconHomeOnAction">
-         <image>
-            <Image url="@../asserts/Icons/icons8-home-96.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="22.0" layoutY="519.0">
-         <image>
-            <Image url="@../asserts/Icons/icons8-logout-96.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="34.0" fitWidth="37.0" layoutX="18.0" layoutY="214.0">
-         <image>
-            <Image url="@../asserts/Icons/icons8-person-96.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="18.0" layoutY="266.0">
-         <image>
-            <Image url="@../asserts/Icons/icons8-user-96.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="17.0" layoutY="364.0">
-         <image>
-            <Image url="@../asserts/Icons/building%20material%20icion.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="22.0" layoutY="318.0">
-         <image>
-            <Image url="@../asserts/Icons/Machine%20icon.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="22.0" layoutY="464.0">
-         <image>
-            <Image url="@../asserts/Icons/mechanic%20icon.png" />
-         </image>
-      </ImageView>
       <JFXButton fx:id="btnRentMachine" buttonType="RAISED" layoutX="14.0" layoutY="60.0" onAction="#btnRentMachineOnAction" prefHeight="37.0" prefWidth="202.0" style="-fx-background-color: #2ecc71;" text="    Rent Machine" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="20.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="34.0" fitWidth="37.0" layoutX="22.0" layoutY="61.0">
-         <image>
-            <Image url="@../asserts/Icons/icons8-drill-96.png" />
-         </image>
-      </ImageView>
       <AnchorPane fx:id="paneHolder" layoutX="238.0" layoutY="32.0" prefHeight="605.0" prefWidth="1048.0" />
       <JFXButton fx:id="btnReservation" buttonType="RAISED" layoutX="14.0" layoutY="161.0" onAction="#btnReservationOnAction" prefHeight="37.0" prefWidth="202.0" style="-fx-background-color: #2ecc71;" text="   Reservation" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="20.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="21.0" layoutY="168.0">
-         <image>
-            <Image url="@../asserts/Icons/icons8-date-96.png" />
-         </image>
-      </ImageView>
       <JFXButton fx:id="btnBokking" buttonType="RAISED" layoutX="14.0" layoutY="109.0" onAction="#BtnBokkingOnAction" prefHeight="37.0" prefWidth="202.0" style="-fx-background-color: #2ecc71;" text="Booking" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="20.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="18.0" layoutY="109.0">
-         <image>
-            <Image url="@../asserts/Icons/icons8-order-96.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="708.0" layoutY="1.0">
-         <image>
-            <Image url="@../asserts/Icons/icons8-date-96.png" />
-         </image>
-      </ImageView>
       <Label fx:id="lblSetTime" layoutX="751.0" layoutY="1.0" prefHeight="37.0" prefWidth="400.0">
          <font>
             <Font name="Calibri Bold" size="25.0" />
          </font>
       </Label>
-      <ImageView fx:id="btnExit" fitHeight="44.0" fitWidth="43.0" layoutX="150.0" layoutY="603.0" onMouseClicked="#btnExitOnAction">
-         <image>
-            <Image url="@../asserts/Icons/icons8-exit-button-480.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="37.0" fitWidth="43.0" layoutX="930.0" layoutY="1.0">
-         <image>
-            <Image url="@../asserts/Icons/icons8-clock-94.png" />
-         </image>
-      </ImageView>
       <Label fx:id="lblName" layoutX="223.0" layoutY="-1.0" prefHeight="37.0" prefWidth="291.0">
          <font>
             <Font name="Calibri Bold" size="26.0" />
@@ -160,19 +86,97 @@
             <Font name="Calibri Bold" size="20.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="19.0" layoutY="561.0">
-         <image>
-            <Image url="@../asserts/Icons/icons8-dollar-banknote-48.png" />
-         </image>
-      </ImageView>
-      <JFXButton fx:id="btnReturn" buttonType="RAISED" layoutX="525.0" layoutY="2.0" onAction="#btnReturnOnActionOnAction" prefHeight="34.0" prefWidth="172.0" style="-fx-background-color: #44bd32;" text="Return" textAlignment="CENTER" textFill="WHITE">
+      <JFXButton fx:id="btnReturn" buttonType="RAISED" layoutX="14.0" layoutY="12.0" onAction="#btnReturnOnActionOnAction" prefHeight="37.0" prefWidth="202.0" style="-fx-background-color: #2ecc71;" text="Return" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="35.0" fitWidth="30.0" layoutX="541.0" layoutY="2.0">
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="13.0" layoutY="12.0">
          <image>
-            <Image url="@../asserts/Icons/Update.png" />
+            <Image url="@../asserts/animated%20icons/icons8-return%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView cache="true" fitHeight="37.0" fitWidth="37.0" layoutX="13.0" layoutY="316.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-floor-scrubber%20machine%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="13.0" layoutY="109.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-search-in-list%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="40.0" layoutX="11.0" layoutY="264.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-male-user%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="40.0" layoutX="11.0" layoutY="215.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-man%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="14.0" layoutY="464.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-mechanic%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="IconBack" fitHeight="37.0" fitWidth="40.0" layoutX="31.0" layoutY="607.0" onMouseClicked="#IconBackOnAction">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-back%20animated.gif" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="0.21" contrast="1.0" hue="-0.31" saturation="-0.09" />
+         </effect>
+      </ImageView>
+      <ImageView fx:id="IconHome" fitHeight="37.0" fitWidth="40.0" layoutX="88.0" layoutY="609.0" onMouseClicked="#IconHomeOnAction">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-home%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnExit" fitHeight="40.0" fitWidth="43.0" layoutX="149.0" layoutY="605.0" onMouseClicked="#btnExitOnAction">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-clear%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView blendMode="MULTIPLY" fitHeight="35.0" fitWidth="37.0" layoutX="714.0" layoutY="2.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-date%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView blendMode="MULTIPLY" fitHeight="30.0" fitWidth="40.0" layoutX="931.0" layoutY="3.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-time%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="14.0" layoutY="413.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-employee%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="14.0" layoutY="163.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-date%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="14.0" layoutY="565.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-sell%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="40.0" layoutX="13.0" layoutY="60.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-paid%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="40.0" layoutX="14.0" layoutY="517.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-logout212%20animated.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="13.0" layoutY="364.0">
+         <image>
+            <Image url="@../asserts/animated%20icons/icons8-machine%20animated.gif" />
          </image>
       </ImageView>
    </children>

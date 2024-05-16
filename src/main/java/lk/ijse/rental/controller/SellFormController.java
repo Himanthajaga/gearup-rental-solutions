@@ -115,22 +115,22 @@ public class SellFormController {
     }
     @FXML
     void btnPrintBillOnAction(ActionEvent event) throws JRException, SQLException, ClassNotFoundException {
-        JasperDesign jasperDesign =
-                JRXmlLoader.load("src/main/resources/reports/RentOrderReport.jrxml");
-        JasperReport jasperReport =
-                JasperCompileManager.compileReport(jasperDesign);
-
-        Map<String, Object> data = new HashMap<>();
-        data.put("OrderID",lblSellId.getLabelFor());
-        data.put("NetTotal",lblNetTotal.getText());
-
-        JasperPrint jasperPrint =
-                JasperFillManager.fillReport(
-                        jasperReport,
-                        data,
-                        DbConnection.getInstance().getConnection());
-
-        JasperViewer.viewReport(jasperPrint,false);
+//        JasperDesign jasperDesign =
+//                JRXmlLoader.load("src/main/resources/reports/RentOrderReport.jrxml");
+//        JasperReport jasperReport =
+//                JasperCompileManager.compileReport(jasperDesign);
+//
+//        Map<String, Object> data = new HashMap<>();
+//        data.put("OrderID",lblSellId.getLabelFor());
+//        data.put("NetTotal",lblNetTotal.getText());
+//
+//        JasperPrint jasperPrint =
+//                JasperFillManager.fillReport(
+//                        jasperReport,
+//                        data,
+//                        DbConnection.getInstance().getConnection());
+//
+//        JasperViewer.viewReport(jasperPrint,false);
     }
     private void getCustomerIds() {
         ObservableList<String> obList = FXCollections.observableArrayList();
@@ -166,20 +166,16 @@ public class SellFormController {
     }
 
     private String nextId(String currentId) {
-        if (currentId == null) {
-            return "SE001";
-        }
-        int maxId = Integer.parseInt(currentId.replace("SE", ""));
-        maxId = maxId + 1;
-        String id = "";
-        if (maxId < 10) {
-            id = "SE00" + maxId;
-        } else if (maxId < 100) {
-            id = "SE0" + maxId;
-        } else {
-            id = "SE" + maxId;
-        }
-        return id;
+           int currentIdNum = Integer.parseInt(currentId.replace("S", ""));
+            currentIdNum = currentIdNum + 1;
+
+            if (currentIdNum < 10) {
+                return "S00" + currentIdNum;
+            } else if (currentIdNum < 100) {
+                return "S0" + currentIdNum;
+            } else {
+                return "S" + currentIdNum;
+            }
     }
 
     private void setCellValueFactory() {
