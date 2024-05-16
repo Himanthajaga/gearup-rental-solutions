@@ -92,30 +92,30 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </Text>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="101.0" layoutY="281.0">
-         <image>
-            <Image url="@../asserts/animated%20icons/icons8-save%20animated.gif" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="335.0" layoutY="281.0">
-         <image>
-            <Image url="@../asserts/animated%20icons/icons8-update%20animated.gif" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="754.0" layoutY="281.0">
-         <image>
-            <Image url="@../asserts/animated%20icons/icons8-delete%20animated.gif" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="560.0" layoutY="281.0">
-         <image>
-            <Image url="@../asserts/animated%20icons/icons8-clearanimated.gif" />
-         </image>
-      </ImageView>
       <Label fx:id="txtMachineId" layoutX="147.0" layoutY="87.0" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </Label>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="101.0" layoutY="282.0">
+         <image>
+            <Image url="@../asserts/Icons/Save.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="337.0" layoutY="283.0">
+         <image>
+            <Image url="@../asserts/Icons/Update.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="762.0" layoutY="283.0">
+         <image>
+            <Image url="@../asserts/Icons/Delete.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="568.0" layoutY="283.0">
+         <image>
+            <Image url="@../asserts/Icons/Clear.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

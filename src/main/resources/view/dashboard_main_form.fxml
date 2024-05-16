@@ -91,36 +91,6 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="13.0" layoutY="12.0">
-         <image>
-            <Image url="@../asserts/animated%20icons/icons8-return%20animated.gif" />
-         </image>
-      </ImageView>
-      <ImageView cache="true" fitHeight="37.0" fitWidth="37.0" layoutX="13.0" layoutY="316.0">
-         <image>
-            <Image url="@../asserts/animated%20icons/icons8-floor-scrubber%20machine%20animated.gif" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="13.0" layoutY="109.0">
-         <image>
-            <Image url="@../asserts/animated%20icons/icons8-search-in-list%20animated.gif" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="37.0" fitWidth="40.0" layoutX="11.0" layoutY="264.0">
-         <image>
-            <Image url="@../asserts/animated%20icons/icons8-male-user%20animated.gif" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="40.0" layoutX="11.0" layoutY="215.0">
-         <image>
-            <Image url="@../asserts/animated%20icons/icons8-man%20animated.gif" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="14.0" layoutY="464.0">
-         <image>
-            <Image url="@../asserts/animated%20icons/icons8-mechanic%20animated.gif" />
-         </image>
-      </ImageView>
       <ImageView fx:id="IconBack" fitHeight="37.0" fitWidth="40.0" layoutX="31.0" layoutY="607.0" onMouseClicked="#IconBackOnAction">
          <image>
             <Image url="@../asserts/animated%20icons/icons8-back%20animated.gif" />
@@ -139,44 +109,74 @@
             <Image url="@../asserts/animated%20icons/icons8-clear%20animated.gif" />
          </image>
       </ImageView>
-      <ImageView blendMode="MULTIPLY" fitHeight="35.0" fitWidth="37.0" layoutX="714.0" layoutY="2.0">
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="23.0" layoutY="161.0">
          <image>
-            <Image url="@../asserts/animated%20icons/icons8-date%20animated.gif" />
+            <Image url="@../asserts/Icons/icons8-order-96.png" />
          </image>
       </ImageView>
-      <ImageView blendMode="MULTIPLY" fitHeight="30.0" fitWidth="40.0" layoutX="931.0" layoutY="3.0">
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="23.0" layoutY="214.0">
          <image>
-            <Image url="@../asserts/animated%20icons/icons8-time%20animated.gif" />
+            <Image url="@../asserts/Icons/icons8-person-96.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="14.0" layoutY="413.0">
+      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="23.0" layoutY="13.0">
          <image>
-            <Image url="@../asserts/animated%20icons/icons8-employee%20animated.gif" />
+            <Image url="@../asserts/Icons/icons8-return-100.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="14.0" layoutY="163.0">
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="23.0" layoutY="60.0">
          <image>
-            <Image url="@../asserts/animated%20icons/icons8-date%20animated.gif" />
+            <Image url="@../asserts/Icons/Machine%20icon.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="14.0" layoutY="565.0">
+      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="23.0" layoutY="266.0">
          <image>
-            <Image url="@../asserts/animated%20icons/icons8-sell%20animated.gif" />
+            <Image url="@../asserts/Icons/icons8-attendance-96.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="37.0" fitWidth="40.0" layoutX="13.0" layoutY="60.0">
+      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="714.0" layoutY="1.0">
          <image>
-            <Image url="@../asserts/animated%20icons/icons8-paid%20animated.gif" />
+            <Image url="@../asserts/Icons/icons8-date-96.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="37.0" fitWidth="40.0" layoutX="14.0" layoutY="517.0">
+      <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="931.0" layoutY="3.0">
          <image>
-            <Image url="@../asserts/animated%20icons/icons8-logout212%20animated.gif" />
+            <Image url="@../asserts/Icons/icons8-clocwswk-94.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="13.0" layoutY="364.0">
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="21.0" layoutY="565.0">
          <image>
-            <Image url="@../asserts/animated%20icons/icons8-machine%20animated.gif" />
+            <Image url="@../asserts/Icons/payment.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="23.0" layoutY="109.0">
+         <image>
+            <Image url="@../asserts/Icons/icons8-date-96.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="20.0" layoutY="365.0">
+         <image>
+            <Image url="@../asserts/Icons/building%20material%20icion.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="23.0" layoutY="465.0">
+         <image>
+            <Image url="@../asserts/Icons/mechanic%20icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="37.0" layoutX="25.0" layoutY="317.0">
+         <image>
+            <Image url="@../asserts/Icons/icons8-drill-96.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="20.0" layoutY="517.0">
+         <image>
+            <Image url="@../asserts/Icons/icons8-logout-96.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="21.0" layoutY="413.0">
+         <image>
+            <Image url="@../asserts/Icons/icons8-admin-48.png" />
          </image>
       </ImageView>
    </children>

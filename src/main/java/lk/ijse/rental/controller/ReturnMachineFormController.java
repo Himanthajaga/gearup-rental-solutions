@@ -1,6 +1,8 @@
 package lk.ijse.rental.controller;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,8 +11,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.util.Duration;
 import lk.ijse.rental.model.Machine;
 import lk.ijse.rental.repository.MachineRepo;
+import lk.ijse.rental.util.DateTimeUtil;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -35,16 +39,10 @@ public class ReturnMachineFormController {
     }
 
     private void realTime() {
-        new Thread(() -> {
-            while (true) {
-                try {
-                    Thread.sleep(1000);
-                    lblDate.setText(String.valueOf(java.time.LocalDate.now()));
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> lblDate.setText(DateTimeUtil.timenow())));
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+       lblDate.setText(DateTimeUtil.dateNow());
     }
 
     @FXML

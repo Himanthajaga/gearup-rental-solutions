@@ -103,13 +103,12 @@ public class RentMachineFormController {
     @FXML
     void btnPrintBillOnAction(ActionEvent event) throws JRException, SQLException, ClassNotFoundException {
         JasperDesign jasperDesign =
-                JRXmlLoader.load("src/main/resources/reports/RentOrderReport.jrxml");
+                JRXmlLoader.load("src/main/resources/reports/order.jrxml");
         JasperReport jasperReport =
                 JasperCompileManager.compileReport(jasperDesign);
 
         Map<String, Object> data = new HashMap<>();
         data.put("OrderID",lblOrderId.getLabelFor());
-        data.put("NetTotal",lblNetTotal.getText());
 
         JasperPrint jasperPrint =
                 JasperFillManager.fillReport(

@@ -12,11 +12,14 @@ import lk.ijse.rental.model.Customer;
 import lk.ijse.rental.model.tm.CustomerTm;
 import lk.ijse.rental.qrGenerate.QrcodeForMachine;
 import lk.ijse.rental.repository.CustomerRepo;
+import lk.ijse.rental.util.Regex;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
+
+import static lk.ijse.rental.util.Regex.*;
 
 public class CustomerFormController {
 
@@ -227,7 +230,7 @@ public class CustomerFormController {
 
     @FXML
     void txtCustomerTeleReleasedOnAction(KeyEvent event) {
-        Pattern idPattern = Pattern.compile("^[0]{1}[7]{1}[01245678]{1}[0-9]{7}$");
+        Pattern idPattern = Pattern.compile("^[0-9]{10}$");
         if (!idPattern.matcher(txtTele.getText()).matches()) {
             addError(txtTele);
 
@@ -262,7 +265,9 @@ public class CustomerFormController {
         }
     }
 
-
+//    private boolean isValid() {
+//
+//    }
 
 
     @FXML
