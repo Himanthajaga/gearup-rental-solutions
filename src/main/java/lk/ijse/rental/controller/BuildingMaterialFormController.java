@@ -307,4 +307,13 @@ public class BuildingMaterialFormController {
     }
 
 
+    public void IdReleased(KeyEvent keyEvent) {
+        Pattern idPattern = Pattern.compile("^(BM)[0-9]{1,}$");
+        if (!idPattern.matcher(txtMaterialIdIn.getText()).matches()) {
+            addError(txtMaterialIdIn);
+
+        }else{
+            removeError(txtMaterialIdIn);
+        }
+    }
 }

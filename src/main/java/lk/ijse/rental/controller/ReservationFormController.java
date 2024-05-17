@@ -229,4 +229,13 @@ public class ReservationFormController {
         }
     }
 
+    public void relesed(KeyEvent keyEvent) {
+        Pattern idPattern = Pattern.compile("^(R)[0-9]{1,}$");
+        if (!idPattern.matcher(txtReservationIdnew.getText()).matches()) {
+            addError(txtReservationIdnew);
+
+        }else{
+            removeError(txtReservationIdnew);
+        }
+    }
 }

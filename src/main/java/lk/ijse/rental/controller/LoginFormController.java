@@ -100,6 +100,7 @@ public class LoginFormController {
         }
     }
     private void addError(TextField textField) {
+
         textField.setStyle("-fx-border-color: red; -fx-border-width: 5");
     }
 

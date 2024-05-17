@@ -72,9 +72,10 @@ public class MechanicFormController {
     private TextField txtMTele;
 
     private QrcodeForMachine qrcodeForUser = new QrcodeForMachine();
+
     public void initialize() {
 
-        this.mechanicList=getAllMechanics();
+        this.mechanicList = getAllMechanics();
         setCellValueFactory();
         loadMechanicTable();
         loadNextMechanicId();
@@ -108,14 +109,14 @@ public class MechanicFormController {
         colMSalary.setCellValueFactory(new PropertyValueFactory<>("colMSalary"));
 
 
-
     }
+
     private void loadMechanicTable() {
 
         ObservableList<MechanicTm> tmList = FXCollections.observableArrayList();
 
         for (Mechanic mechanic : mechanicList) {
-            MechanicTm machineTm= new MechanicTm(
+            MechanicTm machineTm = new MechanicTm(
                     mechanic.getMec_id(),
                     mechanic.getMec_name(),
                     mechanic.getMec_address(),
@@ -145,7 +146,7 @@ public class MechanicFormController {
 
     @FXML
     void btnClearCustomerOnAction(ActionEvent event) {
-    clearFields();
+        clearFields();
     }
 
     private void clearFields() {
@@ -159,10 +160,9 @@ public class MechanicFormController {
     }
 
 
-
     @FXML
     void btnDeleteMechanicOnAction(ActionEvent event) {
-        String id =txtMName.getText();
+        String id = txtMName.getText();
         try {
             boolean isDeleted = MechanicRepo.delete(id);
             if (isDeleted) {
@@ -232,13 +232,14 @@ public class MechanicFormController {
             throw new RuntimeException(e);
         }
     }
+
     @FXML
     void txtMechanicAddressOnReleasedOnAction(KeyEvent event) {
         Pattern idPattern = Pattern.compile("^([A-z0-9]|[-/,.@+]|\\\\s){4,}$");
         if (!idPattern.matcher(txtMAddress.getText()).matches()) {
             addError(txtMAddress);
 
-        }else{
+        } else {
             removeError(txtMAddress);
         }
     }
@@ -257,7 +258,7 @@ public class MechanicFormController {
         if (!idPattern.matcher(txtMDescription.getText()).matches()) {
             addError(txtMDescription);
 
-        }else{
+        } else {
             removeError(txtMDescription);
         }
     }
@@ -279,7 +280,7 @@ public class MechanicFormController {
         if (!idPattern.matcher(txtMName.getText()).matches()) {
             addError(txtMName);
 
-        }else{
+        } else {
             removeError(txtMName);
         }
     }
@@ -290,7 +291,7 @@ public class MechanicFormController {
         if (!idPattern.matcher(txtMSalary.getText()).matches()) {
             addError(txtMSalary);
 
-        }else{
+        } else {
             removeError(txtMSalary);
         }
     }
@@ -301,9 +302,18 @@ public class MechanicFormController {
         if (!idPattern.matcher(txtMTele.getText()).matches()) {
             addError(txtMTele);
 
-        }else{
+        } else {
             removeError(txtMTele);
         }
     }
 
+    public void keyReleased(KeyEvent keyEvent) {
+        Pattern idPattern = Pattern.compile("^(ME)[0-9]{1,}$");
+        if (!idPattern.matcher(txtMidnew.getText()).matches()) {
+            addError(txtMidnew);
+
+        } else {
+            removeError(txtMidnew);
+        }
+    }
 }

@@ -117,6 +117,6 @@
             <Image url="@../asserts/Icons/Clear.png" />
          </image>
       </ImageView>
-      <TextField fx:id="txtMaterialIdIn" layoutX="203.0" layoutY="147.0" prefHeight="40.0" prefWidth="171.0" />
+      <TextField fx:id="txtMaterialIdIn" layoutX="203.0" layoutY="147.0" onKeyReleased="#IdReleased" prefHeight="40.0" prefWidth="171.0" />
    </children>
 </AnchorPane>

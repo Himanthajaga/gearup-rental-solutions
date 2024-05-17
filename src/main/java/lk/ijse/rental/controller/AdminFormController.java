@@ -283,6 +283,16 @@ public class AdminFormController {
             removeError(txtPassword);
         }
     }
+
+    public void idReleased(KeyEvent keyEvent) {
+        Pattern idPattern = Pattern.compile("^(A)[0-9]{1,}$");
+        if (!idPattern.matcher(txtAid.getText()).matches()) {
+            addError(txtAid);
+
+        }else{
+            removeError(txtAid);
+        }
     }
+}
 
 

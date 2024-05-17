@@ -329,4 +329,13 @@ public class MachineFormController {
 
     }
 
+    public void idreleased(KeyEvent keyEvent) {
+        Pattern idPattern = Pattern.compile("^(M)[0-9]{1,}$");
+        if (!idPattern.matcher(txtMachineIdNew.getText()).matches()) {
+            addError(txtMachineIdNew);
+
+        }else{
+            removeError(txtMachineIdNew);
+        }
+    }
 }

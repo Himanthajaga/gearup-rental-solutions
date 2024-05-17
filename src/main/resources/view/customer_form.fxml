@@ -97,7 +97,7 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="txtCId" layoutX="772.0" layoutY="166.0" prefHeight="40.0" prefWidth="188.0" />
+      <TextField fx:id="txtCId" layoutX="772.0" layoutY="166.0" onKeyReleased="#idReleased" prefHeight="40.0" prefWidth="188.0" />
       <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="77.0" layoutY="290.0">
          <image>
             <Image url="@../asserts/Icons/Save.png" />

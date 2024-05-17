@@ -304,4 +304,13 @@ public class SupplierFormController {
             removeError(txtSupplierEmail);
         }
     }
+
+    public void supllierIdReleased(KeyEvent keyEvent) {
+        Pattern idPattern = Pattern.compile("^(S)[0-9]{1,}$");
+        if (!idPattern.matcher(txtSupplierIdnew.getText()).matches()) {
+            addError(txtSupplierIdnew);
+        }else{
+            removeError(txtSupplierIdnew);
+        }
+    }
 }

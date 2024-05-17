@@ -319,4 +319,14 @@ public class CustomerFormController {
         }
 
     }
+
+    public void idReleased(KeyEvent keyEvent) {
+        Pattern idPattern = Pattern.compile("^(C)[0-9]{1,}$");
+        if (!idPattern.matcher(txtCId.getText()).matches()) {
+            addError(txtCId);
+
+        }else{
+            removeError(txtCId);
+        }
+    }
 }
