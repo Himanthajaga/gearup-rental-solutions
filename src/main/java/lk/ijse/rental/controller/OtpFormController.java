@@ -55,7 +55,7 @@ private Admin admin;
     void btnResendOnAction(ActionEvent event) throws SQLException, ClassNotFoundException {
        txtOTp.getStyleClass().removeAll("mfx-text-field-error");
         txtMassage.setVisible(false);
-        //sendOtp();
+        sendOtp();
     }
 
     @FXML
@@ -87,9 +87,10 @@ private Admin admin;
 public void setAdmin(Admin admin) {
     this.admin = admin;
 }
-//    public void sendOtp() throws SQLException, ClassNotFoundException{
-//        this.otp= EmailServiceUtil.sendMail(adminRepo.searchByEmail(admin.getEmail())
-//    }
+    public void sendOtp() throws SQLException, ClassNotFoundException{
+        this.otp= EmailServiceUtil.sendMail(admin.getA_email());
+    }
+
 
 
 }

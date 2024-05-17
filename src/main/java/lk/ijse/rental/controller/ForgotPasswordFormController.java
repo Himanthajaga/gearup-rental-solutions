@@ -58,7 +58,7 @@ public class ForgotPasswordFormController {
 
         Stage stage1 = (Stage) btnCancel.getScene().getWindow();
         stage1.close();
-        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/_form.fxml"));
+        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/otp_form.fxml"));
 
         Scene scene = new Scene(rootNode);
         Stage stage = new Stage();

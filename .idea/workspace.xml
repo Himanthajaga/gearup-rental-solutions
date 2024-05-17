@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8fd34041-7df3-4a7c-a09b-be4f07457bf2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4cc9286f-cac7-4834-a7f7-0ef67365cbea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4cc9286f-cac7-4834-a7f7-0ef67365cbea.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/AdminFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/AdminFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/BuildingMaterialFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/BuildingMaterialFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/PaymentFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/PaymentFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/RentMachineFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/RentMachineFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/BuildingMaterialRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/BuildingMaterialRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/sql/query.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/sql/query.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/building_material_form.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/building_material_form.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/ForgotPasswordFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/ForgotPasswordFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/OtpFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/controller/OtpFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/AdminRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/rental/repository/AdminRepo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +57,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/jgkin/IdeaProjects/Tea_Factory_Management_System-Layered_Architecture",
+    "last_opened_file_path": "C:/Users/jgkin/IdeaProjects/tea-craft-layered",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -222,7 +216,7 @@
       <workItem from="1715780626389" duration="1641000" />
       <workItem from="1715837374453" duration="33887000" />
       <workItem from="1715880649378" duration="1296000" />
-      <workItem from="1715916977000" duration="4603000" />
+      <workItem from="1715916977000" duration="5367000" />
     </task>
     <servers />
   </component>
