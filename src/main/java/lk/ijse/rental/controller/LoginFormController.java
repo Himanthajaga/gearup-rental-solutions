@@ -88,7 +88,10 @@ public class LoginFormController {
 
         String userId = txtuserId.getText();
         String pw = txtpassword.getText();
-
+        if (userId.trim().isEmpty() || pw.trim().isEmpty()) {
+            new Alert(Alert.AlertType.ERROR, "User ID, Password can't be empty").show();
+            return;
+        }
         try {
             checkCredential(userId, pw);
             AdminRepo.adminId = userId;
