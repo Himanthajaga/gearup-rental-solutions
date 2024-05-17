@@ -135,21 +135,21 @@ public class PaymentFormController {
 
     @FXML
     void btnPrintBillOnAction(ActionEvent event) throws JRException, SQLException, ClassNotFoundException {
-//        JasperDesign jasperDesign =
-//                JRXmlLoader.load("src/main/resources/reports/RentOrderReport.jrxml");
-//        JasperReport jasperReport =
-//                JasperCompileManager.compileReport(jasperDesign);
-//
-//        Map<String, Object> data = new HashMap<>();
-//        data.put("OrderID", lblSellId.getLabelFor());
-//
-//        JasperPrint jasperPrint =
-//                JasperFillManager.fillReport(
-//                        jasperReport,
-//                        data,
-//                        DbConnection.getInstance().getConnection());
-//
-//        JasperViewer.viewReport(jasperPrint, false);
+        JasperDesign jasperDesign =
+                JRXmlLoader.load("src/main/resources/reports/payment.jrxml");
+        JasperReport jasperReport =
+                JasperCompileManager.compileReport(jasperDesign);
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("PaymentId", lblSellId.getLabelFor());
+
+        JasperPrint jasperPrint =
+                JasperFillManager.fillReport(
+                        jasperReport,
+                        data,
+                        DbConnection.getInstance().getConnection());
+
+        JasperViewer.viewReport(jasperPrint, false);
     }
 
     private void setDate() {
