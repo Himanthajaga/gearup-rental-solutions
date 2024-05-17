@@ -175,7 +175,11 @@ public class AdminFormController {
         String confirmPassword = txtPassword.getText();
         String email = txtPassword.getText();
 
-
+        if (!Regex.idValidation(id)) {
+            new Alert(Alert.AlertType.WARNING, "Invalid Admin ID").show();
+            txtId.requestFocus();
+            return;
+        }
        Admin admin = new Admin(id, name, password,confirmPassword,email);
         try {
             boolean isAdded = adminRepo.save(admin);

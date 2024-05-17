@@ -168,7 +168,10 @@ public class BuildingMaterialFormController {
         String MaterialPrice = txtMaterialPrice.getText();
         String MaterialQty = txtMaterialQty.getText();
 
-
+        if (MaterialId.trim().isEmpty() || MaterialDesc.trim().isEmpty() || MaterialType.trim().isEmpty() || MaterialPrice.trim().isEmpty() || MaterialQty.trim().isEmpty()) {
+            new Alert(Alert.AlertType.WARNING, "Please fill all the fields").show();
+            return;
+        }
         BuildingMaterial buildingMaterial = new BuildingMaterial(MaterialId, MaterialDesc, MaterialType, MaterialPrice, MaterialQty, "null");
         try {
             boolean isAdded = BuildingMaterialRepo.save(buildingMaterial);

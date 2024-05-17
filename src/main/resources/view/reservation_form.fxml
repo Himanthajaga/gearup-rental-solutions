@@ -59,30 +59,31 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </Text>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="95.0" layoutY="281.0">
-         <image>
-            <Image url="@../asserts/animated%20icons/icons8-save%20animated.gif" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="313.0" layoutY="281.0">
-         <image>
-            <Image url="@../asserts/animated%20icons/icons8-update%20animated.gif" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="735.0" layoutY="281.0">
-         <image>
-            <Image url="@../asserts/animated%20icons/icons8-delete%20animated.gif" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="524.0" layoutY="281.0">
-         <image>
-            <Image url="@../asserts/animated%20icons/icons8-clearanimated.gif" />
-         </image>
-      </ImageView>
       <Label fx:id="txtReservationId" layoutX="139.0" layoutY="127.0" prefHeight="40.0" prefWidth="188.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </Label>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="95.0" layoutY="282.0">
+         <image>
+            <Image url="@../asserts/Icons/Save.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="312.0" layoutY="283.0">
+         <image>
+            <Image url="@../asserts/Icons/Update.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="740.0" layoutY="282.0">
+         <image>
+            <Image url="@../asserts/Icons/Delete.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="37.0" layoutX="531.0" layoutY="281.0">
+         <image>
+            <Image url="@../asserts/Icons/Clear.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtReservationIdnew" layoutX="139.0" layoutY="201.0" prefHeight="31.0" prefWidth="154.0" />
    </children>
 </AnchorPane>

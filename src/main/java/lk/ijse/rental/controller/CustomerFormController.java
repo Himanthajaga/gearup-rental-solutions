@@ -247,7 +247,10 @@ public class CustomerFormController {
         String address = txtAddress.getText();
         String tel = txtTele.getText();
         String id = lblCId.getText();
-
+        if (!isValidEmail(email)){
+            new Alert(Alert.AlertType.ERROR, "Invalid Email").show();
+            return;
+        }
         Customer customer= new Customer(email,name,address,tel,id);
         try {
             boolean isSaved = CustomerRepo.save(customer);
@@ -263,6 +266,10 @@ public class CustomerFormController {
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private boolean isValidEmail(String email) {
+        return email.matches("^([A-z])([A-z0-9.]){1,}[@]([A-z0-9]){1,10}[.]([A-z]){2,5}$");
     }
 
 //    private boolean isValid() {

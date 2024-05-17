@@ -27,7 +27,8 @@ import java.util.regex.Pattern;
 
 public class ReservationFormController {
     private JFXButton btnClear;
-
+    @FXML
+    private TextField txtReservationIdnew;
     @FXML
     private JFXButton btnDeleteReservation;
 
@@ -121,7 +122,7 @@ public class ReservationFormController {
 
     @FXML
     void btnDeleteReservationOnAction(ActionEvent event) {
-        String id = txtReservationId.getText();
+        String id = txtReservationIdnew.getText();
         try {
             boolean isDeleted = ReservationRepo.delete(id);
             if (isDeleted) {
@@ -143,7 +144,10 @@ public class ReservationFormController {
     void btnSaveReservationOnAction(ActionEvent event) {
         String id = txtReservationId.getText();
         String name = txtReservationType.getText();
-
+        if (id.trim().length() == 0 || name.trim().length() == 0) {
+            new Alert(Alert.AlertType.WARNING, "Empty Fields").show();
+            return;
+        }
         Reservation reservation = new Reservation(id, name);
         try {
             boolean isSaved = ReservationRepo.save(reservation);
@@ -164,7 +168,7 @@ public class ReservationFormController {
 
     @FXML
     void btnUpdateReservationOnAction(ActionEvent event) {
-        String id = txtReservationId.getText();
+        String id = txtReservationIdnew.getText();
         String name = txtReservationType.getText();
 
 

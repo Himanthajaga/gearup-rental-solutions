@@ -41,7 +41,7 @@ public class MechanicRepo {
     }
 
     public static boolean update(Mechanic mechanic) throws SQLException, ClassNotFoundException {
-        String sql = "UPDATE mechanic SET mec_name = ?,mec_address = ?,mec_tele = ?,mec_desc = ?,mec_salary WHERE mec_id = ?";
+        String sql = "UPDATE mechanic SET mec_name = ?,mec_address = ?,mec_tele = ?,mec_desc = ?,mec_salary=? WHERE mec_id = ?";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);

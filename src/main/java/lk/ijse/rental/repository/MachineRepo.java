@@ -79,16 +79,17 @@ public static  String m_id;
     }
 
     public static boolean update(Machine machine) throws SQLException, ClassNotFoundException {
-        String sql = "UPDATE machine SET m_id = ?, m_name = ?,m_desc = ?,m_rental_price = ?,isAvailable = ? WHERE m_id = ?";
+        String sql = "UPDATE machine SET m_name = ?,m_desc = ?,m_rental_price = ?,isAvailable = ? WHERE m_id = ?";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
 
-        pstm.setString(1, machine.getM_Id());
-        pstm.setString(2, machine.getM_Name());
-        pstm.setString(3, machine.getM_desc());
-        pstm.setString(4, machine.getM_rental_price());
-        pstm.setString(5, machine.getIsAvaiable());
+
+        pstm.setString(1, machine.getM_Name());
+        pstm.setString(2, machine.getM_desc());
+        pstm.setString(3, machine.getM_rental_price());
+        pstm.setString(4, machine.getIsAvaiable());
+        pstm.setString(5, machine.getM_Id());
         return pstm.executeUpdate() > 0;
     }
     public static List <Machine> searchIsavailable() throws SQLException, ClassNotFoundException {

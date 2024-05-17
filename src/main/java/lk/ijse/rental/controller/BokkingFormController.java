@@ -261,7 +261,10 @@ public class BokkingFormController {
         String bokkingDate = txtBokkkingDate.getValue().toString();
         String customerId = cmbCustomerID.getValue().toString();
         String machineId = cmbMachineId.getValue().toString();
-
+        if (customerId == null || machineId == null) {
+            new Alert(Alert.AlertType.WARNING, "Please select a customer and machine").show();
+            return;
+        }
         Bokking bokking = new Bokking(bokkingId, bokkingDate,customerId,machineId);
         try {
             boolean isAdded = BokkingRepo.save(bokking);

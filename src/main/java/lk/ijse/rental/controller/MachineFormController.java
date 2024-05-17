@@ -180,7 +180,10 @@ public class MachineFormController {
         String desc = txtDesc.getText();
         String rentalPrice = txtRentalprice.getText();
         String isAvailable = txtisavailable.getText();
-
+        if (id.trim().isEmpty() || name.trim().isEmpty() || desc.trim().isEmpty() || rentalPrice.trim().isEmpty() || isAvailable.trim().isEmpty()) {
+            new Alert(Alert.AlertType.ERROR, "Please fill all the fields", ButtonType.OK).show();
+            return;
+        }
 
         Machine machine = new Machine(id, name, desc, rentalPrice,isAvailable);
 
