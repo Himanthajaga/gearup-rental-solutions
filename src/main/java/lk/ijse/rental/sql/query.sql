@@ -192,13 +192,19 @@ create table order_detail(
                              foreign key (o_id) references rent_order(o_id)on update cascade on delete cascade,
                              foreign key (m_id) references machine(m_id)on update cascade on delete cascade
 );
-create table sell(
-                     se_id varchar(20)primary key,
-                     se_date date,
-                     c_email varchar(20),
-                     s_total decimal(10,2),
-                     foreign key (c_email) references customer(c_email)on update cascade on delete cascade
+CREATE TABLE sell (
+                      se_id VARCHAR(20) PRIMARY KEY,
+                      se_date DATE,
+                      c_email VARCHAR(20),
+                      s_total DECIMAL(10,2),
+                      FOREIGN KEY (c_email) REFERENCES customer(c_email) ON UPDATE CASCADE ON DELETE CASCADE
 );
+
+-- Insert data into the 'sell' table
+INSERT INTO sell (se_id, se_date, c_email, s_total) VALUES
+                                                        ("S001", "2024-03-23", "shaw123@gmail.com", 2000.00),
+                                                        ("S002", "2024-03-11", "sandu123@gmail.com", 3000.00),
+                                                        ("S003", "2024-03-04", "kavee123@gmail.com", 4000.00);
 create table sell_material(
                               se_id varchar(20),
                               bm_id varchar(20),

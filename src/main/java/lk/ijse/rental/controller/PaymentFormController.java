@@ -133,8 +133,8 @@ public class PaymentFormController {
         }
     }
 
-//    @FXML
-//    void btnPrintBillOnAction(ActionEvent event) throws JRException, SQLException, ClassNotFoundException {
+    @FXML
+    void btnPrintBillOnAction(ActionEvent event) throws JRException, SQLException, ClassNotFoundException {
 //        JasperDesign jasperDesign =
 //                JRXmlLoader.load("src/main/resources/reports/RentOrderReport.jrxml");
 //        JasperReport jasperReport =
@@ -150,7 +150,7 @@ public class PaymentFormController {
 //                        DbConnection.getInstance().getConnection());
 //
 //        JasperViewer.viewReport(jasperPrint, false);
-//    }
+    }
 
     private void setDate() {
         LocalDate now = LocalDate.now();

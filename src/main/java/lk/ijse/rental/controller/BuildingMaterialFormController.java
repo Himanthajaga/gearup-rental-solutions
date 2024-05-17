@@ -50,7 +50,8 @@ public class BuildingMaterialFormController {
     private TextField txtMaterialIdIn;
     @FXML
     private TableColumn<?, ?> colMaterialQty;
-
+    @FXML
+    private TextField txtSupplierEmail;
     @FXML
     private TableColumn<?, ?> colMaterialType;
 
@@ -167,12 +168,13 @@ public class BuildingMaterialFormController {
         String MaterialType = txtMaterialType.getText();
         String MaterialPrice = txtMaterialPrice.getText();
         String MaterialQty = txtMaterialQty.getText();
+        String SupplierEmail = txtSupplierEmail.getText();
 
         if (MaterialId.trim().isEmpty() || MaterialDesc.trim().isEmpty() || MaterialType.trim().isEmpty() || MaterialPrice.trim().isEmpty() || MaterialQty.trim().isEmpty()) {
             new Alert(Alert.AlertType.WARNING, "Please fill all the fields").show();
             return;
         }
-        BuildingMaterial buildingMaterial = new BuildingMaterial(MaterialId, MaterialDesc, MaterialType, MaterialPrice, MaterialQty, "null");
+        BuildingMaterial buildingMaterial = new BuildingMaterial(MaterialId, MaterialDesc, MaterialType, MaterialPrice, MaterialQty, SupplierEmail);
         try {
             boolean isAdded = BuildingMaterialRepo.save(buildingMaterial);
             if (isAdded) {
@@ -196,6 +198,7 @@ public class BuildingMaterialFormController {
         String MaterialType = txtMaterialType.getText();
         String MaterialPrice = txtMaterialPrice.getText();
         String MaterialQty = txtMaterialQty.getText();
+        String SupplierEmail = txtSupplierEmail.getText();
 
         BuildingMaterial buildingMaterial = new BuildingMaterial(MaterialId, MaterialDesc, MaterialType, MaterialPrice, MaterialQty, "null");
         try {
@@ -314,6 +317,16 @@ public class BuildingMaterialFormController {
 
         }else{
             removeError(txtMaterialIdIn);
+        }
+    }
+
+    public void emailreleased(KeyEvent keyEvent) {
+        Pattern idPattern = Pattern.compile("^[a-zA-Z0-9]{1,}[@][a-zA-Z]{1,}[.][a-zA-Z]{1,}$");
+        if (!idPattern.matcher(txtSupplierEmail.getText()).matches()) {
+            addError(txtSupplierEmail);
+
+        }else{
+            removeError(txtSupplierEmail);
         }
     }
 }

@@ -201,14 +201,16 @@ private void clearFields() {
     }
 
     private String nextId(String currentId) {
-        if (currentId != null) {
-            String[] split = currentId.split("O");
-//            System.out.println("Arrays.toString(split) = " + Arrays.toString(split));
-            int id = Integer.parseInt(split[1],10);    //2
-            return "O" + ++id;
+        int currentIdNum = Integer.parseInt(currentId.replace("O", ""));
+        currentIdNum = currentIdNum + 1;
 
+        if (currentIdNum < 10) {
+            return "O00" + currentIdNum;
+        } else if (currentIdNum < 100) {
+            return "O0" + currentIdNum;
+        } else {
+            return "O" + currentIdNum;
         }
-        return "O1";
     }
 
     private void setDate() {

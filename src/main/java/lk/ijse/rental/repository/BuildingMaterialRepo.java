@@ -28,6 +28,7 @@ public class BuildingMaterialRepo {
 
 
 
+
         return pstm.executeUpdate() > 0;
 
         /*int affectedRows = pstm.executeUpdate();
@@ -39,7 +40,7 @@ public class BuildingMaterialRepo {
     }
 
     public static boolean update(BuildingMaterial buildingMaterial) throws SQLException, ClassNotFoundException {
-        String sql = "UPDATE building_material SET  bm_desc = ?,bm_Type = ?,bm_price = ?,bm_amount = ? WHERE bm_id = ?";
+        String sql = "UPDATE building_material SET  bm_desc = ?,bm_Type = ?,bm_price = ?,bm_amount = ?,s_email=? WHERE bm_id = ?";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
@@ -48,7 +49,8 @@ public class BuildingMaterialRepo {
         pstm.setString(2, buildingMaterial.getBm_type());
         pstm.setString(3, buildingMaterial.getBm_price());
         pstm.setString(4, buildingMaterial.getBm_qty());
-        pstm.setObject(5, buildingMaterial.getBm_id());
+        pstm.setString(5, buildingMaterial.getS_email());
+        pstm.setObject(6, buildingMaterial.getBm_id());
         return pstm.executeUpdate() > 0;
     }
     public static BuildingMaterial searchByEmail(String id) throws SQLException, ClassNotFoundException {

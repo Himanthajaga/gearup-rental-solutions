@@ -118,5 +118,11 @@
          </image>
       </ImageView>
       <TextField fx:id="txtMaterialIdIn" layoutX="203.0" layoutY="147.0" onKeyReleased="#IdReleased" prefHeight="40.0" prefWidth="171.0" />
+      <TextField fx:id="txtSupplierEmail" layoutX="673.0" layoutY="220.0" onKeyReleased="#emailreleased" prefHeight="40.0" prefWidth="188.0" />
+      <Text layoutX="673.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier_Email">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

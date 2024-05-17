@@ -172,8 +172,8 @@ public class AdminFormController {
         String id = txtId.getText();
         String name = txtName.getText();
         String password = txtPassword.getText();
-        String confirmPassword = txtPassword.getText();
-        String email = txtPassword.getText();
+        String confirmPassword = txtConfirmPassword.getText();
+        String email = txtEmail.getText();
 
         if (!Regex.idValidation(id)) {
             new Alert(Alert.AlertType.WARNING, "Invalid Admin ID").show();
@@ -223,7 +223,7 @@ public class AdminFormController {
     }
     @FXML
     void txtAdminConfirmPasswordOnreleasedOnAction(KeyEvent event) {
-        Pattern idPattern = Pattern.compile("^[a-zA-Z ]*$");
+        Pattern idPattern = Pattern.compile("^[0-9]{1,}$");
         if (!idPattern.matcher(txtConfirmPassword.getText()).matches()) {
             addError(txtConfirmPassword);
 
@@ -275,7 +275,7 @@ public class AdminFormController {
 
     @FXML
     void txtAdminpasswordOnreleasedOnAction(KeyEvent event) {
-        Pattern idPattern = Pattern.compile("^[a-zA-Z ]*$");
+        Pattern idPattern = Pattern.compile("^[0-9]{1,}$");
         if (!idPattern.matcher(txtPassword.getText()).matches()) {
             addError(txtPassword);
 
