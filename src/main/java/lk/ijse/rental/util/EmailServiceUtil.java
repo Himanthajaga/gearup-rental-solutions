@@ -17,8 +17,8 @@ public class EmailServiceUtil {
         properties.put("mail.smtp.host", "smtp.gmail.com");
 
 
-        String user = "teacraftsolution@gmail.com";
-        String password = "vdbw vixf zvrv fwaf";
+        String user = "himanthagamachchige@gmail.com";
+        String password = "himantha@123";
 
         Session session = Session.getInstance(properties, new Authenticator() {
             @Override
