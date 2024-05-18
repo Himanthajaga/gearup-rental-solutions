@@ -169,6 +169,7 @@ public class MechanicFormController {
                 new Alert(Alert.AlertType.CONFIRMATION, "Deleted..").show();
                 mechanicList.removeIf(mechanic -> mechanic.getMec_id().equals(id));
                 loadMechanicTable();
+                clearFields();
             } else {
                 new Alert(Alert.AlertType.WARNING, "Try Again..").show();
             }

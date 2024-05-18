@@ -159,6 +159,7 @@ public class AdminFormController {
                 new Alert(Alert.AlertType.CONFIRMATION, "Deleted..").show();
                 adminList.removeIf(temp -> temp.getA_id().equals(adminId));
                 loadAdminTable();
+                clearFields();
             } else {
                 new Alert(Alert.AlertType.WARNING, "Try Again..").show();
             }

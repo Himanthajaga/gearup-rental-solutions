@@ -194,6 +194,8 @@ public class BokkingFormController {
             boolean isDeleted = BokkingRepo.delete(id);
             if (isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Bokking deleted!").show();
+                loadBokkingTable();
+                clearFields();
             }
         } catch (SQLException | ClassNotFoundException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -295,6 +297,7 @@ public class BokkingFormController {
                 new Alert(Alert.AlertType.CONFIRMATION, "Updated..").show();
                 bokkingList.add(bokking);
                 loadBokkingTable();
+                clearFields();
             } else {
                 new Alert(Alert.AlertType.WARNING, "Try Again..").show();
             }
