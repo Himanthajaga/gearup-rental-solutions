@@ -162,13 +162,14 @@ public class SupplierFormController {
 
     @FXML
     void btnDeleteSupplierOnAction(ActionEvent event) {
-        String id = txtSupplierName.getText();
+        String id = txtSupplierIdnew.getText();
         try {
             boolean isDeleted = SupplierRepo.delete(id);
             if (isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION, "supplier deleted!").show();
                 supplierList.removeIf(supplier -> supplier.getS_id().equals(id));
                 loadSupplierTable();
+                loadNextSupplierId();
                 clearFields();
             }
         } catch (SQLException | ClassNotFoundException e) {

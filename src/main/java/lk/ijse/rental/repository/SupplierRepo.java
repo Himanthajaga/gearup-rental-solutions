@@ -120,7 +120,7 @@ public class SupplierRepo {
     }
 
     public static boolean delete(String id) throws SQLException, ClassNotFoundException {
-        String sql = "DELETE FROM supplier WHERE s_name = ?";
+        String sql = "DELETE FROM supplier WHERE s_id = ?";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
 

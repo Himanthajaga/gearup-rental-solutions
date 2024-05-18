@@ -10,5 +10,6 @@ import lombok.NoArgsConstructor;
 public class Reservation {
     private String r_id;
     private String r_type;
+    private String r_date;
 
 }

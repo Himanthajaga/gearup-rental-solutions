@@ -310,7 +310,7 @@ public class BokkingFormController {
     clearFields();
     }
 
-    private void clearFields() {
+    private void  clearFields() {
         txtBokkingId.setText("");
         txtBokkkingDate.getEditor().clear();
         cmbCustomerID.getEditor().clear();

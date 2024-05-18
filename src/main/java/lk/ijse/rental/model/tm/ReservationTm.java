@@ -10,5 +10,6 @@ import lombok.NoArgsConstructor;
 public class ReservationTm {
     private String colReservationId;
     private String colReservationType;
+    private String colReservationDate;
 
 }

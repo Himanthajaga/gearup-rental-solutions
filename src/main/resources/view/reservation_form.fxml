@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -20,8 +21,9 @@
       </Text>
       <TableView fx:id="tblReservation" layoutX="77.0" layoutY="328.0" prefHeight="230.0" prefWidth="925.0">
          <columns>
-            <TableColumn fx:id="colReservationId" prefWidth="452.0" text="Reservation_Id" />
-            <TableColumn fx:id="colReservationType" prefWidth="472.0" text="Reservation_Type" />
+            <TableColumn fx:id="colReservationId" prefWidth="374.0" text="Reservation_Id" />
+            <TableColumn fx:id="colReservationType" prefWidth="306.0" text="Reservation_Type" />
+            <TableColumn fx:id="colReservationDate" prefWidth="243.0" text="Reservation_Date" />
          </columns>
       </TableView>
       <JFXButton fx:id="btnUpdateReservation" buttonType="RAISED" layoutX="313.0" layoutY="281.0" onAction="#btnUpdateReservationOnAction" prefHeight="43.0" prefWidth="128.0" style="-fx-background-color: #55E6C1;" text="       Update" textAlignment="CENTER" textFill="WHITE">
@@ -85,5 +87,6 @@
          </image>
       </ImageView>
       <TextField fx:id="txtReservationIdnew" layoutX="132.0" layoutY="199.0" onKeyReleased="#relesed" prefHeight="31.0" prefWidth="154.0" />
+      <DatePicker fx:id="reseerDate" layoutX="637.0" layoutY="202.0" />
    </children>
 </AnchorPane>

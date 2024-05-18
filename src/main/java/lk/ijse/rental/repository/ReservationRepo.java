@@ -14,12 +14,13 @@ import java.util.List;
 public class ReservationRepo {
     public static boolean save(Reservation reservation) throws SQLException, ClassNotFoundException {
 //        In here you can now save your reservation
-        String sql = "INSERT INTO reservation VALUES(?, ?)";
+        String sql = "INSERT INTO reservation VALUES(?, ?, ?)";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
 
         pstm.setObject(1, reservation.getR_id());
         pstm.setObject(2, reservation.getR_type());
+        pstm.setObject(3, reservation.getR_date());
 
 
 
@@ -35,7 +36,7 @@ public class ReservationRepo {
     }
 
     public static boolean update(Reservation reservation) throws SQLException, ClassNotFoundException {
-        String sql = "UPDATE reservation SET r_type = ? WHERE r_id = ?";
+        String sql = "UPDATE reservation SET r_type = ?,r_date=? WHERE r_id = ?";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
@@ -43,6 +44,7 @@ public class ReservationRepo {
 
         pstm.setObject(1, reservation.getR_type());
         pstm.setObject(2, reservation.getR_id());
+        pstm.setObject(3, reservation.getR_date());
 
         return pstm.executeUpdate() > 0;
     }
@@ -60,11 +62,12 @@ public class ReservationRepo {
         if (resultSet.next()) {
             String r_id = resultSet.getString(1);
             String r_type =resultSet.getString(2);
+            String r_date = resultSet.getString(3);
 
 
 
 
-            reservation = new Reservation(r_id,r_type);
+            reservation = new Reservation(r_id, r_type, r_date);
         }
         return reservation;
     }
@@ -90,12 +93,13 @@ public class ReservationRepo {
         List<Reservation> reservationList = new ArrayList<>();
         while (resultSet.next()) {
             String r_id = resultSet.getString(1);
-            String r_date = resultSet.getString(2);
+            String r_type = resultSet.getString(2);
+            String r_date = resultSet.getString(3);
 
 
 
 
-            Reservation reservation = new Reservation(r_id,r_date);
+            Reservation reservation = new Reservation(r_id, r_type, r_date);
             reservationList.add(reservation);
         }
         return reservationList;

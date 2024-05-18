@@ -46,8 +46,10 @@ public class ReservationFormController {
 
     @FXML
     private TableView<ReservationTm> tblReservation;
-
-
+    @FXML
+    private TableColumn<?, ?> colReservationDate;
+    @FXML
+    private DatePicker reseerDate;
     @FXML
     private TextField txtReservationType;
     @FXML
@@ -84,6 +86,7 @@ public class ReservationFormController {
     private void setCellValueFactory() {
         colReservationId.setCellValueFactory(new PropertyValueFactory<>("colReservationId"));
         colReservationType.setCellValueFactory(new PropertyValueFactory<>("colReservationType"));
+        colReservationDate.setCellValueFactory(new PropertyValueFactory<>("colReservationDate"));
 
 
 
@@ -96,7 +99,8 @@ public class ReservationFormController {
         for (Reservation reservation : reservationList) {
             ReservationTm reservationTm = new ReservationTm(
                    reservation.getR_id(),
-                    reservation.getR_type()
+                    reservation.getR_type(),
+                    reservation.getR_date()
 
 
             );
@@ -144,11 +148,12 @@ public class ReservationFormController {
     void btnSaveReservationOnAction(ActionEvent event) {
         String id = txtReservationId.getText();
         String name = txtReservationType.getText();
+        String date = reseerDate.getValue().toString();
         if (id.trim().length() == 0 || name.trim().length() == 0) {
             new Alert(Alert.AlertType.WARNING, "Empty Fields").show();
             return;
         }
-        Reservation reservation = new Reservation(id, name);
+        Reservation reservation = new Reservation(id, name, date);
         try {
             boolean isSaved = ReservationRepo.save(reservation);
             if (isSaved) {
@@ -173,7 +178,7 @@ public class ReservationFormController {
         String name = txtReservationType.getText();
 
 
-        Reservation reservation = new Reservation(id, name);
+        Reservation reservation = new Reservation(id, name, reseerDate.getValue().toString());
         try {
             boolean isUpdated = ReservationRepo.update(reservation);
             if (isUpdated) {
