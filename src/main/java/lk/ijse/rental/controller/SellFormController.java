@@ -18,6 +18,7 @@ import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
+import java.io.InputStream;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -115,22 +116,25 @@ public class SellFormController {
     }
     @FXML
     void btnPrintBillOnAction(ActionEvent event) throws JRException, SQLException, ClassNotFoundException {
-        JasperDesign jasperDesign =
-                JRXmlLoader.load("src/main/resources/reports/sell.jrxml");
-        JasperReport jasperReport =
-                JasperCompileManager.compileReport(jasperDesign);
+        HashMap hashMap = new HashMap();
+        hashMap.put("sellID", lblSellId.getText());
+        hashMap.put("build_Des", lblMaterialDescription.getText());
+        hashMap.put("soldAmount", txtMaterialQty.getText());
+        hashMap.put("customerName", lblCustomerName.getText());
+        hashMap.put("netTotal", lblNetTotal.getText());
 
-        Map<String, Object> data = new HashMap<>();
-        data.put("se_Id",lblSellId.getLabelFor());
 
+        InputStream resourceAsStream = this.getClass().getResourceAsStream("/reports/sell.jrxml");
+        JasperDesign jasperDesign = JRXmlLoader.load(resourceAsStream);
 
-        JasperPrint jasperPrint =
-                JasperFillManager.fillReport(
-                        jasperReport,
-                        data,
-                        DbConnection.getInstance().getConnection());
+        JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
+        JasperPrint jasperPrint = JasperFillManager.fillReport(
+                jasperReport,
+                hashMap,
+                new JREmptyDataSource()
+        );
 
-        JasperViewer.viewReport(jasperPrint,false);
+        JasperViewer.viewReport(jasperPrint, false);
     }
     private void getCustomerIds() {
         ObservableList<String> obList = FXCollections.observableArrayList();

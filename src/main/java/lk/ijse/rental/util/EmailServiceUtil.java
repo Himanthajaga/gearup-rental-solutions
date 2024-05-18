@@ -1,69 +1,109 @@
 package lk.ijse.rental.util;
 
+import com.google.api.client.auth.oauth2.Credential;
+import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;
+import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
+import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
+import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
+import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
+import com.google.api.client.googleapis.json.GoogleJsonError;
+import com.google.api.client.googleapis.json.GoogleJsonResponseException;
+import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.json.gson.GsonFactory;
+import com.google.api.client.util.store.FileDataStoreFactory;
+import com.google.api.services.gmail.Gmail;
+import com.google.api.services.gmail.GmailScopes;
+import org.apache.commons.codec.binary.Base64;
 
-import javax.mail.*;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.file.Paths;
+import java.security.GeneralSecurityException;
 import java.util.Properties;
+import java.util.Set;
 
 public class EmailServiceUtil {
+    public static  String TEST_MAIL;
+    private static Gmail service;
+    private static com.google.api.services.gmail.model.Message msg;
 
-    public static String sendMail(String email) {
-
+    public static String sendMail(String aEmail) {
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", true);
         properties.put("mail.smtp.starttls.enable", true);
         properties.put("mail.smtp.port", "587");
         properties.put("mail.smtp.host", "smtp.gmail.com");
 
-
         String user = "himanthagamachchige@gmail.com";
-        String password = "himantha@123";
-
-        Session session = Session.getInstance(properties, new Authenticator() {
-            @Override
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(user, password);
-            }
-        });
-
-        int otp = (int) (Math.random() * 90000) + 10000;
-
-        String msg = "<div style='border:1px solid #e2e2e2; padding:20px'>"
-                + "<h3>"
-                + "We received a request to get OTP Code "
-                + "<br>"
-                + "Your OTP Code is , "
-                + "<br>"
-                + "</h3>"
-                + "<p>"
-                + "<center>"
-                + "<h1>"
-                + "<b>"
-                + otp
-                + "</b>"
-                + "</h1>"
-                + "</center>"
-                + "</p>"
-                + "Use this OTP to gain Access ."
-                + "</div>";
-
-        try {
-            Message message = new MimeMessage(session);
-            message.setRecipient(Message.RecipientType.TO, new InternetAddress(email));
-            message.setFrom(new InternetAddress(user));
-            message.setSubject(" OTP Verification");
-            message.setContent(msg, "text/html");
-
-            Transport.send(message);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return String.valueOf(otp);
-
+        return user;
     }
 
+    public void SendText() throws GeneralSecurityException, IOException {
+        NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
+        GsonFactory gsonFactory= GsonFactory.getDefaultInstance();
+        service = new Gmail.Builder(HTTP_TRANSPORT, gsonFactory, getCredentials(HTTP_TRANSPORT,gsonFactory))
+                .setApplicationName("sendmail")
+                .build();
+    }
 
+    private static Credential getCredentials(final NetHttpTransport HTTP_TRANSPORT, GsonFactory gsonFactory)
+            throws IOException {
+        // Load client secrets.
+        GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(gsonFactory,
+                new InputStreamReader(EmailServiceUtil.class.getResourceAsStream
+                        ("client_secret_501922145163-dqkjsuf1s6t9v68349i526dkbh8q8kll.apps.googleusercontent.com (1).json"))); // enter your credential
+        // Build flow and trigger user authorization request.
+        GoogleAuthorizationCodeFlow flow = new GoogleAuthorizationCodeFlow.Builder(
+                HTTP_TRANSPORT, gsonFactory, clientSecrets, Set.of(GmailScopes.GMAIL_SEND))
+                .setDataStoreFactory(new FileDataStoreFactory(Paths.get("tokens").toFile()))
+                .setAccessType("offline")
+                .build();
+
+        LocalServerReceiver receiver = new LocalServerReceiver.Builder().setPort(8888).build();
+        return new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
+
+
+    }
+    public static void sendMail(String subject, String massage, String TEST_MAIL) throws  IOException, MessagingException {
+        EmailServiceUtil.TEST_MAIL = TEST_MAIL;
+
+        // Encode as MIME message
+        Properties props = new Properties();
+        Session session = Session.getDefaultInstance(props, null);
+        MimeMessage email = new MimeMessage(session);
+        email.setFrom(new InternetAddress(TEST_MAIL));
+        email.addRecipient(Message.RecipientType.TO, new InternetAddress(TEST_MAIL));
+        email.setSubject(subject);
+        email.setText(massage);
+
+        // Encode and wrap the MIME message into a gmail message
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+        email.writeTo(buffer);
+        byte[] rawMessageBytes = buffer.toByteArray();
+        String encodedEmail = Base64.encodeBase64URLSafeString(rawMessageBytes);
+        com.google.api.services.gmail.model.Message message = new com.google.api.services.gmail.model.Message();
+        {
+            message.setRaw(encodedEmail);
+        }
+
+        try {
+            // Create the draft message
+            msg = service.users().messages().send("me", msg).execute();
+            System.out.println("Draft id: " + msg.getId());
+            System.out.println(msg.toPrettyString());
+        } catch (GoogleJsonResponseException e) {
+            GoogleJsonError error = e.getDetails();
+            if (error.getCode() == 403) {
+                System.err.println("Unable to create draft: " + e.getDetails());
+            } else {
+                throw e;
+            }
+        }
+    }
 }

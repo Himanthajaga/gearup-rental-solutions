@@ -3,49 +3,13 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="payment" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="be26aeda-2320-4c5f-988a-e32279a8a28a">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (5)"/>
-	<parameter name="PaymentID" class="java.lang.String"/>
+	<parameter name="paymentID" class="java.lang.String"/>
+	<parameter name="paymentTYPE" class="java.lang.String"/>
+	<parameter name="supplierEmail" class="java.lang.String"/>
+	<parameter name="totaL" class="java.lang.String"/>
 	<queryString language="SQL">
-		<![CDATA[SELECT 
-    p.p_id AS payment_id,
-    p.p_type AS payment_type,
-    p.s_email AS supplier_email,
-    p.p_amount AS total
-FROM 
-    payment p
-    where p.p_id = $P{PaymentID} ]]>
+		<![CDATA[SELECT]]>
 	</queryString>
-	<field name="payment_id" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="p_id"/>
-		<property name="com.jaspersoft.studio.field.label" value="payment_id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
-	</field>
-	<field name="payment_type" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="p_type"/>
-		<property name="com.jaspersoft.studio.field.label" value="payment_type"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
-	</field>
-	<field name="supplier_email" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="s_email"/>
-		<property name="com.jaspersoft.studio.field.label" value="supplier_email"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
-	</field>
-	<field name="total" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="p_amount"/>
-		<property name="com.jaspersoft.studio.field.label" value="total"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
-	</field>
-	<group name="payment_id">
-		<groupExpression><![CDATA[$F{payment_id}]]></groupExpression>
-	</group>
-	<group name="payment_type">
-		<groupExpression><![CDATA[$F{payment_type}]]></groupExpression>
-	</group>
-	<group name="supplier_email">
-		<groupExpression><![CDATA[$F{supplier_email}]]></groupExpression>
-	</group>
-	<group name="total">
-		<groupExpression><![CDATA[$F{total}]]></groupExpression>
-	</group>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -73,14 +37,14 @@ FROM
 				<text><![CDATA[JAGA RENTERS]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="-20" y="50" width="595" height="30" uuid="da84e735-22ec-4c43-a912-a02bbe7a62fd"/>
+				<reportElement x="162" y="50" width="230" height="30" uuid="da84e735-22ec-4c43-a912-a02bbe7a62fd"/>
 				<box>
 					<bottomPen lineWidth="2.0"/>
 				</box>
 				<textElement>
 					<font size="20" isBold="true"/>
 				</textElement>
-				<text><![CDATA[                                0741411520/0705330140]]></text>
+				<text><![CDATA[0741411520/0705330140]]></text>
 			</staticText>
 			<textField pattern="MMMMM dd, yyyy">
 				<reportElement x="370" y="0" width="180" height="30" uuid="701477c4-46b1-4eb5-a5ca-ea9467445a35"/>
@@ -91,7 +55,7 @@ FROM
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="18"/>
+					<font size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
@@ -100,18 +64,18 @@ FROM
 	<pageHeader>
 		<band height="40" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="10" width="196" height="30" uuid="d56cad08-5802-447f-abab-cadf7186a938"/>
+				<reportElement x="4" y="10" width="196" height="30" uuid="d56cad08-5802-447f-abab-cadf7186a938"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Rent Order Receipt]]></text>
+				<text><![CDATA[Payment Receipt]]></text>
 			</staticText>
 		</band>
 	</pageHeader>
 	<columnHeader>
 		<band height="70" splitType="Stretch">
 			<staticText>
-				<reportElement x="37" y="40" width="100" height="30" uuid="675170d8-1b85-4389-b4d6-adc393695540">
+				<reportElement x="80" y="40" width="100" height="30" uuid="675170d8-1b85-4389-b4d6-adc393695540">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7c086010-9569-4fc3-a308-9bba057f6673"/>
 				</reportElement>
 				<box>
@@ -126,7 +90,7 @@ FROM
 				<text><![CDATA[payment_id]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="137" y="40" width="100" height="30" uuid="18299c73-376b-4d13-a332-3fa193a9bc98">
+				<reportElement x="180" y="40" width="100" height="30" uuid="18299c73-376b-4d13-a332-3fa193a9bc98">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a8c3ce6f-eb70-4368-af07-fd35746cc4d8"/>
 				</reportElement>
 				<box>
@@ -141,7 +105,7 @@ FROM
 				<text><![CDATA[payment_type]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="237" y="40" width="100" height="30" uuid="a5ccdf49-0c31-4791-bb99-ef2829d4400d">
+				<reportElement x="280" y="40" width="100" height="30" uuid="a5ccdf49-0c31-4791-bb99-ef2829d4400d">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5688104d-bfba-448a-b0a3-41630e6c214a"/>
 				</reportElement>
 				<box>
@@ -156,7 +120,7 @@ FROM
 				<text><![CDATA[supplier_email]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="337" y="40" width="100" height="30" uuid="df4402a4-44db-4140-b2a9-a10a5617ef4f">
+				<reportElement x="380" y="40" width="100" height="30" uuid="df4402a4-44db-4140-b2a9-a10a5617ef4f">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="427e3199-c05e-4868-a57d-65eeea296327"/>
 				</reportElement>
 				<box>
@@ -175,74 +139,52 @@ FROM
 	<detail>
 		<band height="125" splitType="Stretch">
 			<textField>
-				<reportElement x="37" y="0" width="100" height="30" uuid="931936de-8577-4009-8ce2-00b286705b89">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7c086010-9569-4fc3-a308-9bba057f6673"/>
-				</reportElement>
+				<reportElement x="80" y="0" width="100" height="30" uuid="42b96f15-301a-4217-9346-bf251387d973"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{payment_id}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{paymentID}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="137" y="0" width="100" height="30" uuid="8238104b-9696-46de-b46f-f170babf9a19">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a8c3ce6f-eb70-4368-af07-fd35746cc4d8"/>
-				</reportElement>
+				<reportElement x="180" y="0" width="100" height="30" uuid="882a4b7d-8db0-423f-a223-939df1c93f5d"/>
 				<box>
+					<pen lineWidth="0.0"/>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{payment_type}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{paymentTYPE}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="237" y="0" width="100" height="30" uuid="048d09dd-c391-4ec1-8c9f-b1027c390e48">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5688104d-bfba-448a-b0a3-41630e6c214a"/>
-				</reportElement>
+				<reportElement x="280" y="0" width="100" height="30" uuid="54177a0d-e4fb-4fc2-a7cc-802f8f2bb89e"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{supplier_email}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{supplierEmail}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="337" y="0" width="100" height="30" uuid="e716a46b-a648-43b9-a0b4-0bc4284014d0">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="427e3199-c05e-4868-a57d-65eeea296327"/>
-				</reportElement>
+				<reportElement x="380" y="0" width="100" height="30" uuid="a8dc81b8-2990-4e21-bba7-6f0bc052e163"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{totaL}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="114" splitType="Stretch"/>
-	</columnFooter>
-	<pageFooter>
-		<band height="70" splitType="Stretch">
+		<band height="114" splitType="Stretch">
 			<staticText>
-				<reportElement x="-20" y="-45" width="595" height="45" uuid="51b6ecb7-3515-4e3b-b177-fb025a6b47eb"/>
+				<reportElement x="40" y="0" width="440" height="30" uuid="51b6ecb7-3515-4e3b-b177-fb025a6b47eb"/>
 				<box>
 					<topPen lineWidth="0.6"/>
 				</box>
@@ -252,6 +194,9 @@ FROM
 				<text><![CDATA[THANK YOU COME AGAIN!!!!]]></text>
 			</staticText>
 		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="70" splitType="Stretch"/>
 	</pageFooter>
 	<summary>
 		<band height="42" splitType="Stretch"/>
