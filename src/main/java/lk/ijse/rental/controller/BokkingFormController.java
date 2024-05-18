@@ -272,6 +272,7 @@ public class BokkingFormController {
                 new Alert(Alert.AlertType.CONFIRMATION, "Saved..").show();
                 bokkingList.add(bokking);
                 loadBokkingTable();
+                clearFields();
             } else {
                 new Alert(Alert.AlertType.WARNING, "Try Again..").show();
             }

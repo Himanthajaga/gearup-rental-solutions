@@ -156,6 +156,7 @@ public class ReservationFormController {
                 reservationList.add(reservation);
                 loadReservationTable();
                 clearFields();
+                loadNextReservationid();
             } else {
                 new Alert(Alert.AlertType.WARNING, "Try Again..").show();
             }

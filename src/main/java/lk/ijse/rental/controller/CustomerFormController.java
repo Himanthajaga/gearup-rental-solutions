@@ -260,6 +260,7 @@ public class CustomerFormController {
                 qrcodeForUser.CreateQr(id);
                 loadCustomerTable();
                 clearFeilds();
+                loadnextCusId();
             }else {
                 new Alert(Alert.AlertType.ERROR, "Try Again!").show();
             }

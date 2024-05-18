@@ -308,6 +308,8 @@ private void clearFields() {
             boolean isPlaced = PlaceOrderRepo.placeOrder(po);
             if(isPlaced) {
                 new Alert(Alert.AlertType.CONFIRMATION, "order placed!").show();
+                clearFields();
+                loadNextOrderId();
             } else {
                 new Alert(Alert.AlertType.WARNING, "order not placed!").show();
             }

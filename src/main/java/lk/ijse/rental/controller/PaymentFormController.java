@@ -184,6 +184,8 @@ public class PaymentFormController {
             if (isAdded) {
                 paymentList.add(payment);
                 loadPaymentTable();
+                clearFields();
+                loadNextOrderId();
             }
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);

@@ -188,6 +188,7 @@ public class AdminFormController {
                 qrcodeForUser.CreateQr(id);
                 adminList.add(admin);
                 loadAdminTable();
+                loadNextAdminId();
             } else {
                 new Alert(Alert.AlertType.WARNING, "Try Again..").show();
             }

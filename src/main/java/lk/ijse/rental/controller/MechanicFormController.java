@@ -200,6 +200,7 @@ public class MechanicFormController {
                 mechanicList.add(mechanic);
                 loadMechanicTable();
                 clearFields();
+                loadNextMechanicId();
             } else {
                 new Alert(Alert.AlertType.WARNING, "Try Again..").show();
             }

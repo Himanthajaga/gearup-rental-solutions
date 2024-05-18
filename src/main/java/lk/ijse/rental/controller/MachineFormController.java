@@ -196,6 +196,7 @@ public class MachineFormController {
                 machineList.add(machine);
                 loadMachineTable();
                 clearFields();
+                loadNextMachineId();
             } else {
                 new Alert(Alert.AlertType.ERROR, "Try Again", ButtonType.OK).show();
             }
@@ -277,7 +278,7 @@ public class MachineFormController {
 
     @FXML
     void txtMachineIsAvailableOnReleased(KeyEvent event) {
-        Pattern idPattern = Pattern.compile("^\\\\d+$");
+        Pattern idPattern = Pattern.compile("[0-1]{1}");
         if (!idPattern.matcher(txtisavailable.getText()).matches()) {
             addError(txtisavailable);
 

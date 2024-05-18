@@ -198,6 +198,7 @@ public class SupplierFormController {
                     supplierList.add(supplier);
                     loadSupplierTable();
                     clearFields();
+                    loadNextSupplierId();
                 }
 
         } catch (SQLException | ClassNotFoundException e) {

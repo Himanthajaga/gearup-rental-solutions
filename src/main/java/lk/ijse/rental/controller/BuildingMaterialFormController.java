@@ -182,6 +182,8 @@ public class BuildingMaterialFormController {
                 qrcodeForUser.CreateQr(MaterialId);
                 bmList.add(buildingMaterial);
                 loadBuildingMaterialTable();
+                clearFields();
+                loadNextBuildingMaterialId();
             } else {
                 new Alert(Alert.AlertType.WARNING, "Try Again..").show();
             }
@@ -206,6 +208,7 @@ public class BuildingMaterialFormController {
             if (isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Updated..").show();
                 loadBuildingMaterialTable();
+                clearFields();
             } else {
                 new Alert(Alert.AlertType.WARNING, "Try Again..").show();
             }

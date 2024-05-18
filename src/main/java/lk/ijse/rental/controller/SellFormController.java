@@ -299,6 +299,8 @@ public class SellFormController {
             boolean isPlaced = PlaceSellRepo.PlaceSell(po);
             if(isPlaced) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Sell placed!").show();
+                clearfields();
+                loadNextSellId();
             } else {
                 new Alert(Alert.AlertType.WARNING, "Sell not placed!").show();
             }
