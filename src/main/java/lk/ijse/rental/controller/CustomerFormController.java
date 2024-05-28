@@ -12,14 +12,11 @@ import lk.ijse.rental.model.Customer;
 import lk.ijse.rental.model.tm.CustomerTm;
 import lk.ijse.rental.qrGenerate.QrcodeForMachine;
 import lk.ijse.rental.repository.CustomerRepo;
-import lk.ijse.rental.util.Regex;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
-
-import static lk.ijse.rental.util.Regex.*;
 
 public class CustomerFormController {
 

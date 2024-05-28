@@ -13,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.rental.db.DbConnection;
@@ -33,6 +34,7 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class RentMachineFormController {
     @FXML
@@ -70,7 +72,8 @@ public class RentMachineFormController {
 
     @FXML
     private Label lblDescription;
-
+    @FXML
+    private TextField txtdays;
     @FXML
     private Label lblNetTotal;
 
@@ -147,7 +150,26 @@ public class RentMachineFormController {
         clearFields();
 
     }
-private void clearFields() {
+    @FXML
+    void daysOnreleased(KeyEvent event) {
+        Pattern idPattern = Pattern.compile("^[0-9]{1,3}$");
+        if (!idPattern.matcher(txtdays.getText()).matches()) {
+            addError(txtdays);
+
+        }else{
+            removeError(txtdays);
+        }
+    }
+
+    private void removeError(TextField txtdays) {
+        txtdays.setStyle("-fx-border-color: green; -fx-border-width: 5");
+    }
+
+    private void addError(TextField txtdays) {
+        txtdays.setStyle("-fx-border-color: red; -fx-border-width: 5");
+    }
+
+    private void clearFields() {
         cmbCustomerId.setValue(null);
         cmbMachineId.setValue(null);
         lblCustomerName.setText("");
@@ -228,7 +250,7 @@ private void clearFields() {
         String code = (String) cmbMachineId.getValue();
         String description = lblDescription.getText();
         double unitPrice = Double.parseDouble(lblUnitprice.getText());
-        double total = unitPrice;
+        double total = unitPrice*Integer.parseInt(txtdays.getText());
         JFXButton btnRemove = new JFXButton("remove");
         btnRemove.setCursor(Cursor.HAND);
 
@@ -276,8 +298,11 @@ private void clearFields() {
     }
     private void calculateNetTotal() {
         netTotal = 0;
+        txtdays.getText();
         for (int i = 0; i < tblOrderCart.getItems().size(); i++) {
-            netTotal += (double) colTotal.getCellData(i);
+            TblOrderCartTm tm = TblOrdercartList.get(i);
+            netTotal += tm.getColTotal();
+
         }
         lblNetTotal.setText(String.valueOf(netTotal));
     }
@@ -288,7 +313,7 @@ private void clearFields() {
         Date date = Date.valueOf(LocalDate.now());
         Date returnDate = Date.valueOf(LocalDate.now().plusDays(7));
         String cusId = (String) cmbCustomerId.getValue();
-        double total = Double.parseDouble(lblNetTotal.getText());
+        double total = lblNetTotal.getText().isEmpty() ? 0 : Double.parseDouble(lblNetTotal.getText());
 
         var RentOrder = new RentOrder(orderId, date, returnDate, cusId, total   );
 
@@ -308,7 +333,6 @@ private void clearFields() {
             boolean isPlaced = PlaceOrderRepo.placeOrder(po);
             if(isPlaced) {
                 new Alert(Alert.AlertType.CONFIRMATION, "order placed!").show();
-                clearFields();
                 loadNextOrderId();
             } else {
                 new Alert(Alert.AlertType.WARNING, "order not placed!").show();

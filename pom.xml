@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>lk.ijse</groupId>
-    <artifactId>thogakade-mvc</artifactId>
+    <ajagartifactId>thogakade-mvc</ajagartifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

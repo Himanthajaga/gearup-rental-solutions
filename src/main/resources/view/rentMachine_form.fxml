@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -154,5 +155,11 @@
             <Image url="@../asserts/animated%20icons/icons8-date%20animated.gif" />
          </image>
       </ImageView>
+      <Label layoutX="669.0" layoutY="222.0" text="Days to rent:">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtdays" layoutX="795.0" layoutY="221.0" onKeyReleased="#daysOnreleased" />
    </children>
 </AnchorPane>

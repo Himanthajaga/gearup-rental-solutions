@@ -77,7 +77,7 @@
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </JFXButton>
-      <TextField fx:id="txtMaterialQty" layoutX="71.0" layoutY="257.0" prefHeight="40.0" prefWidth="188.0" promptText="Material_Qty">
+      <TextField fx:id="txtMaterialQty" layoutX="71.0" layoutY="257.0" onKeyReleased="#QTYRELEASED" prefHeight="40.0" prefWidth="188.0" promptText="Material_Qty">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>

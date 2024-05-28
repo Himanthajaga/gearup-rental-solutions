@@ -12,7 +12,9 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.util.Duration;
+import lk.ijse.rental.model.Customer;
 import lk.ijse.rental.model.Machine;
+import lk.ijse.rental.repository.CustomerRepo;
 import lk.ijse.rental.repository.MachineRepo;
 import lk.ijse.rental.util.DateTimeUtil;
 
@@ -32,6 +34,12 @@ public class ReturnMachineFormController {
 
     @FXML
     private Label lblDescription;
+
+    @FXML
+    private Label lblcusId;
+
+    @FXML
+    private Label lblcusname;
     public void initialize() {
         //getIsavailableMachines();
         getItemCodes();
@@ -70,6 +78,8 @@ public class ReturnMachineFormController {
                 System.out.println(machine.getM_desc());
                 lblDescription.setText(machine.getM_desc());
                 lblMachineName.setText(machine.getM_Name());
+                //lblcusname.setText(machine.getC_email());
+
             }
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);

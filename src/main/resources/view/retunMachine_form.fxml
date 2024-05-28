@@ -61,5 +61,25 @@
             <Font name="Calibri Bold" size="20.0" />
          </font>
       </Text>
+      <Text layoutX="536.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name:">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblcusname" layoutX="676.0" layoutY="295.0" prefHeight="33.0" prefWidth="187.0">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Label>
+      <Text layoutX="536.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer ID:">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblcusId" layoutX="651.0" layoutY="355.0" prefHeight="33.0" prefWidth="187.0">
+         <font>
+            <Font name="Calibri Bold" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

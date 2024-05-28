@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import lk.ijse.rental.db.DbConnection;
 import lk.ijse.rental.model.*;
 import lk.ijse.rental.model.tm.TblMaterialcartTm;
@@ -299,7 +300,6 @@ public class SellFormController {
             boolean isPlaced = PlaceSellRepo.PlaceSell(po);
             if(isPlaced) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Sell placed!").show();
-                clearfields();
                 loadNextSellId();
             } else {
                 new Alert(Alert.AlertType.WARNING, "Sell not placed!").show();
@@ -344,5 +344,23 @@ public class SellFormController {
     void txtSearchOnAction(ActionEvent event) {
 
     }
+    @FXML
+    void QTYRELEASED(KeyEvent event) {
+        if (txtMaterialQty.getText().matches("[0-9]+")) {
+            double qty = Double.parseDouble(txtMaterialQty.getText());
+            double qtyOnHand = Double.parseDouble(lblQtyOnHand.getText());
+            if (qty > qtyOnHand) {
+                new Alert(Alert.AlertType.INFORMATION, "Invalid qty!").show();
+                txtMaterialQty.clear();
+                txtMaterialQty.requestFocus();
+            }
+        } else {
+            new Alert(Alert.AlertType.INFORMATION, "Invalid qty!").show();
+            txtMaterialQty.clear();
+            txtMaterialQty.requestFocus();
+        }
+
+    }
+
 
 }
